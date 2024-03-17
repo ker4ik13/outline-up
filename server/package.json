@@ -24,7 +24,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs-modules/mailer": "^1.11.2",
+    "@nestjs-modules/mailer": "1.10.3",
     "@nestjs/cache-manager": "^2.2.1",
     "@nestjs/common": "^10.3.3",
     "@nestjs/config": "^3.2.0",
@@ -47,7 +47,6 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1",
-    "reflect-metadata": "^0.2.1",
     "rxjs": "^7.8.1",
     "swagger-ui-express": "^5.0.0",
     "telegraf": "^4.16.3",
