@@ -1,0 +1,44 @@
+@import "@/shared/styles/_vars";
+
+.imageWrapper {
+  width: 100%;
+  max-width: rem(500);
+  max-height: rem(500);
+  overflow: hidden;
+  border-radius: rem(8);
+  position: relative;
+  &:hover {
+    .fileName {
+      transform: translate(0, 0);
+    }
+  }
+}
+.image {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 100%;
+  max-width: rem(500);
+  max-height: rem(500);
+}
+.fileName {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: rem(5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $white;
+  width: 100%;
+  transform: translate(0, 100%);
+  transition: transform 0.1s ease-in;
+  transition-behavior: initial;
+  // transition-delay: 0 1s;
+  @include strings(2);
+  font-size: rem(12);
+}

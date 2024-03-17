@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "preserveSymlinks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@user": ["src/crud/user"],
+      "@user/*": ["src/crud/user/*"],
+      "@auth": ["src/auth"],
+      "@auth/*": ["src/auth/*"],
+      "@mail": ["src/crud/mail"],
+      "@mail/*": ["src/crud/mail/*"],
+      "@common": ["src/libs/common"],
+      "@common/*": ["src/libs/common/*"]
+    }
+  }
+}

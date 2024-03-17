@@ -1,0 +1,49 @@
+@import "@/shared/styles/_vars";
+
+.editorButtons {
+  display: flex;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  gap: rem(10);
+  // padding: rem(16) rem(10);
+  // border-bottom: rem(1) solid var(--joy-palette-neutral-700, #f0f4f8);
+
+  & button {
+    // padding: rem(4);
+    // width: rem(32);
+    // height: rem(32);
+    // cursor: pointer;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // aspect-ratio: 1/1;
+    // outline: none;
+    // border: 0;
+    transition: 0.05s;
+    outline: none;
+
+    &:hover {
+      background-color: var(--joy-palette-neutral-500, #636b74);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid var(--joy-palette-neutral-500, #636b74);
+    }
+
+    & svg {
+      color: var(--joy-palette-background-level0);
+    }
+
+    &.isActiveButton {
+      background-color: #0b6bcb;
+    }
+  }
+}
+.divider {
+  width: rem(10);
+}

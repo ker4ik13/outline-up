@@ -1,0 +1,47 @@
+@import "@/shared/styles/_vars";
+
+.responseCard {
+  border-radius: rem(8);
+  background-color: rgb(var(--bg-color-light));
+  display: flex;
+  flex-direction: column;
+  padding: rem(20);
+  gap: rem(10);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--bg-color-dark), 0.1);
+}
+.name {
+  font-size: rem(18);
+  font-weight: 500;
+  color: rgb(var(--text-color-dark));
+  cursor: text;
+}
+.date {
+  font-size: rem(16);
+  font-weight: 400;
+  color: rgb(var(--text-color-dark));
+  opacity: 0.8;
+  cursor: text;
+  border-bottom: 1px solid rgb(var(--bg-color-dark-main));
+  padding-bottom: rem(8);
+}
+.infoString {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  text-decoration: none;
+  color: rgb(var(--text-color-dark));
+  font-size: rem(16);
+
+  & span {
+    cursor: text;
+    text-decoration: none;
+    color: rgb(var(--text-color-dark));
+  }
+
+  & a {
+    cursor: pointer;
+    color: rgb(var(--text-color-dark));
+  }
+}

@@ -1,0 +1,44 @@
+@media (min-width: 1930px) {
+  :root {
+    font-size: 18px;
+  }
+}
+@media (min-width: 2200px) {
+  :root {
+    font-size: 20px;
+  }
+}
+@media (min-width: 2400px) {
+  :root {
+    font-size: 22px;
+  }
+}
+@media (min-width: 2600px) {
+  :root {
+    font-size: 24px;
+  }
+}
+
+:root {
+  --bg-color-light: 255, 255, 255;
+  --bg-color-light-main: 234, 242, 251;
+  --bg-color-dark: 0, 0, 0;
+  --bg-color-dark-main: 24, 25, 27;
+  --accent: 58, 121, 222;
+  --accent-light: 234, 242, 251;
+  --text-color-light: 254, 254, 254;
+  --text-color-dark: 17, 17, 17;
+  --green: 115, 188, 88;
+  --red: 221, 56, 43;
+  --orange: 215, 131, 55;
+  --sidebar-width: 15.625rem;
+}
+
+body.dark {
+  --bg-color-light: 0, 0, 0;
+  --bg-color-light-main: 24, 25, 27;
+  --bg-color-dark: 255, 255, 255;
+  --bg-color-dark-main: 234, 242, 251;
+  --text-color-light: 17, 17, 17;
+  --text-color-dark: 254, 254, 254;
+}

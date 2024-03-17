@@ -1,0 +1,44 @@
+@import "@/shared/styles/_vars";
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.card {
+  max-width: rem(450);
+  width: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: rem(450);
+  width: 100%;
+  margin-top: rem(30);
+}
+.link {
+  text-align: right;
+  text-decoration: none;
+  color: rgb(var(--accent));
+  margin-bottom: rem(20);
+  align-self: flex-end;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.title {
+  @include inter();
+  cursor: text;
+  font-weight: 600;
+  display: inline;
+  color: rgb(var(--text-color-dark));
+  position: -webkit-sticky;
+  position: sticky;
+  top: rem(14);
+  z-index: 13;
+  @include H2-text();
+}
