@@ -1,7 +1,7 @@
 "use client";
 
 import { language, translate } from "@/data/admin/translate";
-import { Empty } from "@/shared/ui";
+import { Empty } from "@/shared/ui/admin";
 import s from "../GeneralPage.module.scss";
 
 const DashboardPage = () => {

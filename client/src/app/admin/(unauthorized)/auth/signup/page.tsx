@@ -6,7 +6,7 @@ import { useAuth } from "@/shared/helpers/auth";
 import { useDebouncedCallback } from "@/shared/helpers/hooks";
 import type { CreateUserErrorResponse } from "@/shared/types/user";
 import type { CreateUserDto } from "@/shared/types/user/CreateUser";
-import { ToggleThemeButton } from "@/shared/ui";
+import { ToggleThemeButton } from "@/shared/ui/admin";
 import {
   Box,
   Button,

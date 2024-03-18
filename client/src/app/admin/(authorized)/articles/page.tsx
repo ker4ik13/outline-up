@@ -14,8 +14,8 @@ import {
 import type { IError } from "@/shared/types";
 import type { Article } from "@/shared/types/article";
 import { UserRoles } from "@/shared/types/role";
-import { CustomBreadcrumbs, Empty } from "@/shared/ui";
-import { ArticleCard } from "@/widgets/ArticleCard/ArticleCard";
+import { CustomBreadcrumbs, Empty } from "@/shared/ui/admin";
+import { ArticleCard } from "@/widgets/admin/ArticleCard/ArticleCard";
 import { Search, UpdateOutlined } from "@mui/icons-material";
 import {
   Button,

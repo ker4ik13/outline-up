@@ -1,0 +1,26 @@
+@import "@/shared/styles/_vars";
+
+.editor {
+  border-radius: rem(8);
+  overflow: hidden;
+  padding: rem(1);
+  background-color: var(--joy-palette-background-level1);
+
+  & > div:last-child {
+    padding: rem(10);
+    outline: rem(1) solid transparent;
+    border-radius: 0 0 rem(8) rem(8);
+
+    min-height: rem(100);
+
+    & a {
+      color: rgb(var(--accent));
+      text-decoration: none;
+    }
+    // TODO: написать стили для редактора
+
+    // &:focus {
+    //   outline: rem(1) solid var(--joy-palette-neutral-100, #f0f4f8);
+    // }
+  }
+}

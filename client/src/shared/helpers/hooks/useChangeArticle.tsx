@@ -1,6 +1,6 @@
 import { ArticlesService } from "@/services/admin";
 import { Article } from "@/shared/types/article";
-import { ArticleCard } from "@/widgets/ArticleCard/ArticleCard";
+import { ArticleCard } from "@/widgets/admin/ArticleCard/ArticleCard";
 import {
   Button,
   Card,

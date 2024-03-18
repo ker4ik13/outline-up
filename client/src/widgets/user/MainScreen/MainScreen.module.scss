@@ -1,0 +1,74 @@
+@import "@/shared/styles/_vars";
+
+.mainScreen {
+  height: 100vh;
+  background-color: $bg-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gradient {
+  -webkit-mask: #00c2ff;
+  mask: #00c2ff;
+  fill: #00c2ff;
+  color: #00c2ff;
+  -webkit-clip-path: fill-box;
+  clip-path: fill-box;
+  -webkit-mask-image: #00c2ff;
+  mask-image: #00c2ff;
+  position: relative;
+}
+.video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-clip-path: fill-box;
+  clip-path: fill-box;
+  -webkit-mask: #00c2ff;
+  mask: #00c2ff;
+  fill: #00c2ff;
+  color: #00c2ff;
+}
+.text {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: rem(20) 0;
+}
+.title {
+  @include helvetica(300);
+  font-size: rem(120);
+  line-height: rem(138);
+  letter-spacing: rem(48);
+  color: $bg-white;
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: pretty;
+  margin: 0 auto;
+
+  @media screen and (max-width: $max-800) {
+    font-size: rem(45);
+    line-height: rem(54);
+    letter-spacing: rem(18);
+  }
+}
+.subtitle {
+  margin: 0 auto;
+  @include helvetica(300);
+  font-size: rem(30);
+  line-height: rem(34);
+  color: $bg-white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: rem(40);
+
+  @media screen and (max-width: $max-768) {
+    font-size: rem(19);
+    line-height: rem(21);
+    margin-top: rem(20);
+  }
+}

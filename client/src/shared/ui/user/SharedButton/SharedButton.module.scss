@@ -1,0 +1,101 @@
+@import "@/shared/styles/_vars";
+
+@property --primary-hover-1 {
+  syntax: "<color>";
+  initial-value: #0b002c;
+  inherits: false;
+}
+@property --primary-hover-2 {
+  syntax: "<color>";
+  initial-value: #160054;
+  inherits: false;
+}
+@property --secondary-hover-1 {
+  syntax: "<color>";
+  initial-value: #fdffff;
+  inherits: false;
+}
+@property --secondary-hover-2 {
+  syntax: "<color>";
+  initial-value: #ebf0ff;
+  inherits: false;
+}
+
+.button {
+  padding: rem(20) rem(50);
+  @include helvetica(400);
+  font-size: rem(20);
+  line-height: rem(23);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0;
+  text-align: center;
+  outline: none;
+  display: inline-block;
+
+  &.primary {
+    transition: all 0.3s, --primary-hover-1 0.3s, --primary-hover-2 0.3s;
+    color: $bg-white;
+    background: linear-gradient(
+      90deg,
+      var(--primary-hover-1),
+      var(--primary-hover-2)
+    );
+
+    &:not(:disabled) {
+      cursor: pointer;
+      &:hover {
+        padding: rem(20) rem(53);
+        --primary-hover-1: #06020f;
+        --primary-hover-2: #110040;
+      }
+    }
+  }
+
+  &.secondary {
+    transition: all 0.3s, --secondary-hover-1 0.3s, --secondary-hover-2 0.3s;
+    color: $black;
+    cursor: pointer;
+
+    background: linear-gradient(
+      90deg,
+      var(--secondary-hover-1),
+      var(--secondary-hover-2)
+    );
+
+    &:not(:disabled) {
+      cursor: pointer;
+      &:hover {
+        padding: rem(20) rem(53);
+        --secondary-hover-1: #edfcff;
+        --secondary-hover-2: #cddbff;
+      }
+    }
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      padding: rem(20) rem(53);
+    }
+  }
+
+  &:active {
+    outline: rem(1) solid $bg-white;
+  }
+
+  &.center {
+    margin-inline: auto;
+  }
+
+  &.fullWidth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $gray;
+  }
+}

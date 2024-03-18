@@ -3,9 +3,12 @@
 import s from "@/pages/GeneralPage.module.scss";
 import { appLinks } from "@/shared/constants";
 import { useAuth } from "@/shared/helpers/auth";
-import { CustomBreadcrumbs } from "@/shared/ui";
-import { PersonalInfo, PersonalInfoPassword } from "@/widgets/PersonalInfo";
-import { UserCard, UserCardSkeleton } from "@/widgets/UserCard";
+import { CustomBreadcrumbs } from "@/shared/ui/admin";
+import {
+  PersonalInfo,
+  PersonalInfoPassword,
+} from "@/widgets/admin/PersonalInfo";
+import { UserCard, UserCardSkeleton } from "@/widgets/admin/UserCard";
 import { Tab, TabList, TabPanel, Tabs, Typography, tabClasses } from "@mui/joy";
 import { useEffect } from "react";
 

@@ -3,7 +3,7 @@ import { language, translate } from "@/data/admin/translate";
 import s from "@/pages/GeneralPage.module.scss";
 import { appLinks } from "@/shared/constants";
 import { useToggleTheme } from "@/shared/helpers/hooks/useToggleTheme";
-import { CustomBreadcrumbs, Empty } from "@/shared/ui";
+import { CustomBreadcrumbs, Empty } from "@/shared/ui/admin";
 import { Switch, useColorScheme } from "@mui/joy";
 
 const SettingsPage = () => {

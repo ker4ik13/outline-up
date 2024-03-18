@@ -3,7 +3,7 @@
 import "@/app/styles";
 import s from "@/pages/GeneralPage.module.scss";
 import { useAuth } from "@/shared/helpers/auth";
-import { Header } from "@/widgets/Header/Header";
+import { Header } from "@/widgets/admin/Header/Header";
 import { CircularProgress, Stack } from "@mui/joy";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";

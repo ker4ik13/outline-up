@@ -1,0 +1,118 @@
+@import "@/shared/styles/_vars";
+
+.header {
+  padding: rem(20) rem(20);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--joy-palette-background-body);
+  max-height: rem(100);
+  overflow: visible;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @include theme-transition();
+  transition: margin-left 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.panel {
+  color: var(--joy-palette-text-primary);
+  text-decoration: none;
+  font-size: rem(24);
+  font-weight: 600;
+  transition: color 0.1s linear;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+}
+.logoWrapper {
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  margin-left: rem(30);
+  width: 100%;
+  display: flex;
+  transition: 0.2s;
+  background-color: transparent;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: rem(10);
+  top: 0;
+  z-index: 2;
+  color: inherit;
+  text-decoration: none;
+}
+.messages {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: rem(6);
+  border-right: 1px solid var(--joy-palette-primary-plainDisabledColor);
+  padding-right: rem(20);
+}
+.messageLink {
+  color: rgb(var(--bg-color-dark));
+  height: 100%;
+  transition: 0.1s;
+  aspect-ratio: 1/1;
+  padding: rem(8);
+  border-radius: rem(6);
+
+  @include theme-transition();
+
+  &:hover {
+    background-color: lighten($accent, 30%);
+
+    @media screen and (prefers-color-scheme: dark) {
+      color: rgb(var(--bg-color-light));
+    }
+  }
+
+  &:focus {
+    outline: 1px solid rgb(var(--bg-color-dark));
+    border: 0;
+  }
+
+  & svg {
+    min-width: rem(24);
+    height: 100%;
+  }
+}
+.account {
+  padding-left: rem(10);
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  position: relative;
+  color: var(--joy-palette-text-primary);
+  @include theme-transition();
+}
+.name {
+  cursor: text;
+  font-weight: 500;
+}
+.userImage {
+  border-radius: rem(50);
+}
+.userButton {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  transition: 0.1s;
+  aspect-ratio: 1/1;
+  padding: 0;
+  border-radius: rem(50);
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 1px solid rgb(var(--bg-color-dark));
+    border: 0;
+    border-radius: rem(50);
+  }
+}

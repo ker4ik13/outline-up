@@ -1,5 +1,5 @@
 import { appLinks } from "@/shared/constants";
-import { CustomBreadcrumbs, Empty } from "@/shared/ui";
+import { CustomBreadcrumbs, Empty } from "@/shared/ui/admin";
 import s from "../GeneralPage.module.scss";
 
 const HelpPage = () => {

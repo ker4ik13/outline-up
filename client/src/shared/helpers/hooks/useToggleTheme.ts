@@ -1,5 +1,5 @@
 import { language, translate } from "@/data/admin/translate";
-import { showNotification } from "@/widgets/Notification/utils";
+import { showNotification } from "@/widgets/admin/Notification/utils";
 import { useColorScheme } from "@mui/joy";
 
 export const useToggleTheme = () => {

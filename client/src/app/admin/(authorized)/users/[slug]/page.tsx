@@ -6,8 +6,8 @@ import { appLinks } from "@/shared/constants";
 import { NextParamsPage } from "@/shared/types";
 import { IError } from "@/shared/types/IError";
 import { User } from "@/shared/types/user";
-import { CustomBreadcrumbs, Empty } from "@/shared/ui";
-import { UserCard, UserCardSkeleton } from "@/widgets/UserCard";
+import { CustomBreadcrumbs, Empty } from "@/shared/ui/admin";
+import { UserCard, UserCardSkeleton } from "@/widgets/admin/UserCard";
 import { type AxiosError } from "axios";
 import { useEffect, useState } from "react";
 

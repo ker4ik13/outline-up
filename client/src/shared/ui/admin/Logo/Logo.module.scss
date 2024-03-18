@@ -1,0 +1,19 @@
+@import "@/shared/styles/_vars";
+
+.logo {
+  font-weight: 500;
+  font-size: rem(30);
+  color: rgb(var(--text-color-dark));
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  z-index: 3;
+  @include theme-transition();
+
+  span {
+    color: rgb(var(--accent));
+    margin: 0 rem(5);
+  }
+}

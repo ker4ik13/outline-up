@@ -1,4 +1,4 @@
-import { Empty } from "@/shared/ui";
+import { Empty } from "@/shared/ui/admin";
 import s from "../GeneralPage.module.scss";
 
 const OrdersPage = () => {

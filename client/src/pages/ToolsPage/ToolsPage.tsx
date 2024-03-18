@@ -1,6 +1,6 @@
 import { language, translate } from "@/data/admin/translate";
 import { appLinks } from "@/shared/constants";
-import { CustomBreadcrumbs } from "@/shared/ui";
+import { CustomBreadcrumbs } from "@/shared/ui/admin";
 import { Card, Stack, Typography } from "@mui/joy";
 import Link from "next/link";
 import { IoQrCodeOutline } from "react-icons/io5";

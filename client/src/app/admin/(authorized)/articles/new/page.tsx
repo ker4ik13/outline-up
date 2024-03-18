@@ -3,8 +3,8 @@
 import s from "@/pages/GeneralPage.module.scss";
 import { appLinks } from "@/shared/constants";
 import { useAuth } from "@/shared/helpers/auth";
-import { CustomBreadcrumbs } from "@/shared/ui";
-import { NewArticle } from "@/widgets/NewArticle/NewArticle";
+import { CustomBreadcrumbs } from "@/shared/ui/admin";
+import { NewArticle } from "@/widgets/admin/NewArticle/NewArticle";
 import { useEffect } from "react";
 
 const NewArticlePage = () => {

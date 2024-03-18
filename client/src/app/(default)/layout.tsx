@@ -1,3 +1,11 @@
+import { Nav } from "@/widgets/user";
+import { type Metadata } from "next";
+import "../styles";
+
+export const metadata: Metadata = {
+  title: "Outline UP",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -16,6 +24,7 @@ export default function RootLayout({
         content="18191b"
       />
       <body>
+        <Nav />
         <main>{children}</main>
       </body>
     </html>

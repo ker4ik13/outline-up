@@ -3,7 +3,7 @@
 import s from "@/pages/GeneralPage.module.scss";
 import { appLinks } from "@/shared/constants";
 import { useAuth } from "@/shared/helpers/auth";
-import { PersonalInfoPassword } from "@/widgets/PersonalInfo";
+import { PersonalInfoPassword } from "@/widgets/admin/PersonalInfo";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import { Breadcrumbs, Link as JoyLink, Typography } from "@mui/joy";
 import Link from "next/link";

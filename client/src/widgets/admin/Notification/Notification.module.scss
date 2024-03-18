@@ -1,0 +1,89 @@
+@import "@/shared/styles/_vars";
+
+.notification {
+  border-radius: rem(8);
+  padding: rem(10) rem(20);
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease-in;
+
+  // &.open {
+  //   transform: translate(rem(-20), 0);
+  // }
+
+  &.success {
+    background-color: rgba(var(--green), 1);
+
+    & svg {
+      color: #000;
+    }
+
+    .closeButton svg {
+      color: rgb(var(--red));
+    }
+  }
+
+  &.warning {
+    background-color: rgba(var(--orange), 0.8);
+    color: $white;
+
+    & svg {
+      color: $white;
+    }
+
+    .closeButton svg {
+      color: $white;
+    }
+  }
+
+  &.error {
+    background-color: rgba(var(--red), 0.8);
+    color: $white;
+
+    & svg {
+      color: $white;
+    }
+
+    .closeButton svg {
+      color: $white;
+    }
+  }
+
+  &.info {
+    background-color: rgba(var(--accent), 0.8);
+    color: $white;
+
+    & svg {
+      color: $white;
+    }
+
+    .closeButton svg {
+      color: rgb(var(--red));
+    }
+  }
+}
+.text {
+  cursor: text;
+  font-size: rem(18);
+}
+.closeButton {
+  border: 0;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: rem(10);
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  & svg {
+    color: rgb(var(--red));
+    width: rem(30);
+    height: 100%;
+  }
+}

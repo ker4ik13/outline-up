@@ -3,6 +3,21 @@ export const SITE_NAME = "Kireev Dev";
 export const SERVER_FILES_DIST = "uploads";
 
 export const appLinks = {
+  user: {
+    main: "/",
+    download: {
+      main: "/download",
+    },
+    buy: {
+      main: "/buy",
+    },
+    instructions: {
+      main: "/instructions",
+    },
+    support: {
+      main: "/support",
+    },
+  },
   admin: {
     main: "/admin/",
     dashboard: "/admin/dashboard",

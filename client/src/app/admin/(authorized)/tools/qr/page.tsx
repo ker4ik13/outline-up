@@ -2,7 +2,7 @@
 
 import s from "@/pages/GeneralPage.module.scss";
 import { appLinks } from "@/shared/constants";
-import { CustomBreadcrumbs, Empty } from "@/shared/ui";
+import { CustomBreadcrumbs, Empty } from "@/shared/ui/admin";
 import {
   Button,
   Card,

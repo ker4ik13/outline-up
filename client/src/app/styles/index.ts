@@ -1,4 +1,3 @@
-import './fonts.scss';
-import './sanitize.scss';
-import './base.scss';
-import './index.css';
+import "./base.scss";
+import "./fonts.scss";
+import "./sanitize.scss";

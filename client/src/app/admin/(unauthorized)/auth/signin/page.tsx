@@ -5,8 +5,8 @@ import { appLinks } from "@/shared/constants";
 import { useAuth } from "@/shared/helpers/auth";
 import type { IError } from "@/shared/types/IError";
 import { LoginUser } from "@/shared/types/user/LoginUser";
-import { ToggleThemeButton } from "@/shared/ui";
-import { showNotification } from "@/widgets/Notification/utils/showNotification";
+import { ToggleThemeButton } from "@/shared/ui/admin";
+import { showNotification } from "@/widgets/admin/Notification/utils/showNotification";
 import {
   Button,
   ButtonGroup,
