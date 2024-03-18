@@ -23,12 +23,10 @@
   height: 100vh;
   -o-object-fit: cover;
   object-fit: cover;
-  -webkit-clip-path: fill-box;
-  clip-path: fill-box;
-  -webkit-mask: #00c2ff;
-  mask: #00c2ff;
-  fill: #00c2ff;
-  color: #00c2ff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .text {
   background-color: rgba(0, 0, 0, 0.5);

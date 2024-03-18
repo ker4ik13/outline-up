@@ -3,6 +3,10 @@
 .textBlock {
   background-color: $bg-dark-white;
   padding: rem(200) 0;
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(80) 0;
+  }
 }
 .container {
   @include container();
@@ -16,6 +20,11 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: rem(100);
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h1();
+    margin-bottom: rem(60);
+  }
 }
 .textWrapper {
   display: flex;
@@ -28,6 +37,10 @@
 .text {
   @include desktop-p();
   text-align: center;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-p();
+  }
 }
 .buttonWrapper {
   display: flex;
@@ -42,4 +55,8 @@
   color: $light-black;
   cursor: pointer;
   text-align: center;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-link();
+  }
 }
