@@ -1,0 +1,65 @@
+@import "@/shared/styles/_vars";
+
+.accordion {
+  width: 100%;
+  border-top: rem(1) solid $light-black;
+  padding: rem(30) 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(20) 0;
+  }
+}
+.upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(18);
+}
+.title {
+  @include desktop-h3();
+  color: $black;
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h3();
+  }
+}
+.arrow {
+  color: $black;
+  fill: $black;
+  max-width: rem(15);
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+.content {
+  height: 0;
+  color: $light-black;
+  @include desktop-p();
+  transition: 0.2s;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    padding-top: rem(15);
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+
+    @media screen and (max-width: $max-768) {
+      padding-top: rem(10);
+    }
+  }
+
+  @media screen and (max-width: $max-768) {
+    @include mob-p();
+  }
+}

@@ -20,7 +20,7 @@
 }
 .video {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + rem(50));
   -o-object-fit: cover;
   object-fit: cover;
   -webkit-user-select: none;

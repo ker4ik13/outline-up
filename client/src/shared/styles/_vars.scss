@@ -42,36 +42,42 @@ $bg-dark-white: #fafafa;
   font-size: rem(54);
   line-height: rem(62);
   cursor: text;
+  text-wrap: balance;
 }
 @mixin mob-h1() {
   @include helvetica(300);
   font-size: rem(27);
   line-height: rem(31);
   cursor: text;
+  text-wrap: balance;
 }
 @mixin desktop-h2() {
   @include helvetica(300);
   font-size: rem(40);
   line-height: rem(46);
   cursor: text;
+  text-wrap: balance;
 }
-@mixin mov-h2() {
+@mixin mob-h2() {
   @include helvetica(300);
   font-size: rem(23);
   line-height: rem(26);
   cursor: text;
+  text-wrap: balance;
 }
 @mixin desktop-h3() {
   @include helvetica(300);
   font-size: rem(30);
   line-height: rem(34);
   cursor: text;
+  text-wrap: balance;
 }
 @mixin mob-h3() {
   @include helvetica(300);
   font-size: rem(19);
   line-height: rem(21);
   cursor: text;
+  text-wrap: balance;
 }
 @mixin desktop-p() {
   @include helvetica(400);

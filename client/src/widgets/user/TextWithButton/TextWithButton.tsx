@@ -15,11 +15,18 @@ interface Props {
     text: string;
     href: string;
   };
+  isGrayBg?: boolean;
 }
 
-export const TextWithButton = ({ text, title, button, link }: Props) => {
+export const TextWithButton = ({
+  text,
+  title,
+  button,
+  link,
+  isGrayBg,
+}: Props) => {
   return (
-    <div className={styles.textBlock}>
+    <div className={`${styles.textBlock} ${isGrayBg && styles.gray}`}>
       <div className={styles.container}>
         <h1 className={styles.title}>
           {title ? title : "Свободный доступ в интернет без границ"}

@@ -1,8 +1,17 @@
 @import "@/shared/styles/_vars";
 
 .textBlock {
-  background-color: $bg-dark-white;
+  background-color: $bg-white;
   padding: rem(200) 0;
+
+  border-radius: rem(10) rem(10) 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  &.gray {
+    background-color: $bg-dark-white;
+  }
 
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;

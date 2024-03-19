@@ -33,6 +33,11 @@
   outline: none;
   display: inline-block;
 
+  @media screen and (max-width: $max-768) {
+    font-size: rem(16);
+    line-height: rem(18);
+  }
+
   &.primary {
     transition: all 0.3s, --primary-hover-1 0.3s, --primary-hover-2 0.3s;
     color: $bg-white;

@@ -1,5 +1,6 @@
+import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
 import { appLinks } from "@/shared/constants";
-import { MainScreen, TextWithButton } from "@/widgets/user";
+import { Accordions, MainScreen, Steps, TextWithButton } from "@/widgets/user";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,7 +20,11 @@ const page = () => {
           text: "Узнать больше про Outline",
           href: appLinks.user.buy.main,
         }}
+        isGrayBg
       />
+      <Steps />
+      <Accordions />
+      <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
     </>
   );
 };
