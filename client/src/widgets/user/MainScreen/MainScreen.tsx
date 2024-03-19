@@ -15,6 +15,7 @@ export const MainScreen = ({ subtitle, title }: Props) => {
         preload="auto"
         muted
         unselectable="on"
+        playsInline
         className={styles.video}
         id="video"
         draggable={false}
