@@ -13,6 +13,7 @@
 .title {
   @include desktop-h2();
   text-align: center;
+  text-transform: uppercase;
 
   @media screen and (max-width: $max-768) {
     @include mob-h2();
@@ -55,6 +56,8 @@
   &.first {
     background: $btm-gradient;
     color: $white;
+    -webkit-filter: none;
+    filter: none;
 
     @media screen and (max-width: $max-1000) {
       padding: rem(40) rem(20);

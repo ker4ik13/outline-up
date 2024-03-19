@@ -1,6 +1,12 @@
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
 import { appLinks } from "@/shared/constants";
-import { Accordions, MainScreen, Steps, TextWithButton } from "@/widgets/user";
+import {
+  Accordions,
+  MainScreen,
+  Rates,
+  Steps,
+  TextWithButton,
+} from "@/widgets/user";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,6 +30,7 @@ const page = () => {
       />
       <Steps />
       <Accordions />
+      <Rates />
       <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
     </>
   );

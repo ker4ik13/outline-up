@@ -44,13 +44,16 @@ const initialAccordions: IAccordion[] = [
 ];
 
 export const Accordions = ({ accordions, title }: Props) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number | null) => {
-    // if (index === openIndex) {
-    //   setOpenIndex(null);
-    //   return;
-    // }
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      if (index === openIndex) {
+        setOpenIndex(null);
+        return;
+      }
+    }
+
     setOpenIndex(index);
   };
 

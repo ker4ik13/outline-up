@@ -6,9 +6,7 @@ $header-height: rem(80);
 .nav {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 100;
 
   // Размытие
@@ -164,7 +162,7 @@ $header-height: rem(80);
 
   @media (max-width: $burger-active-width) {
     position: absolute;
-    top: $header-height;
+    top: 0;
     left: 0%;
     width: 100%;
     flex-direction: column;
@@ -172,10 +170,10 @@ $header-height: rem(80);
     gap: rem(20);
     padding: rem(20);
     padding-bottom: rem(35);
-    transform: translate(200%, 0);
+    transform: translate(0, -300%);
 
     &.active {
-      transform: translate(0%, 0);
+      transform: translate(0%, $header-height);
       background-color: rgba(0, 0, 0, 0.7);
     }
   }
