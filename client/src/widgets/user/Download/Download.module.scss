@@ -61,7 +61,10 @@
   row-gap: rem(20);
 
   @media screen and (max-width: $max-768) {
-    max-width: rem(400);
+    max-width: rem(380);
+    justify-content: space-between;
+    -moz-column-gap: rem(10);
+    column-gap: rem(10);
   }
 }
 .item {
@@ -70,7 +73,7 @@
   align-items: center;
   padding: rem(5) rem(10);
   gap: rem(5);
-  width: rem(104);
+  min-width: rem(104);
   border: 0;
   outline: none;
   background: transparent;
@@ -110,6 +113,7 @@
   @include desktop-p();
   cursor: pointer;
   transition: 0.1s;
+  text-wrap: nowrap;
 
   @media screen and (max-width: $max-768) {
     @include mob-p();
