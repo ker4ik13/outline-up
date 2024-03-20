@@ -23,6 +23,7 @@ export default function RootLayout({
         media="(prefers-color-scheme: dark)"
         content="18191b"
       />
+      <meta name="color-scheme" content="only light" />
       <body>
         <Nav />
         <main>{children}</main>

@@ -1,3 +1,4 @@
+import type { DefaultBlockProps } from "@/shared/types/ui";
 import styles from "./Steps.module.scss";
 
 interface Step {
@@ -20,7 +21,7 @@ const initialSteps: Step[] = [
   },
 ];
 
-interface Props {
+interface Props extends DefaultBlockProps {
   title?: string;
   firstCard?: {
     count: number;
@@ -29,9 +30,19 @@ interface Props {
   steps?: Step[];
 }
 
-export const Steps = ({ steps, title, firstCard }: Props) => {
+export const Steps = ({
+  steps,
+  title,
+  firstCard,
+  isGrayBg,
+  rounded,
+}: Props) => {
   return (
-    <div className={styles.stepsBlock}>
+    <div
+      className={`${styles.stepsBlock} ${isGrayBg && styles.gray} ${
+        rounded && rounded.top && styles.roundedTop
+      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+    >
       <div className={styles.container}>
         <h2 className={styles.title}>
           {title ? title : "Как пользоваться Outline UP?"}

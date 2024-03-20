@@ -12,6 +12,28 @@
   text-align: center;
   transition: transform 0.2s ease-in-out;
 
+  &:first-child {
+    order: 1;
+  }
+  &:nth-child(2n) {
+    order: 3;
+  }
+  &:last-child {
+    order: 2;
+  }
+
+  @media screen and (max-width: $max-768) {
+    &:first-child {
+      order: 3;
+    }
+    &:nth-child(2n) {
+      order: 2;
+    }
+    &:last-child {
+      order: 1;
+    }
+  }
+
   .duration {
     color: $light-black;
   }

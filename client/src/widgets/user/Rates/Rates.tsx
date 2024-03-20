@@ -1,13 +1,12 @@
 "use client";
 
-import type { Rate as IRate } from "@/shared/types/ui";
-import { useState } from "react";
+import type { DefaultBlockProps, Rate as IRate } from "@/shared/types/ui";
+import Link from "next/link";
 import { Rate } from "../Rate/Rate";
 import styles from "./Rates.module.scss";
 
-interface Props {
+interface Props extends DefaultBlockProps {
   title?: string;
-  isGrayBg?: boolean;
 }
 
 const initialRates: IRate[] = [
@@ -37,14 +36,17 @@ const initialRates: IRate[] = [
       href: "#",
     },
     price: 1200,
+    mostProfitable: true,
   },
 ];
 
-export const Rates = ({ isGrayBg, title }: Props) => {
-  const [selectedRate, setSelectedRate] = useState(0);
-
+export const Rates = ({ isGrayBg, title, rounded }: Props) => {
   return (
-    <div className={`${styles.ratesBlock} ${isGrayBg && styles.gray}`}>
+    <div
+      className={`${styles.ratesBlock} ${isGrayBg && styles.gray} ${
+        rounded && rounded.top && styles.roundedTop
+      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+    >
       <div className={styles.container}>
         <h2 className={styles.title}>
           {title ? title : "Купите доступ к VPN прямо сейчас"}
@@ -86,9 +88,15 @@ export const Rates = ({ isGrayBg, title }: Props) => {
         {/* PC logic */}
         <div className={styles.rates}>
           {initialRates.map((rate, index) => (
-            <Rate rate={rate} key={index} isBig={index === 1} />
+            <Rate rate={rate} key={index} />
           ))}
         </div>
+        <p className={styles.helpText}>
+          или протестируйте работу сервера в течение 5 дней всего за 50 рублей:
+        </p>
+        <Link className={styles.getKeyLink} href="#">
+          Получить ключ для тестирования
+        </Link>
       </div>
     </div>
   );

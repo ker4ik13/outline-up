@@ -1,3 +1,5 @@
+import poster from "@/data/user/videos/poster.png";
+import Image from "next/image";
 import styles from "./MainScreen.module.scss";
 
 interface Props {
@@ -9,17 +11,22 @@ export const MainScreen = ({ subtitle, title }: Props) => {
   return (
     <div className={styles.mainScreen}>
       <video
-        src="/video/partial-bg.mp4"
         autoPlay
         loop
-        preload="auto"
         muted
-        unselectable="on"
         playsInline
         className={styles.video}
-        id="video"
         draggable={false}
-      ></video>
+        poster={poster.src}
+      >
+        <source src="/video/partial-bg.mp4" type="video/mp4" />
+        <Image
+          src={poster}
+          alt="poster"
+          className={styles.video}
+          draggable={false}
+        />
+      </video>
       <div className={styles.text}>
         <h2 className={styles.title}>{title ? title : "Outline UP"}</h2>
         <p className={styles.subtitle}>

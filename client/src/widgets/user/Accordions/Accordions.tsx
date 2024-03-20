@@ -1,11 +1,14 @@
 "use client";
 
-import type { Accordion as IAccordion } from "@/shared/types/ui";
+import type {
+  DefaultBlockProps,
+  Accordion as IAccordion,
+} from "@/shared/types/ui";
 import { Accordion } from "@/shared/ui/user";
 import { useState } from "react";
 import styles from "./Accordions.module.scss";
 
-interface Props {
+interface Props extends DefaultBlockProps {
   title?: string;
   accordions?: IAccordion[];
 }
@@ -43,7 +46,7 @@ const initialAccordions: IAccordion[] = [
   },
 ];
 
-export const Accordions = ({ accordions, title }: Props) => {
+export const Accordions = ({ accordions, title, isGrayBg, rounded }: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number | null) => {
@@ -58,7 +61,11 @@ export const Accordions = ({ accordions, title }: Props) => {
   };
 
   return (
-    <div className={styles.accordionBlock}>
+    <div
+      className={`${styles.accordionBlock} ${isGrayBg && styles.gray} ${
+        rounded && rounded.top && styles.roundedTop
+      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+    >
       <div className={styles.container}>
         <h2 className={styles.title}>
           {title ? title : "Используя Outline UP вы получаете"}

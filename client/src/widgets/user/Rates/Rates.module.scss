@@ -6,10 +6,7 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
-
-  &.gray {
-    background-color: $bg-dark-white;
-  }
+  @include default-block-styles();
 
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;
@@ -28,6 +25,7 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: rem(100);
+  text-wrap: balance;
 
   @media screen and (max-width: $max-768) {
     @include mob-h1();
@@ -73,5 +71,28 @@
   &.selected {
     color: $white;
     background: $btm-gradient;
+  }
+}
+.helpText {
+  margin-top: rem(50);
+  text-align: center;
+  @include desktop-p-light();
+  color: $light-black;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-p-light();
+    margin-top: rem(30);
+  }
+}
+.getKeyLink {
+  margin-top: rem(15);
+  text-align: center;
+  @include desktop-link();
+  color: $light-black;
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-link();
+    margin-top: rem(10);
   }
 }

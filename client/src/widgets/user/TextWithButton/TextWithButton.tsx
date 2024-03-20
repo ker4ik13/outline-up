@@ -1,10 +1,11 @@
 import { appLinks } from "@/shared/constants";
+import type { DefaultBlockProps } from "@/shared/types/ui";
 import { SharedButton } from "@/shared/ui/user";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import styles from "./TextWithButton.module.scss";
 
-interface Props {
+interface Props extends DefaultBlockProps {
   title?: string;
   text?: string | ReactNode;
   button?: {
@@ -15,7 +16,6 @@ interface Props {
     text: string;
     href: string;
   };
-  isGrayBg?: boolean;
 }
 
 export const TextWithButton = ({
@@ -24,9 +24,14 @@ export const TextWithButton = ({
   button,
   link,
   isGrayBg,
+  rounded,
 }: Props) => {
   return (
-    <div className={`${styles.textBlock} ${isGrayBg && styles.gray}`}>
+    <div
+      className={`${styles.textBlock} ${isGrayBg && styles.gray} ${
+        rounded && rounded.top && styles.roundedTop
+      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+    >
       <div className={styles.container}>
         <h1 className={styles.title}>
           {title ? title : "Свободный доступ в интернет без границ"}

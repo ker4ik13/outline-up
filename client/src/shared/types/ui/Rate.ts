@@ -7,4 +7,5 @@ export interface Rate {
     text?: string;
     href: string;
   };
+  mostProfitable?: boolean;
 }

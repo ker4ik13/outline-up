@@ -157,6 +157,18 @@ $bg-dark-white: #fafafa;
   margin: 0 auto;
 }
 
+@mixin default-block-styles() {
+  &.gray {
+    background-color: $bg-dark-white;
+  }
+  &.roundedTop {
+    border-radius: rem(10) rem(10) 0 0;
+  }
+  &.roundedBottom {
+    border-radius: 0 0 rem(10) rem(10);
+  }
+}
+
 @mixin position-center() {
   position: absolute;
   top: 50%;

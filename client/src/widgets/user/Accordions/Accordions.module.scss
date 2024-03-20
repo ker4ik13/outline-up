@@ -1,8 +1,13 @@
 @import "@/shared/styles/_vars";
 
 .accordionBlock {
-  background-color: $bg-dark-white;
+  background-color: $bg-white;
   padding: rem(200) 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  @include default-block-styles();
 
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;
@@ -15,6 +20,7 @@
   @include desktop-h2();
   text-align: center;
   text-transform: uppercase;
+  text-wrap: balance;
 
   @media screen and (max-width: $max-768) {
     @include mob-h2();

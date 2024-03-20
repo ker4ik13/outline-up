@@ -2,9 +2,11 @@ import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
 import { appLinks } from "@/shared/constants";
 import {
   Accordions,
+  Footer,
   MainScreen,
   Rates,
   Steps,
+  TextCards,
   TextWithButton,
 } from "@/widgets/user";
 import { type Metadata } from "next";
@@ -27,11 +29,22 @@ const page = () => {
           href: appLinks.user.buy.main,
         }}
         isGrayBg
+        rounded={{
+          top: true,
+        }}
       />
       <Steps />
-      <Accordions />
+      <Accordions isGrayBg />
       <Rates />
-      <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
+      <TextCards isGrayBg />
+      <Accordions
+        title="Вопросы и ответы"
+        accordions={questionsAndAnswers}
+        rounded={{
+          bottom: true,
+        }}
+      />
+      <Footer />
     </>
   );
 };

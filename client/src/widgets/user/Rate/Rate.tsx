@@ -4,12 +4,11 @@ import styles from "./Rate.module.scss";
 
 interface Props {
   rate: IRate;
-  isBig?: boolean;
 }
 
-export const Rate = ({ rate, isBig }: Props) => {
+export const Rate = ({ rate }: Props) => {
   return (
-    <div className={`${styles.rate} ${isBig && styles.big}`}>
+    <div className={`${styles.rate} ${rate.mostProfitable && styles.big}`}>
       <p className={styles.duration}>{rate.duration}</p>
       <p className={styles.subtitle}>{rate.subtitle}</p>
       <p className={styles.advantages}>{rate.advantages}</p>
@@ -17,7 +16,7 @@ export const Rate = ({ rate, isBig }: Props) => {
       <SharedButton
         href={rate.button.href}
         fullWidth
-        variant={isBig ? "secondary" : "primary"}
+        variant={rate.mostProfitable ? "secondary" : "primary"}
         className={styles.button}
       >
         {rate.button.text ? rate.button.text : "Купить ключ"}

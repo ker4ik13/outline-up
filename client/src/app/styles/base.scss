@@ -22,6 +22,10 @@ body.blur {
   }
 }
 
+:root {
+  color-scheme: only light;
+}
+
 body.sidebar_open main {
   margin-left: 15.625rem;
 }
@@ -32,6 +36,16 @@ body {
   min-height: 100vh;
   background-color: var(--bg-color-light-main);
 }
+
+// Выделение текста
+// * {
+//   &::-moz-selection {
+//     background-color: orange;
+//   }
+//   &::selection {
+//     background-color: orange;
+//   }
+// }
 .error_text {
   text-align: center;
   color: rgb(var(--red));
