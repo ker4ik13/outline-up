@@ -1,5 +1,6 @@
 "use client";
 
+import { SITE_NAME } from "@/shared/constants";
 import type {
   DefaultBlockProps,
   Accordion as IAccordion,
@@ -68,7 +69,7 @@ export const Accordions = ({ accordions, title, isGrayBg, rounded }: Props) => {
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
-          {title ? title : "Используя Outline UP вы получаете"}
+          {title ? title : `Используя ${SITE_NAME} вы получаете`}
         </h2>
         <div className={styles.accordions}>
           {accordions

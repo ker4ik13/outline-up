@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/shared/constants";
 import type { DefaultBlockProps, TextCard } from "@/shared/types/ui";
 import Link from "next/link";
 import styles from "./TextCards.module.scss";
@@ -33,7 +34,7 @@ export const TextCards = ({ isGrayBg, rounded, title, cards }: Props) => {
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
-          {title ? title : "Гарантии Outline UP"}
+          {title ? title : `Гарантии ${SITE_NAME}`}
         </h2>
         <div className={styles.cards}>
           {cards

@@ -1,10 +1,5 @@
-import { Nav } from "@/widgets/user";
-import { type Metadata } from "next";
+import { Footer, Nav } from "@/widgets/user";
 import "../styles";
-
-export const metadata: Metadata = {
-  title: "Outline UP",
-};
 
 export default function RootLayout({
   children,
@@ -16,17 +11,18 @@ export default function RootLayout({
       <meta
         name="theme-color"
         media="(prefers-color-scheme: light)"
-        content="eaf2fb"
+        content="000000"
       />
       <meta
         name="theme-color"
         media="(prefers-color-scheme: dark)"
-        content="18191b"
+        content="000000"
       />
       <meta name="color-scheme" content="only light" />
       <body>
         <Nav />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import poster from "@/data/user/videos/poster.png";
+import { SITE_NAME } from "@/shared/constants";
 import Image from "next/image";
 import styles from "./MainScreen.module.scss";
 
@@ -28,7 +29,7 @@ export const MainScreen = ({ subtitle, title }: Props) => {
         />
       </video>
       <div className={styles.text}>
-        <h2 className={styles.title}>{title ? title : "Outline UP"}</h2>
+        <h2 className={styles.title}>{title ? title : `${SITE_NAME}`}</h2>
         <p className={styles.subtitle}>
           {subtitle ? subtitle : "Ваш личный VPN который не заблокируют"}
         </p>

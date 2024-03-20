@@ -49,9 +49,15 @@
 }
 .buttonWrapper {
   display: flex;
-  width: 100%;
   justify-content: center;
   margin-top: rem(50);
+
+  @media screen and (max-width: $max-768) {
+    width: 80%;
+  }
+  @media screen and (max-width: $max-600) {
+    width: 100%;
+  }
 }
 .link {
   margin: 0 auto;

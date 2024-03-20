@@ -1,4 +1,5 @@
 export * from "./Accordions/Accordions";
+export * from "./Download/Download";
 export * from "./Footer/Footer";
 export * from "./MainScreen/MainScreen";
 export * from "./Nav/Nav";

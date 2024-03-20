@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/shared/constants";
 import type { DefaultBlockProps } from "@/shared/types/ui";
 import styles from "./Steps.module.scss";
 
@@ -45,7 +46,7 @@ export const Steps = ({
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
-          {title ? title : "Как пользоваться Outline UP?"}
+          {title ? title : `Как пользоваться ${SITE_NAME}?`}
         </h2>
         <div className={styles.steps}>
           <div className={`${styles.step} ${styles.first}`}>

@@ -1,8 +1,7 @@
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
-import { appLinks } from "@/shared/constants";
+import { appLinks, SITE_NAME } from "@/shared/constants";
 import {
   Accordions,
-  Footer,
   MainScreen,
   Rates,
   Steps,
@@ -12,10 +11,13 @@ import {
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Outline UP",
+  title: `${SITE_NAME}`,
+  openGraph: {
+    title: `${SITE_NAME}`,
+  },
 };
 
-const page = () => {
+const MainPage = () => {
   return (
     <>
       <MainScreen />
@@ -44,9 +46,8 @@ const page = () => {
           bottom: true,
         }}
       />
-      <Footer />
     </>
   );
 };
 
-export default page;
+export default MainPage;

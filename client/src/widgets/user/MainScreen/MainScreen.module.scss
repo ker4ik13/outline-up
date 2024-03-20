@@ -37,11 +37,13 @@
   transform: translate(-50%, -50%);
   width: 100%;
   padding: rem(20) 0;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 .title {
   @include helvetica(300);
   font-size: rem(120);
-  line-height: rem(138);
+  line-height: 1;
   letter-spacing: rem(48);
   color: $bg-white;
   text-align: center;
@@ -59,7 +61,7 @@
   margin: 0 auto;
   @include helvetica(300);
   font-size: rem(30);
-  line-height: rem(34);
+  line-height: 1;
   color: $bg-white;
   text-align: center;
   text-transform: uppercase;

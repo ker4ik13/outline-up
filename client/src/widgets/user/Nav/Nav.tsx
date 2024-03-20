@@ -1,6 +1,6 @@
 "use client";
 
-import { appLinks } from "@/shared/constants";
+import { appLinks, SITE_NAME } from "@/shared/constants";
 import Link from "next/link";
 import { useRef } from "react";
 import styles from "./Nav.module.scss";
@@ -16,7 +16,7 @@ export const Nav = () => {
     <header className={styles.nav}>
       <div className={styles.container}>
         <Link href={appLinks.user.main} className={styles.logo}>
-          Outline UP
+          {SITE_NAME}
         </Link>
         <div className={styles.centerPages}>
           <nav className={styles.pages}>

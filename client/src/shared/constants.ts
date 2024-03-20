@@ -1,5 +1,5 @@
 export const THEME_KEY = "joy-mode";
-export const SITE_NAME = "Kireev Dev";
+export const SITE_NAME = "Outline UP";
 export const SERVER_FILES_DIST = "uploads";
 
 export const appLinks = {

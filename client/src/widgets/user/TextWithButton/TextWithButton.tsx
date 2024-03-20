@@ -55,7 +55,7 @@ export const TextWithButton = ({
         </div>
         {button && (
           <div className={styles.buttonWrapper}>
-            <SharedButton href={appLinks.user.buy.main} center>
+            <SharedButton href={appLinks.user.buy.main} fullWidth center>
               {button.text}
             </SharedButton>
           </div>

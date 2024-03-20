@@ -1,3 +1,4 @@
+import { SITE_NAME } from "@/shared/constants";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
 
@@ -5,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <p className={styles.copy}>&copy; OUTLINE UP | 2024</p>
+        <p className={styles.copy}>&copy; {SITE_NAME} | 2024</p>
         <div className={styles.authorInfo}>
           <p className={styles.authorInfoText}>ИП Пырьев Александр Иванович</p>
           <p className={styles.authorInfoText}>ИНН 543412546512</p>

@@ -11,6 +11,7 @@ interface Props {
   variant?: "primary" | "secondary";
   disabled?: boolean;
   fullWidth?: boolean;
+  target?: "_blank" | "_self" | "_parent" | "_top" | "framename";
 }
 
 export const SharedButton = ({
@@ -23,6 +24,7 @@ export const SharedButton = ({
   variant = "primary",
   disabled,
   fullWidth,
+  target,
 }: Props) => {
   const getStyles = () => {
     return `${styles.button} ${center && styles.center} ${
@@ -34,7 +36,7 @@ export const SharedButton = ({
 
   if (href) {
     return (
-      <Link href={href} className={getStyles()}>
+      <Link href={href} className={getStyles()} target={target}>
         {children}
       </Link>
     );
