@@ -1,5 +1,6 @@
 "use client";
 
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps, Rate as IRate } from "@/shared/types/ui";
 import Link from "next/link";
 import { Rate } from "../Rate/Rate";
@@ -40,12 +41,15 @@ const initialRates: IRate[] = [
   },
 ];
 
-export const Rates = ({ isGrayBg, title, rounded }: Props) => {
+export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
   return (
     <div
-      className={`${styles.ratesBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.ratesBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h2 className={styles.title}>

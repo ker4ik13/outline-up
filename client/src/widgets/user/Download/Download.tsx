@@ -1,5 +1,6 @@
 "use client";
 
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps } from "@/shared/types/ui";
 import { SharedButton } from "@/shared/ui/user";
 import {
@@ -64,14 +65,23 @@ const initialItems: DownloadItem[] = [
   },
 ];
 
-export const Download = ({ isGrayBg, rounded, title, items }: Props) => {
+export const Download = ({
+  isGrayBg,
+  rounded,
+  title,
+  items,
+  className,
+}: Props) => {
   const [selectedItem, setSelectedItem] = useState(initialItems[0]);
 
   return (
     <div
-      className={`${styles.downloadBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.downloadBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h1 className={styles.title}>

@@ -167,6 +167,9 @@ $bg-dark-white: #fafafa;
   &.roundedBottom {
     border-radius: 0 0 rem(10) rem(10);
   }
+  &.rounded {
+    border-radius: rem(10);
+  }
 }
 
 @mixin position-center() {

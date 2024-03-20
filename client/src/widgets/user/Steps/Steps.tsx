@@ -1,4 +1,5 @@
 import { SITE_NAME } from "@/shared/constants";
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps } from "@/shared/types/ui";
 import styles from "./Steps.module.scss";
 
@@ -37,12 +38,16 @@ export const Steps = ({
   firstCard,
   isGrayBg,
   rounded,
+  className,
 }: Props) => {
   return (
     <div
-      className={`${styles.stepsBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.stepsBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h2 className={styles.title}>

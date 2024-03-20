@@ -1,4 +1,5 @@
 import { appLinks } from "@/shared/constants";
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps } from "@/shared/types/ui";
 import { SharedButton } from "@/shared/ui/user";
 import Link from "next/link";
@@ -25,12 +26,16 @@ export const TextWithButton = ({
   link,
   isGrayBg,
   rounded,
+  className,
 }: Props) => {
   return (
     <div
-      className={`${styles.textBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.textBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h1 className={styles.title}>

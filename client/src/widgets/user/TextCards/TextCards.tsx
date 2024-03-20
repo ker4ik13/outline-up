@@ -1,4 +1,5 @@
 import { SITE_NAME } from "@/shared/constants";
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps, TextCard } from "@/shared/types/ui";
 import Link from "next/link";
 import styles from "./TextCards.module.scss";
@@ -25,12 +26,21 @@ const initialCards: TextCard[] = [
   },
 ];
 
-export const TextCards = ({ isGrayBg, rounded, title, cards }: Props) => {
+export const TextCards = ({
+  isGrayBg,
+  rounded,
+  title,
+  cards,
+  className,
+}: Props) => {
   return (
     <div
-      className={`${styles.textCardsBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.textCardsBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h2 className={styles.title}>

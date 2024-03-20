@@ -1,6 +1,7 @@
 "use client";
 
 import { SITE_NAME } from "@/shared/constants";
+import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type {
   DefaultBlockProps,
   Accordion as IAccordion,
@@ -47,7 +48,13 @@ const initialAccordions: IAccordion[] = [
   },
 ];
 
-export const Accordions = ({ accordions, title, isGrayBg, rounded }: Props) => {
+export const Accordions = ({
+  accordions,
+  title,
+  isGrayBg,
+  rounded,
+  className,
+}: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number | null) => {
@@ -63,9 +70,12 @@ export const Accordions = ({ accordions, title, isGrayBg, rounded }: Props) => {
 
   return (
     <div
-      className={`${styles.accordionBlock} ${isGrayBg && styles.gray} ${
-        rounded && rounded.top && styles.roundedTop
-      } ${rounded && rounded.bottom && styles.roundedBottom}`}
+      className={`${styles.accordionBlock} ${getDefaultBlockStyles({
+        styles,
+        isGrayBg,
+        rounded,
+        className,
+      })}`}
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
