@@ -1,6 +1,7 @@
 import iconWebp from "@/data/images/favicon/icon.webp";
 import { Footer, Nav } from "@/widgets/user";
 import type { Metadata } from "next";
+import "../styles";
 import "./styles";
 
 export const metadata: Metadata = {
