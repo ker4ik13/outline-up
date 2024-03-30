@@ -26,13 +26,11 @@ body.blur {
   color-scheme: only light;
 }
 
-body.sidebar_open main {
-  margin-left: 15.625rem;
-}
 html {
   scroll-behavior: smooth;
 }
 body {
+  scroll-behavior: smooth;
   min-height: 100vh;
   background-color: var(--bg-color-light-main);
 }

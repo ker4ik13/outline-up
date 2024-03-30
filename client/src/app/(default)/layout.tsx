@@ -1,5 +1,22 @@
+import iconWebp from "@/data/images/favicon/icon.webp";
 import { Footer, Nav } from "@/widgets/user";
+import type { Metadata } from "next";
 import "../styles";
+import "./styles";
+
+export const metadata: Metadata = {
+  creator: "ker4ik13",
+  icons: {
+    icon: iconWebp.src,
+    href: iconWebp.src,
+    apple: iconWebp.src,
+    shortcut: iconWebp.src,
+    other: {
+      url: iconWebp.src,
+      type: "image/webp",
+    },
+  },
+};
 
 export default function RootLayout({
   children,

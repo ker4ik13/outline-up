@@ -75,6 +75,7 @@
   gap: rem(5);
   min-width: rem(104);
   border: 0;
+  border-bottom: rem(1) solid transparent;
   outline: none;
   background: transparent;
   cursor: pointer;
@@ -134,5 +135,4 @@
 }
 .button {
   min-width: rem(300);
-  background: $bg-black !important;
 }

@@ -1,5 +1,7 @@
 export const THEME_KEY = "joy-mode";
 export const SITE_NAME = "Outline UP";
+// FIXME: исправить после релиза
+export const CLIENT_URL = "https://outline-up.vercel.app";
 export const SERVER_FILES_DIST = "uploads";
 
 export const appLinks = {
