@@ -12,7 +12,10 @@ import styles from "./Accordions.module.scss";
 
 interface Props extends DefaultBlockProps {
   title?: string;
+  mainTitle?: boolean;
   accordions?: IAccordion[];
+  lowerPadding?: boolean;
+  moreText?: React.ReactNode | string;
 }
 
 const initialAccordions: IAccordion[] = [
@@ -54,6 +57,9 @@ export const Accordions = ({
   isGrayBg,
   rounded,
   className,
+  lowerPadding,
+  moreText,
+  mainTitle = false,
 }: Props) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -75,12 +81,16 @@ export const Accordions = ({
         isGrayBg,
         rounded,
         className,
-      })}`}
+      })} ${lowerPadding && styles.lowerPadding}`}
     >
       <div className={styles.container}>
-        <h2 className={styles.title}>
-          {title ? title : `Используя ${SITE_NAME} вы получаете`}
-        </h2>
+        {mainTitle ? (
+          <h1 className={styles.mainTitle}>{title}</h1>
+        ) : (
+          <h2 className={styles.title}>
+            {title ? title : `Используя ${SITE_NAME} вы получаете`}
+          </h2>
+        )}
         <div className={styles.accordions}>
           {accordions
             ? accordions.map((accordion, index) => (
@@ -102,6 +112,7 @@ export const Accordions = ({
                 />
               ))}
         </div>
+        {moreText && <div className={styles.moreText}>{moreText}</div>}
       </div>
     </div>
   );

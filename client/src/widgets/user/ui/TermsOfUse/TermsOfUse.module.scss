@@ -1,0 +1,60 @@
+@import "@/shared/styles/_vars";
+
+.termsOfUseBlock {
+  background-color: $bg-white;
+  padding: rem(100) 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  @include default-block-styles();
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(80) 0;
+  }
+}
+.container {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(0) rem(20);
+}
+.title {
+  @include desktop-h1();
+  color: $black;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: rem(50);
+  text-wrap: balance;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h1();
+    margin-bottom: 0;
+  }
+}
+.content {
+  color: $black;
+  margin-top: rem(50);
+  & p {
+    @include desktop-p();
+    color: inherit;
+  }
+
+  & a {
+    @include desktop-link();
+    color: inherit;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $max-768) {
+    margin-top: rem(40);
+
+    & p {
+      @include mob-p();
+    }
+
+    & a {
+      @include mob-link();
+    }
+  }
+}

@@ -11,13 +11,16 @@ export const appLinks = {
       main: "/download",
     },
     buy: {
-      main: "/buy",
+      main: "/#buy-key",
     },
     instructions: {
       main: "/instructions",
     },
     support: {
       main: "/support",
+    },
+    termsOfUse: {
+      main: "/terms-of-use",
     },
   },
   admin: {

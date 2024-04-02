@@ -87,7 +87,7 @@ $border-radius: rem(10);
 @mixin mob-p() {
   @include inter(400);
   font-size: rem(16);
-  line-height: rem(18);
+  line-height: rem(22);
   cursor: text;
 }
 @mixin desktop-p-light() {

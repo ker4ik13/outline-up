@@ -1,4 +1,4 @@
-import { SITE_NAME } from "@/shared/constants";
+import { appLinks, SITE_NAME } from "@/shared/constants";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
 
@@ -14,17 +14,20 @@ export const Footer = () => {
         <ul className={styles.pages}>
           <li className={styles.page}>
             <Link href="#" className={styles.pageLink}>
-              Договор оферты
-            </Link>
-          </li>
-          <li className={styles.page}>
-            <Link href="#" className={styles.pageLink}>
               Правила возврата
             </Link>
           </li>
           <li className={styles.page}>
+            <Link
+              href={appLinks.user.termsOfUse.main}
+              className={styles.pageLink}
+            >
+              Пользовательское соглашение
+            </Link>
+          </li>
+          <li className={styles.page}>
             <Link href="#" className={styles.pageLink}>
-              Политика обработки персональных данных
+              Политика конфиденциальности
             </Link>
           </li>
         </ul>

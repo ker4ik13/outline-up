@@ -12,9 +12,27 @@
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;
   }
+
+  &.lowerPadding {
+    padding: rem(100) 0;
+
+    @media screen and (max-width: $max-768) {
+      padding: rem(60) 0;
+    }
+  }
 }
 .container {
   @include container();
+}
+.mainTitle {
+  @include desktop-h1();
+  text-align: center;
+  text-transform: uppercase;
+  text-wrap: balance;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h1();
+  }
 }
 .title {
   @include desktop-h2();
@@ -31,5 +49,32 @@
 
   @media screen and (max-width: $max-768) {
     margin-top: rem(60);
+  }
+}
+.moreText {
+  text-align: center;
+  color: $black;
+  text-wrap: balance;
+  margin-top: rem(50);
+
+  @media screen and (max-width: $max-768) {
+    margin-top: rem(40);
+  }
+
+  & p {
+    @include desktop-p();
+
+    @media screen and (max-width: $max-768) {
+      @include mob-p();
+    }
+  }
+  & a {
+    color: inherit;
+    @include desktop-link();
+    cursor: pointer;
+
+    @media screen and (max-width: $max-768) {
+      @include mob-link();
+    }
   }
 }

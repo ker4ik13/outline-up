@@ -50,44 +50,12 @@ export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
         rounded,
         className,
       })}`}
+      id="buy-key"
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
           {title ? title : "Купите доступ к VPN прямо сейчас"}
         </h2>
-        {/* Mobile logic */}
-        {/* <div className={styles.selectRateBlock}>
-          <button
-            type="button"
-            className={`${styles.selectRateButton} ${
-              selectedRate === 0 && styles.selected
-            }`}
-            onClick={() => setSelectedRate(0)}
-          >
-            1 мес
-          </button>
-          <button
-            type="button"
-            className={`${styles.selectRateButton} ${
-              selectedRate === 1 && styles.selected
-            }`}
-            onClick={() => setSelectedRate(1)}
-          >
-            3 мес
-          </button>
-          <button
-            type="button"
-            className={`${styles.selectRateButton} ${
-              selectedRate === 2 && styles.selected
-            }`}
-            onClick={() => setSelectedRate(2)}
-          >
-            12 мес
-          </button>
-        </div>
-        <div className={styles.rates}>
-          <Rate rate={initialRates[selectedRate]} isBig={selectedRate === 1} />
-        </div> */}
 
         {/* PC logic */}
         <div className={styles.rates}>

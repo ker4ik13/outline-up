@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-const MainPage = () => {
+const UserMainPage = () => {
   return (
     <>
       <MainScreen />
@@ -43,4 +43,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default UserMainPage;

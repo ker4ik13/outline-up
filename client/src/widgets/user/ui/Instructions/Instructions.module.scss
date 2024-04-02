@@ -1,6 +1,6 @@
 @import "@/shared/styles/_vars";
 
-.downloadBlock {
+.instructionsBlock {
   background-color: $bg-white;
   padding: rem(100) 0;
   overflow: hidden;
@@ -24,47 +24,96 @@
   color: $black;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: rem(100);
+  margin-bottom: rem(50);
   text-wrap: balance;
 
   @media screen and (max-width: $max-768) {
     @include mob-h1();
-    margin-bottom: rem(60);
+    margin-bottom: 0;
   }
 }
-.mainIcon {
-  color: transparent;
-  fill: transparent;
-  max-width: rem(230);
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+.instructionItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.helpText {
-  @include desktop-p();
-  color: $light-black;
-  max-width: rem(850);
-  margin: 0 auto;
-  text-align: center;
-  margin-top: rem(30);
+.instructionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: $black;
+  gap: clamp(rem(40), 8vw, rem(130));
+  padding: rem(100) 0;
+  border-bottom: 1px solid $white;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  @media screen and (max-width: $max-900) {
+    gap: rem(40);
+    flex-direction: column;
+    align-items: center;
+    padding: rem(60) 0;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}
+.instructionTitle {
+  @include desktop-h2();
+  color: inherit;
 
   @media screen and (max-width: $max-768) {
-    @include mob-p();
+    @include mob-h2();
+    text-align: center;
+  }
+}
+.instructionContent {
+  max-width: rem(740);
+  width: 100%;
+  color: inherit;
+
+  & ol {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @media screen and (max-width: $max-768) {
+      gap: rem(15);
+    }
+
+    & li {
+      @include desktop-p();
+      cursor: default;
+
+      & p {
+        cursor: text;
+      }
+
+      @media screen and (max-width: $max-768) {
+        @include mob-p();
+      }
+    }
   }
 }
 .items {
   display: flex;
   align-items: stretch;
-  justify-content: center;
-  margin-top: rem(100);
+  margin-top: rem(50);
   flex-wrap: wrap;
   row-gap: rem(20);
 
   @media screen and (max-width: $max-768) {
     max-width: rem(380);
-    justify-content: space-between;
     -moz-column-gap: rem(10);
     column-gap: rem(10);
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: rem(40);
   }
 }
 .item {
@@ -123,16 +172,22 @@
 
 .buttonWrapper {
   display: flex;
-  justify-content: center;
-  margin-top: rem(100);
+  justify-content: flex-start;
+  margin-top: rem(30);
 
   @media screen and (max-width: $max-768) {
     width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: rem(40);
   }
   @media screen and (max-width: $max-600) {
     width: 100%;
   }
 }
 .button {
-  min-width: rem(300);
+  @media screen and (max-width: $max-768) {
+    margin: 0 auto;
+    width: 100%;
+  }
 }

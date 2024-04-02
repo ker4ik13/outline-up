@@ -9,18 +9,12 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const UserDownloadPage = () => {
   return (
     <>
-      {/* <MainScreen /> */}
-      <Download
-        rounded={{
-          top: true,
-          bottom: true,
-        }}
-      />
+      <Download />
     </>
   );
 };
 
-export default page;
+export default UserDownloadPage;
