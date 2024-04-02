@@ -24,6 +24,14 @@ body.blur {
 
 :root {
   color-scheme: only light;
+  --primary-1-color: #001357;
+  --primary-2-color: #570165;
+  --primary-hover-1-color: #effcff;
+  --primary-hover-2-color: #7e0093;
+  --secondary-1-color: #ffffff;
+  --secondary-2-color: #ffffff;
+  --secondary-hover-1-color: #effcff;
+  --secondary-hover-2-color: #f6e8fd;
 }
 
 html {
@@ -38,10 +46,10 @@ body {
 // Выделение текста
 // * {
 //   &::-moz-selection {
-//     background-color: orange;
+//     background-color: rgba(87, 1, 101, 0.3);
 //   }
 //   &::selection {
-//     background-color: orange;
+//     background-color: rgba(87, 1, 101, 0.3);
 //   }
 // }
 .error_text {

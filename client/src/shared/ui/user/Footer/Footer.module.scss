@@ -1,0 +1,73 @@
+@import "@/shared/styles/_vars";
+
+.footer {
+  background-color: $bg-dark-white;
+  padding: rem(50) 0;
+  padding-top: rem(80);
+
+  // Для того, чтобы у последнего блока было закругление
+  margin-top: rem(-30);
+  color: $white;
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(30) 0;
+    padding-top: rem(60);
+  }
+}
+
+.container {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(0) rem(20);
+  gap: rem(30);
+
+  @media screen and (max-width: $max-768) {
+    gap: rem(20);
+  }
+}
+.copy {
+  text-transform: uppercase;
+  @include desktop-small();
+  color: $black;
+
+  @media screen and (max-width: $max-768) {
+    font-size: rem(14);
+  }
+}
+.authorInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: rem(5);
+}
+.authorInfoText {
+  @include desktop-extra-small();
+  text-transform: uppercase;
+  color: $black;
+
+  @media screen and (max-width: $max-768) {
+    font-size: rem(14);
+  }
+}
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(20);
+  list-style-type: none;
+  padding: 0;
+
+  @media screen and (max-width: $max-768) {
+    flex-direction: column;
+    gap: rem(15);
+  }
+}
+.pageLink {
+  text-decoration: none;
+  @include desktop-extra-small();
+  cursor: pointer;
+  color: $light-black;
+}

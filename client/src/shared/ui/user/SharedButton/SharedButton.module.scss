@@ -2,28 +2,28 @@
 
 @property --primary-hover-1 {
   syntax: "<color>";
-  initial-value: #0b002c;
+  initial-value: #001357;
   inherits: false;
 }
 @property --primary-hover-2 {
   syntax: "<color>";
-  initial-value: #160054;
+  initial-value: #570165;
   inherits: false;
 }
 @property --secondary-hover-1 {
   syntax: "<color>";
-  initial-value: #fdffff;
+  initial-value: #ffffff;
   inherits: false;
 }
 @property --secondary-hover-2 {
   syntax: "<color>";
-  initial-value: #ebf0ff;
+  initial-value: #ffffff;
   inherits: false;
 }
 
 .button {
   padding: rem(20) rem(50);
-  @include helvetica(400);
+  @include inter(400);
   font-size: rem(20);
   line-height: rem(23);
   text-decoration: none;
@@ -32,6 +32,7 @@
   text-align: center;
   outline: none;
   display: inline-block;
+  border-radius: $border-radius;
 
   @media screen and (max-width: $max-768) {
     font-size: rem(16);
@@ -51,8 +52,8 @@
       cursor: pointer;
       &:hover {
         padding: rem(20) rem(53);
-        --primary-hover-1: #06020f;
-        --primary-hover-2: #110040;
+        --primary-hover-1: #01056b;
+        --primary-hover-2: #7e0093;
       }
     }
   }
@@ -72,8 +73,8 @@
       cursor: pointer;
       &:hover {
         padding: rem(20) rem(53);
-        --secondary-hover-1: #edfcff;
-        --secondary-hover-2: #cddbff;
+        --secondary-hover-1: #effcff;
+        --secondary-hover-2: #f6e8fd;
       }
     }
   }

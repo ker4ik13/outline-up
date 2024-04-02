@@ -2,17 +2,16 @@
 
 // Colors
 // Primary
-$black: #000029;
-$light-black: #3c3c5b;
+$black: #280a29;
+$light-black: #462847;
 $accent: rgb(58, 121, 222);
 $white: #f2f2f2;
 $light-white: #c2c9e0;
 $gray: #b4b3b4;
-$btm-gradient: linear-gradient(90deg, #0b002c, #160054);
-$btm-gradient-hover: linear-gradient(90deg, #06020f, #110040);
+$btm-gradient: linear-gradient(90deg, #001357, #570165);
+$btm-gradient-hover: linear-gradient(90deg, #01056b, #7e0093);
 
 // Background
-
 $bg-black: #000000;
 $bg-white: #ffffff;
 $bg-dark-white: #fafafa;
@@ -27,86 +26,85 @@ $bg-dark-white: #fafafa;
   @return $result;
 }
 
+// Values
+$border-radius: rem(10);
+
 // Fonts
-@mixin inter() {
+@mixin inter($weight: 400) {
   font-family: "Inter", sans-serif;
-}
-@mixin helvetica($weight: 400) {
-  font-family: "Helvetica", sans-serif;
   font-weight: $weight;
 }
-
 // Templates
 @mixin desktop-h1() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(54);
   line-height: rem(62);
   cursor: text;
   text-wrap: balance;
 }
 @mixin mob-h1() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(27);
   line-height: rem(31);
   cursor: text;
   text-wrap: balance;
 }
 @mixin desktop-h2() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(40);
   line-height: rem(46);
   cursor: text;
   text-wrap: balance;
 }
 @mixin mob-h2() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(23);
   line-height: rem(26);
   cursor: text;
   text-wrap: balance;
 }
 @mixin desktop-h3() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(30);
   line-height: rem(34);
   cursor: text;
   text-wrap: balance;
 }
 @mixin mob-h3() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(19);
   line-height: rem(21);
   cursor: text;
   text-wrap: balance;
 }
 @mixin desktop-p() {
-  @include helvetica(400);
+  @include inter(400);
   font-size: rem(20);
   line-height: rem(28);
   letter-spacing: rem(0.4);
   cursor: text;
 }
 @mixin mob-p() {
-  @include helvetica(400);
+  @include inter(400);
   font-size: rem(16);
   line-height: rem(18);
   cursor: text;
 }
 @mixin desktop-p-light() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(20);
   line-height: rem(28);
   letter-spacing: rem(0.4);
   cursor: text;
 }
 @mixin mob-p-light() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(16);
   line-height: rem(18);
   cursor: text;
 }
 @mixin desktop-small() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(16);
   line-height: rem(18);
   letter-spacing: 2%;
@@ -114,14 +112,14 @@ $bg-dark-white: #fafafa;
   background: transparent;
 }
 @mixin desktop-extra-small() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(14);
   line-height: rem(18);
   letter-spacing: rem(0.4);
   cursor: text;
 }
 @mixin desktop-link() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(20);
   line-height: rem(28);
   letter-spacing: 2%;
@@ -131,7 +129,7 @@ $bg-dark-white: #fafafa;
   letter-spacing: rem(0.4);
 }
 @mixin mob-link() {
-  @include helvetica(300);
+  @include inter(300);
   font-size: rem(16);
   line-height: rem(18);
   cursor: text;
@@ -162,13 +160,13 @@ $bg-dark-white: #fafafa;
     background-color: $bg-dark-white;
   }
   &.roundedTop {
-    border-radius: rem(10) rem(10) 0 0;
+    border-radius: $border-radius $border-radius 0 0;
   }
   &.roundedBottom {
-    border-radius: 0 0 rem(10) rem(10);
+    border-radius: 0 0 $border-radius $border-radius;
   }
   &.rounded {
-    border-radius: rem(10);
+    border-radius: $border-radius;
   }
 }
 
