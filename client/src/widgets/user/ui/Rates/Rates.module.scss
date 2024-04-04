@@ -90,9 +90,13 @@
   @include desktop-link();
   color: $light-black;
   cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
 
   @media screen and (max-width: $max-768) {
     @include mob-link();
+    cursor: pointer;
     margin-top: rem(10);
   }
 }

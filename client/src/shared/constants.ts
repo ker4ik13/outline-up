@@ -69,4 +69,7 @@ export const appLinks = {
       registration: "/admin/auth/signup",
     },
   },
+  other: {
+    tgBot: "https://t.me/OutlineUpBot",
+  },
 };
