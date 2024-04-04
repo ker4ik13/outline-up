@@ -27,6 +27,11 @@ const siteRoutes = [
     lastModify: new Date(2024, 3, 4).toISOString(),
     priority: 1.0,
   },
+  {
+    link: appLinks.user.privacy.main,
+    lastModify: new Date(2024, 3, 4).toISOString(),
+    priority: 1.0,
+  },
 ];
 
 export default async function sitemap() {

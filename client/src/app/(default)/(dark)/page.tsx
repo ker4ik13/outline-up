@@ -1,6 +1,6 @@
 import { possibilities } from "@/data/user/possibilities";
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
-import { SITE_NAME } from "@/shared/constants";
+import { CLIENT_URL, SITE_NAME } from "@/shared/constants";
 import {
   Accordions,
   MainScreen,
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: `${SITE_NAME}`,
   openGraph: {
     title: `${SITE_NAME}`,
+  },
+  alternates: {
+    canonical: `${CLIENT_URL}/`,
   },
 };
 

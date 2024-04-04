@@ -15,7 +15,7 @@
   font-size: clamp(rem(120), calc(30vw + 50px), rem(350));
   white-space: nowrap;
   line-height: 1;
-  background: linear-gradient(#ed00d5, #10c6ff);
+  background: linear-gradient(90deg, #ed00d5, #10c6ff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: rem(4) transparent;
@@ -46,6 +46,7 @@
   cursor: pointer;
   text-decoration: underline;
   text-align: center;
+  font-weight: 400;
 
   @media screen and (max-width: $max-768) {
     @include mob-link();

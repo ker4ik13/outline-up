@@ -26,6 +26,7 @@ export const handleNav = (
       burger.current?.classList.remove(styles.active);
       document.body.classList.remove("overflow");
       pagesWrapper?.classList.remove(styles.active);
+      return;
     }
   });
 

@@ -7,11 +7,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: [
-          `${appLinks.user.main}/`,
+          `${appLinks.user.main}`,
           `${appLinks.user.download.main}/`,
           `${appLinks.user.instructions.main}/`,
           `${appLinks.user.offerta.main}/`,
           `${appLinks.user.support.main}/`,
+          `${appLinks.user.privacy.main}/`,
         ],
         disallow: [
           `${appLinks.user.main}*?*`,
@@ -19,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           `${appLinks.user.instructions.main}/*?*`,
           `${appLinks.user.offerta.main}/*?*`,
           `${appLinks.user.support.main}/*?*`,
+          `${appLinks.user.privacy.main}/*?*`,
           `${appLinks.admin.main}*?*`,
         ],
       },

@@ -1,22 +1,6 @@
-import faviconSvg from "@/data/images/favicon/favicon.svg";
 import { Footer, Nav } from "@/shared/ui/user";
-import type { Metadata } from "next";
 import "../../styles";
 import "./styles";
-
-export const metadata: Metadata = {
-  creator: "ker4ik13",
-  icons: {
-    icon: faviconSvg.src,
-    href: faviconSvg.src,
-    apple: faviconSvg.src,
-    shortcut: faviconSvg.src,
-    other: {
-      url: faviconSvg.src,
-      type: "image/svg+xml",
-    },
-  },
-};
 
 export default function RootLayout({
   children,
