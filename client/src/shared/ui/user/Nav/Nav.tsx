@@ -2,7 +2,7 @@
 
 import { appLinks } from "@/shared/constants";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./Nav.module.scss";
 import { handleNav } from "./handleNav";
 
@@ -13,15 +13,36 @@ interface Props {
 
 export const Nav = ({ isSolid, theme = "dark" }: Props) => {
   const burger = useRef<HTMLDivElement>(null);
-  // const path = usePathname();
+  const header = useRef<HTMLDivElement>(null);
 
-  // const isActive = (link: string) =>
-  //   path === link ? `${styles.link} ${styles.active}` : styles.link;
+  // Изменение цвета шапки при скролле
+  const scrollListener = () => {
+    const scroll = window.scrollY;
+    const clientInnerHeight = window.innerHeight;
+    if (header.current) {
+      if (scroll + 90 > clientInnerHeight) {
+        header.current.classList.add(styles.light);
+        header.current.classList.remove(styles.dark);
+        return;
+      }
+      header.current.classList.remove(styles.light);
+      header.current.classList.add(styles.dark);
+    }
+  };
+
+  useEffect(() => {
+    if (theme === "dark") {
+      window.addEventListener("scroll", scrollListener);
+      return () => window.removeEventListener("scroll", scrollListener);
+    }
+  }, []);
+
   return (
     <header
       className={`${styles.nav} ${isSolid ? styles.isSolid : ""} ${
         theme && theme === "light" ? styles.light : styles.dark
       }`}
+      ref={header}
     >
       <div className={styles.container}>
         <Link href={appLinks.user.main} className={styles.logo}>

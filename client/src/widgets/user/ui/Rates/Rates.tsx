@@ -54,7 +54,7 @@ export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
     >
       <div className={styles.container}>
         <h2 className={styles.title}>
-          {title ? title : "Купите доступ к VPN прямо сейчас"}
+          {title ? title : <>Купите доступ к&nbsp;VPN прямо сейчас</>}
         </h2>
 
         {/* PC logic */}
@@ -64,10 +64,10 @@ export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
           ))}
         </div>
         <p className={styles.helpText}>
-          или протестируйте работу сервера в течение 3 дней бесплатно:
+          или&nbsp;протестируйте работу сервера в&nbsp;течение 3 дней бесплатно:
         </p>
         <Link className={styles.getKeyLink} href="#">
-          Получить ключ для тестирования
+          Получить ключ для&nbsp;тестирования
         </Link>
       </div>
     </div>

@@ -32,13 +32,7 @@ const UserMainPage = () => {
       <Accordions accordions={possibilities} isGrayBg />
       <Rates />
       <TextCards isGrayBg />
-      <Accordions
-        title="Вопросы и ответы"
-        accordions={questionsAndAnswers}
-        rounded={{
-          bottom: true,
-        }}
-      />
+      <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
     </>
   );
 };

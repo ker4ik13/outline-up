@@ -45,7 +45,7 @@ export const TextWithButton = ({
     >
       <div className={styles.container}>
         <h1 className={styles.title}>
-          {title ? title : "Безопасный доступ в интернет без границ"}
+          {title ? title : <>Безопасный доступ в интернет без&nbsp;границ</>}
         </h1>
         <div className={styles.textWrapper}>
           {text ? (
@@ -53,9 +53,10 @@ export const TextWithButton = ({
           ) : (
             <>
               <p className={styles.text}>
-                Outline Up – это VPN сервер на базе сервиса Outline,
+                Outline Up – это VPN сервер на&nbsp;базе сервиса Outline,
                 разработанного компанией Jigsaw. Его цель – обеспечить
-                безопасный доступ к Интернету для организаций и физических лиц
+                безопасный доступ к&nbsp;Интернету для&nbsp;организаций
+                и&nbsp;физических лиц
               </p>
               <p className={styles.text}>
                 Для подключения к серверу требуется приобрести ключ доступа

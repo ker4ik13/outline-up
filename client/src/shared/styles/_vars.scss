@@ -125,7 +125,7 @@ $border-radius: rem(10);
   letter-spacing: 2%;
   cursor: text;
   text-decoration: underline;
-  font-style: italic;
+  font-style: oblique 12deg;
   letter-spacing: rem(0.4);
 }
 @mixin mob-link() {
@@ -134,7 +134,7 @@ $border-radius: rem(10);
   line-height: rem(18);
   cursor: text;
   text-decoration: underline;
-  font-style: italic;
+  font-style: oblique 12deg;
 }
 
 @mixin strings($string-count) {

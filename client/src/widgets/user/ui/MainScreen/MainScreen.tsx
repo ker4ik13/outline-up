@@ -31,7 +31,11 @@ export const MainScreen = ({ subtitle, title }: Props) => {
       <div className={styles.text}>
         <h2 className={styles.title}>{title ? title : `${SITE_NAME}`}</h2>
         <p className={styles.subtitle}>
-          {subtitle ? subtitle : "Ваш личный VPN который не заблокируют"}
+          {subtitle ? (
+            subtitle
+          ) : (
+            <>Ваш личный VPN который не&nbsp;заблокируют</>
+          )}
         </p>
       </div>
     </div>

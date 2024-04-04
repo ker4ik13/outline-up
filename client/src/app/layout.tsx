@@ -1,7 +1,5 @@
 import faviconSvg from "@/data/images/favicon/favicon.svg";
-import { Footer, Nav } from "@/shared/ui/user";
 import type { Metadata } from "next";
-import "../../styles";
 import "./styles";
 
 export const metadata: Metadata = {
@@ -24,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <html lang="ru">
       <meta
         name="theme-color"
         media="(prefers-color-scheme: light)"
@@ -36,11 +34,7 @@ export default function RootLayout({
         content="FAFAFA"
       />
       <meta name="color-scheme" content="only light" />
-      <body>
-        <Nav theme="light" />
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </>
+      {children}
+    </html>
   );
 }

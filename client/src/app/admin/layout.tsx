@@ -21,28 +21,23 @@ export default function RootLayout({
             key: "joy",
           }}
         >
-          <html lang="ru">
-            <head>
-              <meta
-                name="theme-color"
-                media="(prefers-color-scheme: light)"
-                content="eaf2fb"
-              />
-              <meta
-                name="theme-color"
-                media="(prefers-color-scheme: dark)"
-                content="18191b"
-              />
-              <title>Админ панель</title>
-              <meta property="og:title" content="Админ панель"></meta>
-              <meta property="og:description" content="Админ панель"></meta>
-              <meta name="description" content="Админ панель"></meta>
-              <meta property="og:type" content="website"></meta>
-              <link rel="shortcut icon" href={favicon.src} />
-            </head>
-
-            {children}
-          </html>
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="eaf2fb"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="18191b"
+          />
+          <title>Админ панель</title>
+          <meta property="og:title" content="Админ панель"></meta>
+          <meta property="og:description" content="Админ панель"></meta>
+          <meta name="description" content="Админ панель"></meta>
+          <meta property="og:type" content="website"></meta>
+          <link rel="shortcut icon" href={favicon.src} />
+          {children}
         </ThemeRegistry>
       </AuthProvider>
     </Provider>

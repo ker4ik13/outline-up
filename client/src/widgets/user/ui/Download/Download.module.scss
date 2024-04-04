@@ -3,6 +3,7 @@
 .downloadBlock {
   background-color: $bg-white;
   padding: rem(100) 0;
+  padding-top: rem(180);
   overflow: hidden;
   position: relative;
   z-index: 2;
@@ -10,6 +11,7 @@
 
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;
+    padding-top: rem(160);
   }
 }
 .container {

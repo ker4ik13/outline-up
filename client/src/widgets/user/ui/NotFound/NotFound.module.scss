@@ -1,0 +1,53 @@
+@import "@/shared/styles/_vars";
+
+.notFound {
+  background-color: $bg-black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  color: $white;
+}
+.code {
+  @include inter(800);
+  font-size: clamp(rem(120), calc(30vw + 50px), rem(350));
+  white-space: nowrap;
+  line-height: 1;
+  background: linear-gradient(#ed00d5, #10c6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: rem(4) transparent;
+  color: $bg-black;
+}
+.text {
+  margin-top: rem(60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  @include desktop-p();
+  gap: rem(10);
+  text-align: center;
+  text-wrap: pretty;
+
+  @media screen and (max-width: $max-768) {
+    margin-top: rem(50);
+    @include mob-p();
+  }
+}
+.link {
+  margin-top: rem(30);
+  background: linear-gradient(90deg, #ed00d5, #10c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @include desktop-link();
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-link();
+  }
+}

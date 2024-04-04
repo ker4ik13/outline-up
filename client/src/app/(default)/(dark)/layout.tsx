@@ -1,4 +1,4 @@
-import iconWebp from "@/data/images/favicon/icon.webp";
+import faviconSvg from "@/data/images/favicon/favicon.svg";
 import { Footer, Nav } from "@/shared/ui/user";
 import type { Metadata } from "next";
 import "../../styles";
@@ -7,13 +7,13 @@ import "./styles";
 export const metadata: Metadata = {
   creator: "ker4ik13",
   icons: {
-    icon: iconWebp.src,
-    href: iconWebp.src,
-    apple: iconWebp.src,
-    shortcut: iconWebp.src,
+    icon: faviconSvg.src,
+    href: faviconSvg.src,
+    apple: faviconSvg.src,
+    shortcut: faviconSvg.src,
     other: {
-      url: iconWebp.src,
-      type: "image/webp",
+      url: faviconSvg.src,
+      type: "image/svg+xml",
     },
   },
 };
@@ -24,23 +24,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru">
+    <>
       <meta
         name="theme-color"
         media="(prefers-color-scheme: light)"
-        content="000000"
+        content="FAFAFA"
       />
       <meta
         name="theme-color"
         media="(prefers-color-scheme: dark)"
-        content="000000"
+        content="FAFAFA"
       />
       <meta name="color-scheme" content="only light" />
       <body>
-        <Nav />
+        <Nav isSolid theme="dark" />
         <main>{children}</main>
         <Footer />
       </body>
-    </html>
+    </>
   );
 }

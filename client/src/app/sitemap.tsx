@@ -4,12 +4,27 @@ import { MetadataRoute } from "next";
 const siteRoutes = [
   {
     link: appLinks.user.main,
-    lastModify: new Date().toISOString(),
+    lastModify: new Date(2024, 3, 4).toISOString(),
     priority: 1.0,
   },
   {
     link: appLinks.user.download.main,
-    lastModify: new Date().toISOString(),
+    lastModify: new Date(2024, 3, 4).toISOString(),
+    priority: 1.0,
+  },
+  {
+    link: appLinks.user.instructions.main,
+    lastModify: new Date(2024, 3, 4).toISOString(),
+    priority: 1.0,
+  },
+  {
+    link: appLinks.user.support.main,
+    lastModify: new Date(2024, 3, 4).toISOString(),
+    priority: 1.0,
+  },
+  {
+    link: appLinks.user.offerta.main,
+    lastModify: new Date(2024, 3, 4).toISOString(),
     priority: 1.0,
   },
 ];

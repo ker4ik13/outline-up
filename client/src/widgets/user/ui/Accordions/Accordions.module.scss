@@ -15,9 +15,11 @@
 
   &.lowerPadding {
     padding: rem(100) 0;
+    padding-top: rem(180);
 
     @media screen and (max-width: $max-768) {
       padding: rem(60) 0;
+      padding-top: rem(140);
     }
   }
 }

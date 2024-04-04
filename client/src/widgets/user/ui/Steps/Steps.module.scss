@@ -64,6 +64,7 @@
     color: $white;
     -webkit-filter: none;
     filter: none;
+    justify-content: center;
 
     @media screen and (max-width: $max-1000) {
       padding: rem(40) rem(20);
@@ -75,10 +76,10 @@
 .firstCount {
   @include inter(300);
   font-size: rem(90);
+  line-height: 1;
 
   @media screen and (max-width: $max-768) {
     font-size: rem(40);
-    line-height: rem(46);
   }
 }
 .firstText {

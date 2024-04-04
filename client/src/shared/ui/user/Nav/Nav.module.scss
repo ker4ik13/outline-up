@@ -7,10 +7,13 @@ $header-height: rem(80);
   width: 100%;
   position: relative;
   z-index: 100;
+  transition: background-color 0.3s;
 
   &.light {
     background-color: $bg-dark-white;
     color: $black;
+    position: fixed;
+    top: 0;
 
     .centerPages {
       @media (max-width: $burger-active-width) {
@@ -34,14 +37,16 @@ $header-height: rem(80);
     }
   }
   &.dark {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     color: $bg-white;
+    position: fixed;
+    top: 0;
 
     .centerPages {
       @media (max-width: $burger-active-width) {
         &.active {
           transform: translate(0%, $header-height);
-          background-color: rgba(0, 0, 0, 0.7);
+          background-color: $bg-black;
         }
       }
     }
@@ -111,7 +116,6 @@ $header-height: rem(80);
   color: inherit;
   text-decoration: none;
   text-transform: uppercase;
-  transition: 0.1s;
   @include desktop-small();
   cursor: pointer;
   font-weight: 300;
@@ -128,6 +132,7 @@ $header-height: rem(80);
 
   @media screen and (max-width: $burger-active-width) {
     @include mob-p-light();
+    cursor: pointer;
   }
 }
 .burger {

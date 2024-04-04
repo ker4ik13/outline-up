@@ -1,4 +1,4 @@
-import { CLIENT_URL } from "@/shared/constants";
+import { appLinks, CLIENT_URL } from "@/shared/constants";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,8 +6,21 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/download"],
-        disallow: ["/*?*", "/download/*?*"],
+        allow: [
+          `${appLinks.user.main}/`,
+          `${appLinks.user.download.main}/`,
+          `${appLinks.user.instructions.main}/`,
+          `${appLinks.user.offerta.main}/`,
+          `${appLinks.user.support.main}/`,
+        ],
+        disallow: [
+          `${appLinks.user.main}*?*`,
+          `${appLinks.user.download.main}/*?*`,
+          `${appLinks.user.instructions.main}/*?*`,
+          `${appLinks.user.offerta.main}/*?*`,
+          `${appLinks.user.support.main}/*?*`,
+          `${appLinks.admin.main}*?*`,
+        ],
       },
     ],
     sitemap: `${CLIENT_URL}/sitemap.xml`,
