@@ -9,13 +9,10 @@
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   padding: rem(30) 0;
   transition: 0.3s;
   opacity: 0;
@@ -91,7 +88,6 @@
   color: $black;
 }
 .modal {
-  cursor: default;
   position: relative;
   @include container();
   width: 100%;
@@ -101,14 +97,15 @@
   border-radius: $border-radius;
   overflow: auto;
   max-height: 94vh;
-  transition: 0.2s ease-in-out;
   touch-action: none;
+  transition: transform 0.1s;
 
   @media screen and (max-width: $max-1100) {
     padding: rem(100) rem(60);
   }
 
   @media screen and (max-width: $max-768) {
+    bottom: rem(-10);
     padding: rem(60) rem(20);
     height: auto;
   }
@@ -125,7 +122,7 @@
 }
 .content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: rem(30);
   margin-top: rem(70);
@@ -157,9 +154,10 @@
 }
 .divider {
   position: relative;
-  width: rem(1);
+  min-width: 1px;
+  width: 1px;
   background-color: $light-black;
-  height: 100%;
+  align-self: stretch;
 
   @media screen and (max-width: $max-1000) {
     display: none;

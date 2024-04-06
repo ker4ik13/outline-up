@@ -1,5 +1,9 @@
 @import "@/shared/styles/_vars";
 
+html {
+  scroll-padding-top: rem(80);
+}
+
 body {
   background-color: $bg-dark-white !important;
 }

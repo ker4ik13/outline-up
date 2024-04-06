@@ -36,10 +36,12 @@ export const RateModal = ({ rate, isOpen, closeModal }: Props) => {
     if (typeof window !== "undefined" && window.innerWidth > 768) return;
 
     if (down) {
+      // Если свайп вверх, блокируем скролл
+      if (my < 0) return;
       set({ y: my });
     } else {
       // Если свайп вниз достаточно значителен, закрываем попап
-      if (my > 150) closeModal();
+      if (my > 200) closeModal();
       set({ y: 0 });
     }
   });

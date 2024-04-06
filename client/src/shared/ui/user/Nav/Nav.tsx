@@ -32,6 +32,7 @@ export const Nav = ({ isSolid, theme = "dark" }: Props) => {
 
   useEffect(() => {
     if (theme === "dark") {
+      scrollListener();
       window.addEventListener("scroll", scrollListener);
       return () => window.removeEventListener("scroll", scrollListener);
     }
