@@ -2,6 +2,7 @@ import favicon128 from "@/data/images/favicon/favicon-128x128.png";
 import favicon32 from "@/data/images/favicon/favicon-32x32.png";
 import favicon64 from "@/data/images/favicon/favicon-64x64.png";
 import faviconSvg from "@/data/images/favicon/favicon.svg";
+import poster from "@/data/user/source/Header.jpg";
 import type { Metadata } from "next";
 import "./styles";
 
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
       sizes: "128x128",
     },
   ],
+  openGraph: {
+    images: [poster.src],
+  },
 };
 
 export default function RootLayout({

@@ -49,8 +49,8 @@ export const Nav = ({ isSolid, theme = "dark" }: Props) => {
         <Link href={appLinks.user.main} className={styles.logo}>
           OutlineUP
         </Link>
-        <div className={styles.centerPages}>
-          <nav className={styles.pages}>
+        <nav className={styles.centerPages}>
+          <ul className={styles.pages}>
             <li className={styles.page}>
               <Link href={appLinks.user.download.main}>Скачать Outline</Link>
             </li>
@@ -60,11 +60,11 @@ export const Nav = ({ isSolid, theme = "dark" }: Props) => {
             <li className={styles.page}>
               <Link href={appLinks.user.instructions.main}>Инструкции</Link>
             </li>
-          </nav>
+          </ul>
           <Link className={styles.page} href={appLinks.user.support.main}>
             Поддержка
           </Link>
-        </div>
+        </nav>
         <div
           ref={burger}
           className={styles.burger}

@@ -33,12 +33,15 @@ const UserSupportPage = () => {
           <p>
             Если вы не нашли ответа на свой вопрос на этой странице, то напишите
             нам в телеграм:{" "}
-            <Link href={"https://t.me/supportoutlineup"} target="_blank">
-              supportoutlineup
+            <Link href={appLinks.other.tgSupport} target="_blank">
+              outlineupsupport
             </Link>{" "}
             или на почту{" "}
-            <Link href="mailto:support@outlineup.ru" target="_blank">
-              support@outlineup.ru
+            <Link
+              href={`mailto:${appLinks.other.emailSupport}`}
+              target="_blank"
+            >
+              {appLinks.other.emailSupport}
             </Link>
           </p>
         }

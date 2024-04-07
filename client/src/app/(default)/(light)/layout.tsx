@@ -1,6 +1,14 @@
+import poster from "@/data/user/source/Header.jpg";
 import { Footer, Nav } from "@/shared/ui/user";
+import type { Metadata } from "next";
 import "../../styles";
 import "./styles";
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [poster.src],
+  },
+};
 
 export default function RootLayout({
   children,

@@ -71,5 +71,7 @@ export const appLinks = {
   },
   other: {
     tgBot: "https://t.me/OutlineUpBot",
+    tgSupport: "https://t.me/outlineupsupport",
+    emailSupport: "support@outlineup.ru",
   },
 };
