@@ -1,4 +1,4 @@
-import type { Accordion } from "@/shared/types/ui";
+import { Accordion } from "@/shared/types/ui";
 
 export const possibilities: Accordion[] = [
   {
