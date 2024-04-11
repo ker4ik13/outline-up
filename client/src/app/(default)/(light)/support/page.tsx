@@ -1,4 +1,5 @@
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
+import poster from "@/data/user/source/Header.jpg";
 import { appLinks, CLIENT_URL, SITE_NAME } from "@/shared/constants";
 import { Accordion } from "@/shared/types/ui";
 import { Accordions } from "@/widgets/user/ui";
@@ -6,12 +7,23 @@ import { type Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: `Поддержка ${SITE_NAME}`,
+  title: `Поддержка: Ответы на вопросы по использованию ${SITE_NAME}`,
+  description: `Здесь вы найдете ответы на самые часто задаваемые вопросы о использовании ${SITE_NAME}. Получите помощь здесь.`,
+  keywords:
+    "Поддержка, вопросы и ответы, Outline Up, VPN, помощь, поддержка пользователей, техническая поддержка, часто задаваемые вопросы, FAQ",
   openGraph: {
-    title: `Поддержка ${SITE_NAME}`,
+    title: `Поддержка: Ответы на вопросы по использованию ${SITE_NAME}`,
+    description: `Здесь вы найдете ответы на самые часто задаваемые вопросы о использовании ${SITE_NAME}. Получите помощь здесь.`,
+    type: "website",
+    siteName: SITE_NAME,
+    url: `${CLIENT_URL}${appLinks.user.support.main}`,
+    images: [poster.src],
   },
   alternates: {
     canonical: `${CLIENT_URL}${appLinks.user.support.main}`,
+    languages: {
+      ru: `${CLIENT_URL}${appLinks.user.support.main}`,
+    },
   },
 };
 
