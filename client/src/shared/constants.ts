@@ -2,6 +2,7 @@ export const THEME_KEY = "joy-mode";
 export const SITE_NAME = "Outline UP";
 export const CLIENT_URL = process.env.NEXT_PUBLIC_CLIENT_URL;
 export const SERVER_FILES_DIST = "uploads";
+export const YANDEX_METRIKA = 97025859;
 
 export const appLinks = {
   user: {
