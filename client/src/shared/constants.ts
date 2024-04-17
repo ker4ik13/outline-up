@@ -3,6 +3,7 @@ export const SITE_NAME = "Outline UP";
 export const CLIENT_URL = process.env.NEXT_PUBLIC_CLIENT_URL;
 export const SERVER_FILES_DIST = "uploads";
 export const YANDEX_METRIKA = 97025859;
+export const GOOGLE_ANALYTICS = "GTM-T7HCN6P";
 
 export const appLinks = {
   user: {
