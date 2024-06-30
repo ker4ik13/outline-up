@@ -939,6 +939,76 @@ export interface ApiRatesRates extends Schema.CollectionType {
   };
 }
 
+export interface ApiTextContentTextContent extends Schema.CollectionType {
+  collectionName: 'text_content_api';
+  info: {
+    singularName: 'text-content';
+    pluralName: 'text-content-api';
+    displayName: '\u0422\u0435\u043A\u0441\u0442\u043E\u0432\u044B\u0439 \u043A\u043E\u043D\u0442\u0435\u043D\u0442';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishDate: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::text-content.text-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::text-content.text-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::text-content.text-content',
+      'oneToMany',
+      'api::text-content.text-content'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -961,6 +1031,7 @@ declare module '@strapi/types' {
       'api::articles.articles': ApiArticlesArticles;
       'api::meta-tags.meta-tags': ApiMetaTagsMetaTags;
       'api::rates.rates': ApiRatesRates;
+      'api::text-content.text-content': ApiTextContentTextContent;
     }
   }
 }

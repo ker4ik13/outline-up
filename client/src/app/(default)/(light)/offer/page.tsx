@@ -1,5 +1,6 @@
+import { TextContentService } from "@/services/content";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
-import { ContractOffer } from "@/widgets/user/ui";
+import { TextContent } from "@/widgets/user/ui";
 import type { Metadata } from "next/types";
 
 export const revalidate = 30; // Обновление всех данных
@@ -29,10 +30,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
 //   },
 // };
 
-const ContractOfferPage = () => {
+const ContractOfferPage = async () => {
+  const response = await TextContentService.getTextContent("dogovor-oferta-ru");
   return (
     <>
-      <ContractOffer />
+      <TextContent content={response.data[0]} />
     </>
   );
 };

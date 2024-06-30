@@ -1,7 +1,6 @@
 import { possibilities } from "@/data/user/possibilities";
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
-import { RatesUserService } from "@/services/content";
-import { AccordionUserService } from "@/services/content/accordion.user.service";
+import { AccordionUserService, RatesUserService } from "@/services/content";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
 
 import {

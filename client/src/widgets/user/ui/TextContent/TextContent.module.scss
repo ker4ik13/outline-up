@@ -50,7 +50,7 @@
     margin-bottom: 0;
   }
 }
-.offerDate {
+.date {
   color: $light-black;
   @include desktop-p();
 
@@ -62,6 +62,7 @@
   color: $light-black;
   margin-top: rem(50);
   white-space: pre-wrap;
+  min-height: 50vh;
 
   & ol,
   ul {

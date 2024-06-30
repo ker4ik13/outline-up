@@ -9,4 +9,5 @@ export * from "./Rates/Rates";
 export * from "./Steps/Steps";
 export * from "./TermsOfUse/TermsOfUse";
 export * from "./TextCards/TextCards";
+export * from "./TextContent/TextContent";
 export * from "./TextWithButton/TextWithButton";

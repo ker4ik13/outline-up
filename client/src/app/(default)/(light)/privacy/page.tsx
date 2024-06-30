@@ -1,5 +1,6 @@
+import { TextContentService } from "@/services/content";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
-import { PrivacyPolicy } from "@/widgets/user/ui";
+import { TextContent } from "@/widgets/user/ui";
 import type { Metadata } from "next/types";
 
 export const revalidate = 30; // Обновление всех данных
@@ -32,10 +33,11 @@ export const generateMetadata = async (): Promise<Metadata> => {
 //   },
 // };
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = async () => {
+  const response = await TextContentService.getTextContent("privacy-policy-ru");
   return (
     <>
-      <PrivacyPolicy />
+      <TextContent content={response.data[0]} />
     </>
   );
 };

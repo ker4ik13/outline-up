@@ -1,4 +1,4 @@
-import { AccordionUserService } from "@/services/content/accordion.user.service";
+import { AccordionUserService } from "@/services/content";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
 import { Accordions } from "@/widgets/user/ui";
 import type { Metadata } from "next/types";
