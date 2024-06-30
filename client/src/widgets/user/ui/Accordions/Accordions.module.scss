@@ -58,18 +58,13 @@
   color: $black;
   text-wrap: balance;
   margin-top: rem(50);
+  @include desktop-p();
 
   @media screen and (max-width: $max-768) {
     margin-top: rem(40);
+    @include mob-p();
   }
 
-  & p {
-    @include desktop-p();
-
-    @media screen and (max-width: $max-768) {
-      @include mob-p();
-    }
-  }
   & a {
     color: inherit;
     @include desktop-link();

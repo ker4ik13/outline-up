@@ -1,59 +1,19 @@
 "use client";
 
+import { initialRates } from "@/data/user/initialRates";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps, Rate as IRate } from "@/shared/types/ui";
 import { Rate } from "@/shared/ui/user";
-import { RateModal } from "@/widgets/user/ui/Modals";
 import { useState } from "react";
+import { RateModal } from "../Modals";
 import styles from "./Rates.module.scss";
 
 interface Props extends DefaultBlockProps {
   title?: string;
+  data?: IRate[];
 }
 
-const initialRates: IRate[] = [
-  {
-    duration: "1 месяц",
-    subtitle: "Базовый тариф",
-    advantages: "500 Гигабайт трафика в месяц",
-    button: {
-      href: "#",
-    },
-    price: 400,
-  },
-  {
-    duration: "3 месяца",
-    subtitle: "Выгода 400 рублей",
-    advantages: "500 Гигабайт трафика в месяц",
-    button: {
-      href: "#",
-    },
-    price: 800,
-  },
-  {
-    duration: "1 год",
-    subtitle: "Выгода 3 600 рублей",
-    advantages: "1 Терабайт трафика в месяц",
-    button: {
-      href: "#",
-    },
-    price: 1200,
-    mostProfitable: true,
-  },
-];
-
-const freeRate: IRate = {
-  advantages: "500 Гигабайт трафика",
-  button: {
-    href: "#",
-    text: "",
-  },
-  price: 0,
-  duration: "3 дня",
-  subtitle: "Тестовый ключ",
-};
-
-export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
+export const Rates = ({ isGrayBg, title, rounded, className, data }: Props) => {
   const [selectedRate, setSelectedRate] = useState<IRate>({} as IRate);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -91,9 +51,19 @@ export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
 
           {/* PC logic */}
           <div className={styles.rates}>
-            {initialRates.map((rate, index) => (
-              <Rate rate={rate} key={index} openModal={openModal} />
-            ))}
+            {data && data.length > 0
+              ? data
+                  .sort((a, b) => a.attributes.position - b.attributes.position)
+                  .map((rate) => {
+                    return (
+                      <Rate rate={rate} key={rate.id} openModal={openModal} />
+                    );
+                  })
+              : initialRates.initialRates
+                  .sort((a, b) => a.attributes.position - b.attributes.position)
+                  .map((rate) => (
+                    <Rate rate={rate} key={rate.id} openModal={openModal} />
+                  ))}
           </div>
           <p className={styles.helpText}>
             или&nbsp;протестируйте работу сервера в&nbsp;течение 3 дней
@@ -102,7 +72,7 @@ export const Rates = ({ isGrayBg, title, rounded, className }: Props) => {
           <button
             className={styles.getKeyLink}
             type="button"
-            onClick={() => openModal(freeRate)}
+            onClick={() => openModal(initialRates.freeRate)}
           >
             Получить ключ для&nbsp;тестирования
           </button>

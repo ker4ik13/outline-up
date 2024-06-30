@@ -1,11 +1,12 @@
 @import "@/shared/styles/_vars";
 
 .mainScreen {
-  height: 100vh;
+  height: calc(100vh + rem(10));
   background-color: $bg-black;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: rem(-10);
 }
 .video {
   width: 100%;

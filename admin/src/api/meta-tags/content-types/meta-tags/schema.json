@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_tags_api",
+  "info": {
+    "singularName": "meta-tags",
+    "pluralName": "meta-tags-api",
+    "displayName": "Мета теги",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "keywords": {
+      "type": "text"
+    },
+    "path": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "website",
+        "article"
+      ],
+      "default": "website"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

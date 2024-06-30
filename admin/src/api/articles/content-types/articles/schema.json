@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles_api",
+  "info": {
+    "singularName": "articles",
+    "pluralName": "articles-api",
+    "displayName": "Статьи",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "preview": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Новость",
+        "Блог",
+        "Инструкция"
+      ],
+      "required": true,
+      "default": "Блог"
+    }
+  }
+}

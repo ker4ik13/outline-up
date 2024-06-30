@@ -33,8 +33,6 @@ export const Accordion = ({
           <p className={styles.title}>{title}</p>
           <ArrowIcon className={`${styles.arrow} ${isOpen && styles.open}`} />
         </div>
-
-        {/* TODO: параграф */}
         <div className={`${styles.content} ${isOpen && styles.open}`}>
           {content}
         </div>

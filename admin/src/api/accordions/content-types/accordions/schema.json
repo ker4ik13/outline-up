@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accordions_api",
+  "info": {
+    "singularName": "accordions",
+    "pluralName": "accordions-api",
+    "displayName": "Аккордеоны",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.akkordeon",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "moreText": {
+      "type": "richtext"
+    }
+  }
+}

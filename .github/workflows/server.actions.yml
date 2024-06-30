@@ -23,7 +23,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Сброка и проверка ESLint серверного проекта
         run: |
-          cd server
+          cd admin
           npm install
-          npm run lint
           npm run build

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rates_api",
+  "info": {
+    "singularName": "rates",
+    "pluralName": "rates-api",
+    "displayName": "Тарифы",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "duration": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": true
+    },
+    "advantages": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "pluginOptions": {},
+      "type": "integer",
+      "required": true
+    },
+    "mostProfitable": {
+      "pluginOptions": {},
+      "type": "boolean",
+      "default": false
+    },
+    "position": {
+      "type": "integer"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

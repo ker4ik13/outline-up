@@ -1,10 +1,10 @@
-export const getTheme = () => {
-  const isDarkTheme = localStorage.getItem("darkTheme");
+export const getTheme = (key = "darkTheme", darkClass = "dark") => {
+  const isDarkTheme = localStorage.getItem(key);
   if (isDarkTheme && JSON.parse(isDarkTheme) === true) {
-    document.body.classList.add("dark");
+    document.body.classList.add(darkClass);
     return true;
   } else {
-    document.body.classList.remove("dark");
+    document.body.classList.remove(darkClass);
     return false;
   }
 };

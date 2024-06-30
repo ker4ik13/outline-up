@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_buttons",
+  "info": {
+    "displayName": "Кнопка",
+    "icon": "cursor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_akkordeon",
+  "info": {
+    "displayName": "Аккордеон",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

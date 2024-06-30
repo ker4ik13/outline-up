@@ -73,14 +73,14 @@ export const RateModal = ({ rate, isOpen, closeModal }: Props) => {
           </button>
           <p className={styles.modalTitle}>Подтвердите действие</p>
           <div className={styles.content}>
-            {rate && rate.duration && (
+            {rate && rate.attributes && rate.attributes.duration && (
               <div className={styles.rate}>
                 <Rate rate={rate} defaultRate />
               </div>
             )}
             <div className={styles.divider}></div>
             <div className={styles.text}>
-              {rate.price === 0 ? (
+              {rate.attributes && rate.attributes.price === 0 ? (
                 <p>
                   Для новых пользователей сервиса мы&nbsp;предусмотрели
                   возможность протестировать качество сервера Outline&nbsp;Up
@@ -90,7 +90,7 @@ export const RateModal = ({ rate, isOpen, closeModal }: Props) => {
                 <p>
                   Вы намереваетесь произвести покупку ключа доступа
                   к&nbsp;серверу Outline&nbsp;Up сроком на&nbsp;
-                  {rate.duration}
+                  {rate.attributes && rate.attributes.duration}
                 </p>
               )}
               <br />

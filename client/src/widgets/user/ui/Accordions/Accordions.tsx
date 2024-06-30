@@ -1,5 +1,6 @@
 "use client";
 
+import { possibilities } from "@/data/user/possibilities";
 import { SITE_NAME } from "@/shared/constants";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type {
@@ -7,6 +8,7 @@ import type {
   Accordion as IAccordion,
 } from "@/shared/types/ui";
 import { Accordion } from "@/shared/ui/user";
+import Markdown from "markdown-to-jsx";
 import { useState } from "react";
 import styles from "./Accordions.module.scss";
 
@@ -15,41 +17,8 @@ interface Props extends DefaultBlockProps {
   mainTitle?: boolean;
   accordions?: IAccordion[];
   lowerPadding?: boolean;
-  moreText?: React.ReactNode | string;
+  moreText?: string;
 }
-
-const initialAccordions: IAccordion[] = [
-  {
-    title: "Высокая производительность и скорость",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-  {
-    title: "Доступ к VPN серверу для вас и ваших близких",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-  {
-    title: "Поддержка множества устройств и платформ",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-  {
-    title: "Обход цензуры и географических ограничений",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-  {
-    title: "Повышенная конфиденциальность и безопасность",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-  {
-    title: "Отсутствие логирования активности",
-    content:
-      "Подчеркните, что ваш собственный сервер Outline VPN обеспечивает повышенную конфиденциальность и безопасность данных пользователей. Это происходит благодаря возможности контролировать свой сервер и обеспечивать его высокий уровень защиты.",
-  },
-];
 
 export const Accordions = ({
   accordions,
@@ -97,22 +66,29 @@ export const Accordions = ({
                 <Accordion
                   title={accordion.title}
                   content={accordion.content}
-                  key={index}
+                  key={accordion.id}
+                  id={accordion.id}
                   isOpen={openIndex === index}
                   toggleAccordion={() => toggleAccordion(index)}
                 />
               ))
-            : initialAccordions.map((accordion, index) => (
+            : possibilities.map((accordion, index) => (
                 <Accordion
                   title={accordion.title}
                   content={accordion.content}
-                  key={index}
+                  key={accordion.id}
+                  id={accordion.id}
                   isOpen={openIndex === index}
                   toggleAccordion={() => toggleAccordion(index)}
                 />
               ))}
         </div>
-        {moreText && <div className={styles.moreText}>{moreText}</div>}
+        {moreText && (
+          <div className={styles.moreText}>
+            {/* Конвертация в HTML из Markdown */}
+            <Markdown>{moreText}</Markdown>
+          </div>
+        )}
       </div>
     </div>
   );

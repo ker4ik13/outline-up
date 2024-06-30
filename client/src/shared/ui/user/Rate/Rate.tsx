@@ -12,23 +12,27 @@ export const Rate = ({ rate, defaultRate, openModal }: Props) => {
   return (
     <div
       className={`${styles.rate} ${
-        rate.mostProfitable && !defaultRate ? styles.big : ""
+        rate.attributes.mostProfitable && !defaultRate ? styles.big : ""
       }`}
     >
-      <p className={styles.duration}>{rate.duration}</p>
-      <p className={styles.subtitle}>{rate.subtitle}</p>
-      <p className={styles.advantages}>{rate.advantages}</p>
-      <p className={styles.price}>{`${rate.price.toLocaleString("ru")} Руб`}</p>
+      <p className={styles.duration}>{rate.attributes.duration}</p>
+      <p className={styles.subtitle}>{rate.attributes.subtitle}</p>
+      <p className={styles.advantages}>{rate.attributes.advantages}</p>
+      <p className={styles.price}>{`${rate.attributes.price.toLocaleString(
+        "ru"
+      )} Руб`}</p>
       {!defaultRate && (
         <SharedButton
           fullWidth
-          variant={rate.mostProfitable ? "secondary" : "primary"}
+          variant={rate.attributes.mostProfitable ? "secondary" : "primary"}
           className={styles.button}
           onClick={() => {
             openModal && openModal(rate);
           }}
         >
-          {rate.button.text ? rate.button.text : "Купить ключ"}
+          {rate.attributes.button_text
+            ? rate.attributes.button_text
+            : "Купить ключ"}
         </SharedButton>
       )}
     </div>

@@ -1,8 +1,9 @@
 "use client";
 
+import { initialRates } from "@/data/user/initialRates";
 import { appLinks } from "@/shared/constants";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
-import type { DefaultBlockProps, Rate as IRate } from "@/shared/types/ui";
+import type { DefaultBlockProps } from "@/shared/types/ui";
 import { SharedButton } from "@/shared/ui/user";
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
@@ -12,34 +13,17 @@ import styles from "./TextWithButton.module.scss";
 interface Props extends DefaultBlockProps {
   title?: string;
   text?: string | ReactNode;
-  button?: {
-    text: string;
-    href: string;
-  };
+  button_text?: string;
   link?: {
     text: string;
     href: string;
   };
 }
 
-const freeRate: IRate = {
-  advantages: "500 Гигабайт трафика",
-  button: {
-    href: "#",
-    text: "",
-  },
-  price: 0,
-  duration: "3 дня",
-  subtitle: "Тестовый ключ",
-};
-
 export const TextWithButton = ({
   text,
   title,
-  button = {
-    href: appLinks.user.buy.main,
-    text: "Попробовать бесплатно",
-  },
+  button_text = "Попробовать бесплатно",
   link = {
     text: "Купить ключ доступа",
     href: appLinks.user.buy.main,
@@ -61,7 +45,11 @@ export const TextWithButton = ({
   };
   return (
     <>
-      <RateModal isOpen={isOpenModal} closeModal={closeModal} rate={freeRate} />
+      <RateModal
+        isOpen={isOpenModal}
+        closeModal={closeModal}
+        rate={initialRates.freeRate}
+      />
       <div
         className={`${styles.textBlock} ${getDefaultBlockStyles({
           styles,
@@ -91,18 +79,16 @@ export const TextWithButton = ({
               </>
             )}
           </div>
-          {button && (
-            <div className={styles.buttonWrapper}>
-              <SharedButton
-                // variant="secondary"
-                fullWidth
-                center
-                onClick={openModal}
-              >
-                {button.text}
-              </SharedButton>
-            </div>
-          )}
+          <div className={styles.buttonWrapper}>
+            <SharedButton
+              // variant="secondary"
+              fullWidth
+              center
+              onClick={openModal}
+            >
+              {button_text}
+            </SharedButton>
+          </div>
 
           {link && link.text && (
             <Link href={link.href} className={styles.link}>
