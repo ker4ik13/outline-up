@@ -839,13 +839,15 @@ export interface ApiArticlesArticles extends Schema.CollectionType {
     preview: Attribute.Media<'images'> & Attribute.Required;
     type: Attribute.Enumeration<
       [
-        '\u041D\u043E\u0432\u043E\u0441\u0442\u044C',
+        '\u041D\u043E\u0432\u043E\u0441\u0442\u0438',
         '\u0411\u043B\u043E\u0433',
-        '\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F'
+        '\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438'
       ]
     > &
       Attribute.Required &
       Attribute.DefaultTo<'\u0411\u043B\u043E\u0433'>;
+    onMainPage: Attribute.Boolean & Attribute.DefaultTo<false>;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

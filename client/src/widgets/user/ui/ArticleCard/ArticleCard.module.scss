@@ -1,0 +1,86 @@
+@import "@/shared/styles/_vars";
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  padding-bottom: rem(30);
+  max-width: rem(625);
+  width: 100%;
+  // flex: max(rem(520), 100% / 2 - rem(30));
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    -webkit-filter: drop-shadow(0 0 rem(30) rgba(21, 1, 79, 0.1));
+    filter: drop-shadow(0 0 rem(30) rgba(21, 1, 79, 0.1));
+
+    .previewImage {
+      transform: scale(1.03);
+    }
+    .icon {
+      transform: rotate(45deg);
+    }
+  }
+}
+.preview {
+  width: 100%;
+  height: rem(260);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  @media screen and (max-width: $max-500) {
+    height: rem(200);
+  }
+}
+.previewImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.articleContent {
+  display: flex;
+  flex-direction: column;
+  gap: rem(15);
+  width: 100%;
+}
+.articleTitle {
+  @include desktop-h3();
+  color: $black;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h3();
+    cursor: pointer;
+  }
+}
+.articleDesc {
+  @include desktop-p();
+  color: $light-black;
+  @include strings(3);
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-p();
+    cursor: pointer;
+  }
+}
+.icon {
+  width: rem(15);
+  fill: $black;
+  color: $black;
+  transition: transform 0.15s ease-in-out;
+}

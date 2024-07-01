@@ -1,0 +1,79 @@
+@import "@/shared/styles/_vars";
+
+.articles {
+  background-color: $bg-white;
+  padding: rem(200) 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  @include default-block-styles();
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(80) 0;
+
+    &.paddingTop {
+      padding-top: rem(160);
+    }
+  }
+}
+
+.container {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(0) rem(20);
+}
+
+.title {
+  @include desktop-h2();
+  color: $black;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: rem(100);
+  text-wrap: balance;
+
+  &.miniMargin {
+    margin-bottom: rem(70);
+  }
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h1();
+    margin-bottom: rem(60);
+
+    &.miniMargin {
+      margin-bottom: rem(40);
+    }
+  }
+}
+.articlesCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(480), 1fr));
+  gap: rem(30);
+  width: 100%;
+  justify-items: center;
+
+  @media screen and (max-width: $max-768) {
+    gap: rem(20);
+    grid-template-columns: 1fr;
+  }
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: flex-start;
+  // flex-wrap: wrap;
+  // gap: rem(30);
+  // margin: 0 auto;
+}
+
+.link {
+  margin-top: rem(50);
+  text-align: center;
+  color: $light-black;
+  @include desktop-link;
+  cursor: pointer;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-link();
+    margin-top: rem(30);
+  }
+}

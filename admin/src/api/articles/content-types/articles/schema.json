@@ -35,12 +35,21 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "Новость",
+        "Новости",
         "Блог",
-        "Инструкция"
+        "Инструкции"
       ],
       "required": true,
       "default": "Блог"
+    },
+    "onMainPage": {
+      "type": "boolean",
+      "default": false
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

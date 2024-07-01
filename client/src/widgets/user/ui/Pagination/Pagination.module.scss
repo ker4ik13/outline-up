@@ -1,0 +1,99 @@
+@import "@/shared/styles/_vars";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  margin-top: rem(50);
+
+  @media screen and (max-width: $max-768) {
+    margin-top: rem(30);
+    // flex-direction: column;
+  }
+}
+.string {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+}
+// .prev {
+//   order: 1;
+//   @media screen and (max-width: $max-768) {
+//     order: 2;
+//   }
+// }
+// .next {
+//   order: 3;
+//   @media screen and (max-width: $max-768) {
+//     order: 3;
+//   }
+// }
+// .string {
+//   order: 2;
+//   @media screen and (max-width: $max-768) {
+//     order: 1;
+//   }
+// }
+.paginationItem {
+  @include mob-p();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  aspect-ratio: 1/1;
+  border-radius: $border-radius;
+  background-color: $bg-dark-white;
+  color: $light-black;
+  text-decoration: none;
+  transition: 0.2s linear;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+
+  &:disabled {
+    cursor: not-allowed;
+
+    &:hover {
+      -webkit-filter: none;
+      filter: none;
+    }
+  }
+
+  @media screen and (max-width: $max-768) {
+    width: rem(30);
+  }
+
+  &:hover {
+    -webkit-filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+    filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+  }
+
+  &.active {
+    color: $white;
+    background-color: $light-black;
+  }
+
+  &.arrow {
+    width: rem(80);
+    height: rem(40);
+    aspect-ratio: unset;
+
+    @media screen and (max-width: $max-768) {
+      width: rem(60);
+      height: rem(30);
+    }
+
+    &.prev {
+      & svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+.icon {
+  width: rem(16);
+  height: 100%;
+}

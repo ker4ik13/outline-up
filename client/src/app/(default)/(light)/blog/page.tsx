@@ -1,14 +1,12 @@
-import { TextContentService } from "@/services/content";
-import { generateCustomMetadata } from "@/shared/helpers/lib";
-import { TextContent } from "@/widgets/user/ui";
-import type { Metadata } from "next/types";
+import { ArticleService, SortService } from "@/services/content";
+import { Articles } from "@/widgets/user/ui";
 
 export const revalidate = 30; // Обновление всех данных
 
 // Генерация мета-тегов
-export const generateMetadata = async (): Promise<Metadata> => {
-  return generateCustomMetadata("/privacy", "website");
-};
+// export const generateMetadata = async (): Promise<Metadata> => {
+//   return generateCustomMetadata("/articles", "website");
+// };
 
 // export const metadata: Metadata = {
 //   title: `Политика конфиденциальности: Как мы защищаем вашу приватность на сервисе ${SITE_NAME}`,
@@ -33,13 +31,33 @@ export const generateMetadata = async (): Promise<Metadata> => {
 //   },
 // };
 
-const PrivacyPolicyPage = async () => {
-  const response = await TextContentService.getTextContent("privacy-policy");
+const ArticlesPage = async ({
+  searchParams,
+}: {
+  searchParams: { type?: string; page?: number; limit?: number };
+}) => {
+  const allArticles = await ArticleService.getAllArticles({
+    page: searchParams.page,
+    type: searchParams.type,
+    limit: searchParams.limit,
+  });
+  const sortItems = await SortService.getSortFields("articles-api");
+
   return (
-    <>
-      <TextContent content={response.data[0]} />
-    </>
+    <Articles
+      title="Статьи"
+      articles={allArticles.data}
+      pagination={{
+        enabled: true,
+        meta: allArticles.data.meta,
+      }}
+      sort={{
+        enabled: true,
+        items: sortItems || [],
+        activeType: searchParams.type,
+      }}
+    />
   );
 };
 
-export default PrivacyPolicyPage;
+export default ArticlesPage;

@@ -1,9 +1,11 @@
 export const THEME_KEY = "joy-mode";
 export const SITE_NAME = "Outline UP";
 export const CLIENT_URL = process.env.NEXT_PUBLIC_CLIENT_URL;
+export const SERVER_URL = process.env.NEXT_PUBLIC_API_URL;
 export const SERVER_FILES_DIST = "uploads";
 export const YANDEX_METRIKA = 97025859;
 export const GOOGLE_ANALYTICS = "GTM-P3LH9BQD";
+export const MAIN_ARTICLES_COUNT = 4; // Сколько выводить статей на главной странице
 
 export const appLinks = {
   user: {
@@ -28,6 +30,10 @@ export const appLinks = {
     },
     privacy: {
       main: "/privacy",
+    },
+    articles: {
+      main: "/blog",
+      bySlug: (slug: string) => `/blog/${slug}`,
     },
   },
   admin: {

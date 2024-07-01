@@ -1,10 +1,15 @@
 import { possibilities } from "@/data/user/possibilities";
 import { questionsAndAnswers } from "@/data/user/questionsAndAnswers";
-import { AccordionUserService, RatesUserService } from "@/services/content";
+import {
+  AccordionUserService,
+  ArticleService,
+  RatesUserService,
+} from "@/services/content";
+import { MAIN_ARTICLES_COUNT } from "@/shared/constants";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
-
 import {
   Accordions,
+  Articles,
   MainScreen,
   Rates,
   Steps,
@@ -25,6 +30,9 @@ const UserMainPage = async () => {
   const asksAndAnswersAccordions =
     await AccordionUserService.getAsksAndAnswers();
   const advantagesAccordions = await AccordionUserService.getAdvantages();
+  const mainArticles = await ArticleService.getMainArticles(
+    MAIN_ARTICLES_COUNT
+  );
   return (
     <>
       <MainScreen />
@@ -62,11 +70,11 @@ const UserMainPage = async () => {
           title={asksAndAnswersAccordions.data[0].attributes.title}
           key={asksAndAnswersAccordions.data[0].attributes.name}
           moreText={asksAndAnswersAccordions.data[0].attributes.moreText}
-          isGrayBg
         />
       ) : (
         <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
       )}
+      <Articles title="Статьи" articles={mainArticles.data} mainArticles />
     </>
   );
 };

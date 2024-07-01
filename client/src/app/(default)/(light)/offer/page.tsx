@@ -31,7 +31,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 // };
 
 const ContractOfferPage = async () => {
-  const response = await TextContentService.getTextContent("dogovor-oferta-ru");
+  const response = await TextContentService.getTextContent("dogovor-oferta");
   return (
     <>
       <TextContent content={response.data[0]} />

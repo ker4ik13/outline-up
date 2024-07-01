@@ -1,0 +1,36 @@
+@import "@/shared/styles/_vars";
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(10);
+  margin-bottom: rem(50);
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $max-768) {
+    margin-bottom: rem(30);
+  }
+}
+.sortItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(5) rem(20);
+  border-radius: $border-radius;
+  background-color: $bg-dark-white;
+  color: $light-black;
+  text-decoration: none;
+  transition: 0.2s linear;
+  white-space: nowrap;
+
+  &:hover {
+    -webkit-filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+    filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+  }
+
+  &.active {
+    color: $white;
+    background-color: $light-black;
+  }
+}
