@@ -1,0 +1,80 @@
+@import "@/shared/styles/_vars";
+
+.input {
+  @include desktop-p();
+  cursor: text;
+  color: $light-black;
+  border-radius: $border-radius;
+  outline: none;
+  border: 1px solid $gray;
+  background: $bg-white;
+  padding: rem(10) rem(18);
+  transition: 0.1s;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(8) rem(14);
+    @include mob-p();
+    cursor: text;
+  }
+
+  &.error {
+    border-color: $error;
+    color: $error;
+  }
+
+  &:focus {
+    -webkit-filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+    filter: drop-shadow(0 rem(4) rem(12) rgba(21, 1, 79, 0.1));
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+    }
+
+    &::-moz-placeholder {
+      opacity: 0;
+    }
+
+    &:-ms-input-placeholder {
+      opacity: 0;
+    }
+
+    &::-ms-input-placeholder {
+      opacity: 0;
+    }
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    color: $gray;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+  }
+
+  &::-moz-placeholder {
+    color: $gray;
+    -moz-transition: 0.1s;
+    transition: 0.1s;
+  }
+
+  &:-ms-input-placeholder {
+    color: $gray;
+    -ms-transition: 0.1s;
+    transition: 0.1s;
+  }
+
+  &::-ms-input-placeholder {
+    color: $gray;
+    -ms-transition: 0.1s;
+    transition: 0.1s;
+  }
+
+  &::placeholder {
+    color: $gray;
+    transition: 0.1s;
+  }
+}

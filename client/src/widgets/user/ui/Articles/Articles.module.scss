@@ -5,7 +5,6 @@
   padding: rem(200) 0;
   overflow: hidden;
   position: relative;
-  z-index: 2;
   @include default-block-styles();
 
   @media screen and (max-width: $max-768) {
@@ -74,6 +73,7 @@
 
   @media screen and (max-width: $max-768) {
     @include mob-link();
+    cursor: pointer;
     margin-top: rem(30);
   }
 }

@@ -29,11 +29,6 @@ export class ArticleService {
     link += `&pagination[pageSize]=${limit}&pagination[page]=${page}`;
 
     const response = await $content.get<Data<IArticle>>(link);
-    // const response = await $content.get<Data<IArticle>>(
-    //   `articles-api?populate=*&pagination[pageSize]=${limit}${
-    //     type && `&type={${type}}`
-    //   }&pagination[page]=${page}`
-    // );
     return response;
   }
 

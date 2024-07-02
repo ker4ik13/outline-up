@@ -34,7 +34,11 @@ export const revalidate = 30; // Обновление всех данных
 const ArticlesPage = async ({
   searchParams,
 }: {
-  searchParams: { type?: string; page?: number; limit?: number };
+  searchParams: {
+    type?: string;
+    page?: number;
+    limit?: number;
+  };
 }) => {
   const allArticles = await ArticleService.getAllArticles({
     page: searchParams.page,
@@ -44,19 +48,21 @@ const ArticlesPage = async ({
   const sortItems = await SortService.getSortFields("articles-api");
 
   return (
-    <Articles
-      title="Статьи"
-      articles={allArticles.data}
-      pagination={{
-        enabled: true,
-        meta: allArticles.data.meta,
-      }}
-      sort={{
-        enabled: true,
-        items: sortItems || [],
-        activeType: searchParams.type,
-      }}
-    />
+    <>
+      <Articles
+        title="Статьи"
+        articles={allArticles.data}
+        pagination={{
+          enabled: true,
+          meta: allArticles.data.meta,
+        }}
+        sort={{
+          enabled: true,
+          items: sortItems || [],
+          activeType: searchParams.type,
+        }}
+      />
+    </>
   );
 };
 

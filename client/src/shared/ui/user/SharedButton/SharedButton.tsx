@@ -1,9 +1,10 @@
 import Link from "next/link";
+import type { UrlObject } from "url";
 import styles from "./SharedButton.module.scss";
 
 interface Props {
   children?: React.ReactNode;
-  href?: string;
+  href?: UrlObject | string;
   onClick?: (...args: unknown[]) => void;
   type?: "button" | "submit" | "reset";
   className?: string;
@@ -36,7 +37,12 @@ export const SharedButton = ({
 
   if (href) {
     return (
-      <Link href={href} className={getStyles()} target={target}>
+      <Link
+        href={href}
+        onClick={onClick}
+        className={getStyles()}
+        target={target}
+      >
         {children}
       </Link>
     );

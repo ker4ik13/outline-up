@@ -1,0 +1,28 @@
+@import "@/shared/styles/_vars";
+
+.pagePeeker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.container {
+  @include container();
+  max-width: rem(670);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: rem(15);
+}
+.title {
+  @include desktop-h3();
+  text-align: center;
+  color: $light-black;
+  margin-bottom: rem(15);
+
+  @media screen and (max-width: $max-768) {
+    margin-bottom: 0;
+    @include mob-h3();
+  }
+}

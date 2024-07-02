@@ -4,43 +4,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   gap: rem(10);
   margin-top: rem(50);
+  width: 100%;
+  position: relative;
+  z-index: 2;
 
   @media screen and (max-width: $max-768) {
     margin-top: rem(30);
-    // flex-direction: column;
+    gap: rem(8);
   }
 }
 .string {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: rem(10);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border-radius: rem(10);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: $max-768) {
+    gap: rem(4);
+  }
 }
-// .prev {
-//   order: 1;
-//   @media screen and (max-width: $max-768) {
-//     order: 2;
-//   }
-// }
-// .next {
-//   order: 3;
-//   @media screen and (max-width: $max-768) {
-//     order: 3;
-//   }
-// }
-// .string {
-//   order: 2;
-//   @media screen and (max-width: $max-768) {
-//     order: 1;
-//   }
-// }
 .paginationItem {
   @include mob-p();
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: rem(40);
   width: rem(40);
   aspect-ratio: 1/1;
   border-radius: $border-radius;
@@ -54,16 +52,12 @@
   border: 0;
 
   &:disabled {
-    cursor: not-allowed;
+    cursor: default;
 
     &:hover {
       -webkit-filter: none;
       filter: none;
     }
-  }
-
-  @media screen and (max-width: $max-768) {
-    width: rem(30);
   }
 
   &:hover {
@@ -82,8 +76,9 @@
     aspect-ratio: unset;
 
     @media screen and (max-width: $max-768) {
-      width: rem(60);
-      height: rem(30);
+      min-width: rem(56);
+      width: rem(56);
+      height: rem(40);
     }
 
     &.prev {

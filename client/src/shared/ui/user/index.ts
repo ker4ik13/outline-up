@@ -4,3 +4,4 @@ export * from "./Nav/Nav";
 export * from "./Preloader/Preloader";
 export * from "./Rate/Rate";
 export * from "./SharedButton/SharedButton";
+export * from "./SharedInput/SharedInput";

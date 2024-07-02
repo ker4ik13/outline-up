@@ -19,27 +19,29 @@ export const Sort = async ({
 }: SortProps) => {
   return (
     <div className={styles.sort}>
-      <Link
-        href={parentPageLink}
-        className={`${styles.sortItem} ${!activeType ? styles.active : ""}`}
-      >
-        Все
-      </Link>
-      {sortItems.map((field) => (
+      <div className={styles.sortWrapper}>
         <Link
-          href={{
-            query: {
-              type: field.attributes.type,
-            },
-          }}
-          className={`${styles.sortItem} ${
-            activeType === field.attributes.type ? styles.active : ""
-          }`}
-          key={field.id}
+          href={parentPageLink}
+          className={`${styles.sortItem} ${!activeType ? styles.active : ""}`}
         >
-          {field.attributes.type}
+          Все
         </Link>
-      ))}
+        {sortItems.map((field) => (
+          <Link
+            href={{
+              query: {
+                type: field.attributes.type,
+              },
+            }}
+            className={`${styles.sortItem} ${
+              activeType === field.attributes.type ? styles.active : ""
+            }`}
+            key={field.id}
+          >
+            {field.attributes.type}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

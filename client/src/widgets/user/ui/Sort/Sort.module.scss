@@ -1,15 +1,27 @@
 @import "@/shared/styles/_vars";
 
 .sort {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: rem(10);
   margin-bottom: rem(50);
-  flex-wrap: wrap;
 
   @media screen and (max-width: $max-768) {
     margin-bottom: rem(30);
+  }
+}
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: rem(10);
+  border-radius: rem(10);
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 .sortItem {
