@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
           `${appLinks.user.offerta.main}/`,
           `${appLinks.user.support.main}/`,
           `${appLinks.user.privacy.main}/`,
+          `${appLinks.user.articles.main}/`,
         ],
         disallow: [
           `${appLinks.user.main}*?*`,

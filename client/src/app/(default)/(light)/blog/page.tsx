@@ -1,12 +1,14 @@
 import { ArticleService, SortService } from "@/services/content";
+import { generateCustomMetadata } from "@/shared/helpers/lib";
 import { Articles } from "@/widgets/user/ui";
+import type { Metadata } from "next/types";
 
 export const revalidate = 30; // Обновление всех данных
 
 // Генерация мета-тегов
-// export const generateMetadata = async (): Promise<Metadata> => {
-//   return generateCustomMetadata("/articles", "website");
-// };
+export const generateMetadata = async (): Promise<Metadata> => {
+  return generateCustomMetadata("/articles", "website");
+};
 
 // export const metadata: Metadata = {
 //   title: `Политика конфиденциальности: Как мы защищаем вашу приватность на сервисе ${SITE_NAME}`,

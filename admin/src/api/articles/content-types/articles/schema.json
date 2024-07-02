@@ -50,6 +50,9 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "keywords": {
+      "type": "text"
     }
   }
 }

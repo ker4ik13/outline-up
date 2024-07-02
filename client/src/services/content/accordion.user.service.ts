@@ -8,7 +8,7 @@ export class AccordionUserService {
   // Получить вопросы и ответы
   static async getAsksAndAnswers() {
     const response = await $content.get<IAccordions<Accordion>>(
-      "/accordions-api?populate=*&name=asks-and-answers"
+      "/accordions-api?populate=*&filters[name][$eq]=asks-and-answers"
     );
     return response.data;
   }
@@ -16,7 +16,7 @@ export class AccordionUserService {
   // Получить преимущества
   static async getAdvantages() {
     const response = await $content.get<IAccordions<Accordion>>(
-      "/accordions-api?populate=*&name=advantages"
+      "/accordions-api?populate=*&filters[name][$eq]=advantages"
     );
     return response.data;
   }
@@ -24,7 +24,7 @@ export class AccordionUserService {
   // Получить поддержку
   static async getSupport() {
     const response = await $content.get<IAccordions<Accordion>>(
-      "/accordions-api?populate=*&name=support-outline-up"
+      "/accordions-api?populate=*&filters[name][$eq]=support-outline-up"
     );
     return response.data;
   }

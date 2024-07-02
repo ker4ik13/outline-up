@@ -34,6 +34,7 @@ export const appLinks = {
     articles: {
       main: "/blog",
       bySlug: (slug: string) => `/blog/${slug}`,
+      byType: (type: string) => `/blog?type=${type}`,
     },
   },
   admin: {

@@ -848,6 +848,7 @@ export interface ApiArticlesArticles extends Schema.CollectionType {
       Attribute.DefaultTo<'\u0411\u043B\u043E\u0433'>;
     onMainPage: Attribute.Boolean & Attribute.DefaultTo<false>;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    keywords: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

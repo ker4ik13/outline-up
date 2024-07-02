@@ -5,6 +5,7 @@ export interface IArticle {
   attributes: {
     title: string;
     description: string;
+    keywords?: string;
     content: string; // Текстовый контент
     preview: StrapiImageData;
     type: string; // Тип записи

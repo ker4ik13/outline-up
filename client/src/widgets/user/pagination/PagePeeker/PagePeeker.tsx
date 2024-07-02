@@ -18,15 +18,20 @@ export const PagePeeker = ({
   meta,
   closeModal,
 }: PagePeekerProps) => {
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState<number | "">("");
   const [isValid, setIsValid] = useState(false);
 
   const validateValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Если впереди 0, то убираем его
-    if (event.target.value[0] === "0") {
+    if (event.target.value[0] === "0" || event.target.value[0] === "-") {
       event.target.value = event.target.value.slice(1);
     }
-    const eventValue = +event.target.value;
+    const eventValue = Number(event.target.value);
+    if (Number.isNaN(eventValue)) {
+      setIsValid(false);
+      return;
+    }
+
     setValue(eventValue);
     // Если значение меньше 1 или больше количества страниц
     if (eventValue < 1 || eventValue > meta.pagination.pageCount) {
@@ -46,7 +51,6 @@ export const PagePeeker = ({
         <SharedInput
           value={value}
           onChange={validateValue}
-          type="number"
           max={meta.pagination.pageCount}
           min={1}
           placeholder="Укажите номер страницы"

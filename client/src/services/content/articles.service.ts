@@ -7,7 +7,7 @@ export class ArticleService {
   // Получить статьи на главной
   static async getMainArticles(count: number = 4) {
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&pagination[pageSize]=${count}`
+      `articles-api?populate=*&pagination[pageSize]=${count}&sort[0]=publishedAt:desc`
     );
     return response;
   }
@@ -22,7 +22,7 @@ export class ArticleService {
     page?: number;
     type?: string;
   }) {
-    let link = "articles-api?populate=*";
+    let link = "articles-api?populate=*&sort[0]=publishedAt:desc";
     if (type) {
       link += `&filters[type][$eq]=${type}`;
     }
@@ -35,7 +35,15 @@ export class ArticleService {
   // Получить статью по ссылке
   static async getArticleBySlug(slug: string) {
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&slug=${slug}`
+      `articles-api?populate=*&filters[slug][$eq]=${slug}`
+    );
+    return response.data;
+  }
+
+  // Получить последнюю статью по типу
+  static async getLastArticleByType(type: string) {
+    const response = await $content.get<Data<IArticle>>(
+      `articles-api?populate=*&sort[0]=publishedAt:desc&filters[type][$eq]=${type}`
     );
     return response.data;
   }
