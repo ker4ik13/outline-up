@@ -1,0 +1,64 @@
+@import "@/shared/styles/_vars";
+
+.moreArticles {
+  width: 100%;
+  background-color: $bg-white;
+  padding-bottom: rem(100);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  @media screen and (max-width: $max-768) {
+    gap: rem(30);
+  }
+}
+.container {
+  @include container();
+  display: flex;
+  flex-direction: column;
+  gap: rem(50);
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.title {
+  @include desktop-h2();
+  color: $black;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h2();
+  }
+}
+.articlesWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.articles {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: rem(30);
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.swiperWrapper {
+  width: 100%;
+  display: flex;
+}
+.article {
+  width: 100%;
+  @media screen and (min-width: $max-1000) {
+    min-width: rem(550);
+  }
+  @media screen and (min-width: $max-768) {
+    min-width: rem(450);
+  }
+  min-width: rem(280);
+}

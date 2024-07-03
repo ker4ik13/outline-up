@@ -1,6 +1,6 @@
 import { ArticleService } from "@/services/content";
 import { appLinks, CLIENT_URL, SITE_NAME } from "@/shared/constants";
-import { Article } from "@/widgets/user/ui";
+import { Article, MoreArticles } from "@/widgets/user/ui";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next/types";
 
@@ -53,10 +53,14 @@ export const generateMetadata = async ({
 
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
   const articleBySlug = await ArticleService.getArticleBySlug(params.slug);
+  const moreArticles = await ArticleService.getMoreArticles(params.slug);
 
   return (
     <>
       <Article article={articleBySlug.data[0]} />
+      {moreArticles.data.length > 0 && (
+        <MoreArticles articles={moreArticles.data} />
+      )}
     </>
   );
 };

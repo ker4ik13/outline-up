@@ -5,6 +5,7 @@ export * from "./Articles/Articles";
 export * from "./Download/Download";
 export * from "./Instructions/Instructions";
 export * from "./MainScreen/MainScreen";
+export * from "./MoreArticles/MoreArticles";
 export * from "./NotFound/NotFound";
 export * from "./Pagination/Pagination";
 export * from "./Rates/Rates";

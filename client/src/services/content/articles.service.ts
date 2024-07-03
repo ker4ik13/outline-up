@@ -47,4 +47,19 @@ export class ArticleService {
     );
     return response.data;
   }
+
+  // Получить больше статей
+  static async getMoreArticles(slug?: string) {
+    if (!slug) {
+      const response = await $content.get<Data<IArticle>>(
+        `articles-api?populate=*&sort[0]=publishedAt:desc`
+      );
+      return response.data;
+    }
+
+    const response = await $content.get<Data<IArticle>>(
+      `articles-api?populate=*&sort[0]=publishedAt:desc&filters[slug][$ne]=${slug}`
+    );
+    return response.data;
+  }
 }

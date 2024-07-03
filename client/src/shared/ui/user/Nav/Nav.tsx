@@ -60,6 +60,9 @@ export const Nav = ({ isSolid, theme = "dark" }: Props) => {
             <li className={styles.page}>
               <Link href={appLinks.user.instructions.main}>Инструкции</Link>
             </li>
+            <li className={styles.page}>
+              <Link href={appLinks.user.articles.main}>Статьи</Link>
+            </li>
           </ul>
           <Link className={styles.page} href={appLinks.user.support.main}>
             Поддержка

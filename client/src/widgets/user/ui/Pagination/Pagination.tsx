@@ -14,6 +14,7 @@ interface PaginationProps {
   params?: {
     type?: string;
     page?: number;
+    limit?: number;
   };
 }
 

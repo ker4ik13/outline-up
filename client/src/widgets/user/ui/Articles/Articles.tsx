@@ -67,7 +67,10 @@ export const Articles = async ({
         {pagination && pagination.enabled && (
           <Pagination
             meta={articles.meta}
-            params={{ type: sort?.activeType }}
+            params={{
+              type: sort?.activeType,
+              limit: pagination.meta.pagination.pageSize,
+            }}
           />
         )}
         {mainArticles && (
