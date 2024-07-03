@@ -1,5 +1,6 @@
-import { appLinks, SERVER_URL } from "@/shared/constants";
-import { IArticle } from "@/shared/types/api";
+import { appLinks } from "@/shared/constants";
+import { setServerUrlBeforeSrc } from "@/shared/helpers/files";
+import type { IArticle } from "@/shared/types/api";
 import { ArrowIcon } from "@/shared/ui/user/icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +18,9 @@ export const ArticleCard = ({ article }: ArticleCardProps) => {
     >
       <div className={styles.preview}>
         <Image
-          src={`${SERVER_URL}${article.attributes.preview.data.attributes.formats.large.url}`}
+          src={setServerUrlBeforeSrc(
+            article.attributes.preview.data.attributes.formats.large.url
+          )}
           alt={
             article.attributes.preview.data.attributes.alternativeText ||
             "Article preview"

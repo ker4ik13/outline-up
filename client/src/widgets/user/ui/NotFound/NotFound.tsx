@@ -9,11 +9,16 @@ interface Props {
     text?: string;
     href?: string;
   };
+  theme?: "dark" | "light";
 }
 
-export const NotFound = ({ code, href, text }: Props) => {
+export const NotFound = ({ code, href, text, theme = "dark" }: Props) => {
   return (
-    <div className={styles.notFound}>
+    <div
+      className={`${styles.notFound} ${
+        theme === "light" ? styles.lightBg : styles.darkBg
+      }`}
+    >
       <p className={styles.code}>{code ? code : 404}</p>
       <p className={styles.text}>
         {text ? (

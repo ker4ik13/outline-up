@@ -1,4 +1,5 @@
 export * from "./Accordions/Accordions";
+export * from "./Article/Article";
 export * from "./ArticleCard/ArticleCard";
 export * from "./Articles/Articles";
 export * from "./Download/Download";

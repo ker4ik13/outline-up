@@ -1,0 +1,182 @@
+@import "@/shared/styles/_vars";
+
+.article {
+  min-height: 80vh;
+  background-color: $bg-white;
+  padding: rem(100) 0 rem(150);
+  overflow: hidden;
+  position: relative;
+  @include default-block-styles();
+
+  @media screen and (max-width: $max-768) {
+    padding: rem(100) 0 rem(80);
+  }
+}
+.container {
+  @include container();
+}
+.breadcrumbs {
+  @include desktop-small();
+  margin-left: rem(110);
+  color: $black;
+  display: inline-block;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: rem(20);
+
+  @media screen and (max-width: $max-768) {
+    margin-left: 0;
+    @include desktop-extra-small();
+  }
+
+  & * {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+
+    &:nth-child(even) {
+      color: $light-black;
+      cursor: default;
+      margin-inline: rem(5);
+    }
+
+    &:last-child {
+      cursor: text;
+    }
+  }
+}
+.preview {
+  border-radius: $border-radius;
+  max-height: rem(530);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  overflow: hidden;
+  margin-bottom: rem(100);
+
+  @media screen and (max-width: $max-768) {
+    margin-bottom: rem(60);
+  }
+}
+.previewImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.content {
+  margin: 0 auto;
+  @include container();
+  padding: 0;
+  max-width: rem(1060);
+  display: flex;
+  flex-direction: column;
+  gap: rem(50);
+  color: $light-black;
+  white-space: pre-wrap;
+
+  & > * {
+    @include desktop-p();
+    cursor: default;
+    color: inherit;
+    white-space: pre-wrap;
+  }
+
+  & p {
+    cursor: text;
+  }
+
+  & a {
+    @include desktop-link();
+    color: inherit;
+    cursor: pointer;
+    font-style: normal;
+    white-space: pre-wrap;
+  }
+
+  & h3 {
+    @include desktop-h3();
+    margin: rem(50) 0;
+    text-wrap: pretty;
+  }
+
+  & blockquote {
+    width: 100%;
+    background-color: $bg-dark-white;
+    padding: rem(50);
+    border-radius: $border-radius;
+    @include desktop-p-light();
+  }
+
+  & img {
+    width: 100%;
+    border-radius: $border-radius;
+    max-height: rem(600);
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    cursor: default;
+    margin: rem(50) 0;
+  }
+
+  @media screen and (max-width: $max-768) {
+    gap: rem(30);
+
+    & > * {
+      @include mob-p();
+    }
+
+    & a {
+      @include mob-link();
+      font-style: normal;
+    }
+
+    & h3 {
+      @include mob-h3();
+      margin: rem(30) 0;
+    }
+
+    & blockquote {
+      padding: rem(30);
+      @include mob-p-light();
+    }
+
+    & img {
+      margin: rem(30) 0;
+    }
+  }
+}
+
+.title {
+  @include desktop-h1();
+  color: $black;
+  text-transform: uppercase;
+  margin-bottom: rem(50);
+  text-wrap: pretty;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h1();
+    margin-bottom: rem(30);
+  }
+}
+.description {
+  @include desktop-h2();
+  text-wrap: pretty;
+  color: $light-black;
+  margin-bottom: rem(50);
+
+  @media screen and (max-width: $max-768) {
+    @include mob-h2();
+    margin-bottom: rem(30);
+  }
+}
+.publishDate {
+  @include desktop-small();
+  color: $light-black;
+}

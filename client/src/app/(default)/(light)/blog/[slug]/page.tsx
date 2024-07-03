@@ -1,5 +1,7 @@
 import { ArticleService } from "@/services/content";
 import { appLinks, CLIENT_URL, SITE_NAME } from "@/shared/constants";
+import { Article } from "@/widgets/user/ui";
+import { notFound } from "next/navigation";
 import type { Metadata } from "next/types";
 
 export const revalidate = 30; // Обновление всех данных
@@ -22,11 +24,8 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const article = await ArticleService.getArticleBySlug(params.slug);
 
-  if (!article || !article.data) {
-    return {
-      title: "404: Статья не найдена",
-      description: "Страница не найдена",
-    };
+  if (!article || !article.data || !article.data[0]) {
+    return notFound();
   }
 
   return {
@@ -53,24 +52,11 @@ export const generateMetadata = async ({
 };
 
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
-  console.log("slug:", params.slug);
   const articleBySlug = await ArticleService.getArticleBySlug(params.slug);
 
   return (
     <>
-      {/* <Articles
-        title="Статьи"
-        articles={allArticles.data}
-        pagination={{
-          enabled: true,
-          meta: allArticles.data.meta,
-        }}
-        sort={{
-          enabled: true,
-          items: sortItems || [],
-          activeType: searchParams.type,
-        }}
-      /> */}
+      <Article article={articleBySlug.data[0]} />
     </>
   );
 };

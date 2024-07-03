@@ -1,14 +1,29 @@
 @import "@/shared/styles/_vars";
 
 .notFound {
-  background-color: $bg-black;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  color: $white;
+
+  &.lightBg {
+    background-color: $bg-white;
+    color: $light-black;
+
+    & .code {
+      color: $bg-white;
+    }
+  }
+  &.darkBg {
+    background-color: $bg-black;
+    color: $white;
+
+    & .code {
+      color: $bg-black;
+    }
+  }
 }
 .code {
   @include inter(800);
