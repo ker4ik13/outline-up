@@ -11,7 +11,7 @@ export const generateStaticParams = async () => {
   const articles = await ArticleService.getAllArticles({ limit: 100 });
 
   if (!articles.data.data) {
-    return;
+    return [];
   }
 
   const slugs = articles.data.data.map((article) => ({
