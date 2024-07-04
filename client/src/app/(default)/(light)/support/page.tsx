@@ -44,6 +44,7 @@ const UserSupportPage = async () => {
             key={supportAccordions.data[0].attributes.name}
             moreText={supportAccordions.data[0].attributes.moreText}
             isGrayBg
+            lowerPadding
           />
         )}
     </>

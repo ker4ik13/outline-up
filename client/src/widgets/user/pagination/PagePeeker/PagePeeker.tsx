@@ -9,6 +9,11 @@ interface PagePeekerProps {
   title?: string;
   buttonText?: string;
   meta: Meta;
+  params?: {
+    type?: string;
+    page?: number;
+    limit?: number;
+  };
   closeModal: () => void;
 }
 
@@ -17,6 +22,7 @@ export const PagePeeker = ({
   buttonText,
   meta,
   closeModal,
+  params,
 }: PagePeekerProps) => {
   const [value, setValue] = useState<number | "">("");
   const [isValid, setIsValid] = useState(false);
@@ -63,6 +69,7 @@ export const PagePeeker = ({
           <SharedButton
             href={{
               query: {
+                ...params,
                 page: value,
               },
             }}

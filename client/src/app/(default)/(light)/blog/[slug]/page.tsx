@@ -28,7 +28,7 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const article = await ArticleService.getArticleBySlug(params.slug);
 
-  if (!article.data || article.data.length === 0) {
+  if (!article.data.length || !article.data[0]) {
     return notFound();
   }
 
@@ -58,6 +58,10 @@ export const generateMetadata = async ({
 const ArticlePage = async ({ params }: { params: { slug: string } }) => {
   const articleBySlug = await ArticleService.getArticleBySlug(params.slug);
   const moreArticles = await ArticleService.getMoreArticles(params.slug);
+
+  if (!articleBySlug.data.length || !articleBySlug.data[0]) {
+    return notFound();
+  }
 
   return (
     <>

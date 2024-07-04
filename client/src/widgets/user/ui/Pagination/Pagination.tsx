@@ -63,7 +63,11 @@ export const Pagination = ({ meta, params }: PaginationProps) => {
   return (
     <>
       <RoundModal closeModal={() => toggleModal(false)} isOpen={isOpenModal}>
-        <PagePeeker meta={meta} closeModal={() => toggleModal(false)} />
+        <PagePeeker
+          meta={meta}
+          closeModal={() => toggleModal(false)}
+          params={params}
+        />
       </RoundModal>
       <div className={styles.pagination}>
         {/* Предыдущая страница */}

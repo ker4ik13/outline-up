@@ -3,7 +3,6 @@
 .articles {
   background-color: $bg-white;
   padding: rem(200) 0;
-  overflow: hidden;
   position: relative;
   @include default-block-styles();
 
