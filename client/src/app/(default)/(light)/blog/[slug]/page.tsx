@@ -10,7 +10,7 @@ export const revalidate = 30; // Обновление всех данных
 export const generateStaticParams = async () => {
   const articles = await ArticleService.getAllArticles({ limit: 100 });
 
-  if (!articles.data.data) {
+  if (!articles.data.data || articles.data.data.length === 0) {
     return [];
   }
 
@@ -28,7 +28,7 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
   const article = await ArticleService.getArticleBySlug(params.slug);
 
-  if (!article || !article.data || !article.data[0]) {
+  if (!article.data || article.data.length === 0) {
     return notFound();
   }
 
