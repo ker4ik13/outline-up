@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ["localhost", process.env.NEXT_PUBLIC_API_URL],
+    domains: [process.env.NEXT_PUBLIC_API_HOSTNAME],
   },
 };
 
