@@ -2,14 +2,7 @@
 
 const nextConfig = {
   images: {
-    // TODO: Удалить домены
-    domains: [
-      "placehold.co",
-      "secureservercdn.net",
-      "api.qrserver.com",
-      // "http://localhost:3333",
-      "localhost",
-    ],
+    domains: ["localhost", process.env.NEXT_PUBLIC_API_URL],
   },
 };
 
