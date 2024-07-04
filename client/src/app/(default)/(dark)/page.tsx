@@ -74,7 +74,9 @@ const UserMainPage = async () => {
       ) : (
         <Accordions title="Вопросы и ответы" accordions={questionsAndAnswers} />
       )}
-      <Articles title="Статьи" articles={mainArticles.data} mainArticles />
+      {mainArticles.data.data.length > 0 && (
+        <Articles title="Статьи" articles={mainArticles.data} mainArticles />
+      )}
     </>
   );
 };

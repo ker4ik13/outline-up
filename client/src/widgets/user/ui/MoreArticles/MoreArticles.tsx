@@ -39,13 +39,6 @@ export const MoreArticles = ({ articles, title }: MoreArticlesProps) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* <div className={styles.articles}>
-            {articles.map((article) => (
-              <div className={styles.article} key={article.id}>
-                <ArticleCard article={article} />
-              </div>
-            ))}
-          </div> */}
         </div>
       </div>
     </div>

@@ -10,6 +10,10 @@ export const revalidate = 30; // Обновление всех данных
 export const generateStaticParams = async () => {
   const articles = await ArticleService.getAllArticles({ limit: 100 });
 
+  if (!articles.data.data) {
+    return;
+  }
+
   const slugs = articles.data.data.map((article) => ({
     slug: article.attributes.slug,
   }));

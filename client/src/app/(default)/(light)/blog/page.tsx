@@ -28,19 +28,21 @@ const ArticlesPage = async ({
 
   return (
     <>
-      <Articles
-        title="Статьи"
-        articles={allArticles.data}
-        pagination={{
-          enabled: true,
-          meta: allArticles.data.meta,
-        }}
-        sort={{
-          enabled: true,
-          items: sortItems || [],
-          activeType: searchParams.type,
-        }}
-      />
+      {allArticles.data.data.length > 0 && (
+        <Articles
+          title="Статьи"
+          articles={allArticles.data}
+          pagination={{
+            enabled: true,
+            meta: allArticles.data.meta,
+          }}
+          sort={{
+            enabled: true,
+            items: sortItems || [],
+            activeType: searchParams.type,
+          }}
+        />
+      )}
     </>
   );
 };
