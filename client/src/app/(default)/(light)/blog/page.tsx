@@ -1,4 +1,5 @@
 import { ArticleService, SortService } from "@/services/content";
+import { appLinks } from "@/shared/constants";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
 import { Articles } from "@/widgets/user/ui";
 import type { Metadata } from "next/types";
@@ -7,7 +8,7 @@ export const revalidate = 30; // Обновление всех данных
 
 // Генерация мета-тегов
 export const generateMetadata = async (): Promise<Metadata> => {
-  return generateCustomMetadata("/articles", "website");
+  return generateCustomMetadata(appLinks.user.articles.main, "website");
 };
 
 const ArticlesPage = async ({
