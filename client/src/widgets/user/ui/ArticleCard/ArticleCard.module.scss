@@ -3,12 +3,12 @@
 .articleCard {
   display: flex;
   flex-direction: column;
-  gap: rem(30);
-  padding-bottom: rem(30);
   max-width: rem(625);
   width: 100%;
   text-decoration: none;
   transition: all 0.2s;
+  background-color: $bg-white;
+  border-radius: $border-radius;
 
   &:hover {
     -webkit-filter: drop-shadow(0 0 rem(30) rgba(21, 1, 79, 0.1));
@@ -54,6 +54,7 @@
   flex-direction: column;
   gap: rem(15);
   width: 100%;
+  padding: rem(30) rem(20);
 }
 .articleTitle {
   @include desktop-h3();

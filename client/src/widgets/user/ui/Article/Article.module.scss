@@ -73,11 +73,17 @@
   @include container();
   padding: 0;
   max-width: rem(1060);
+  color: $light-black;
+  white-space: pre-wrap;
   display: flex;
   flex-direction: column;
   gap: rem(50);
-  color: $light-black;
-  white-space: pre-wrap;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: rem(50);
+  }
 
   & > * {
     @include desktop-p();
@@ -100,7 +106,7 @@
 
   & h3 {
     @include desktop-h3();
-    margin: rem(50) 0;
+    margin: rem(50) 0 0;
     text-wrap: pretty;
   }
 
@@ -139,7 +145,7 @@
 
     & h3 {
       @include mob-h3();
-      margin: rem(30) 0;
+      margin: rem(30) 0 0;
     }
 
     & blockquote {

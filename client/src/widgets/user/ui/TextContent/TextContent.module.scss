@@ -79,6 +79,10 @@
     white-space: pre-wrap;
   }
 
+  & strong {
+    font-weight: bolder;
+  }
+
   & a {
     @include desktop-link();
     color: inherit;
