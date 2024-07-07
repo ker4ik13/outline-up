@@ -115,7 +115,10 @@
     background-color: $bg-dark-white;
     padding: rem(50);
     border-radius: $border-radius;
-    @include desktop-p-light();
+
+    & p {
+      @include desktop-p-light();
+    }
   }
 
   & img {
@@ -150,7 +153,10 @@
 
     & blockquote {
       padding: rem(30);
-      @include mob-p-light();
+
+      & p {
+        @include mob-p-light();
+      }
     }
 
     & img {

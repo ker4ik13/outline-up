@@ -35,6 +35,7 @@ export const Article = ({ article }: ArticleProps) => {
               article.attributes.preview.data.attributes.alternativeText ||
               article.attributes.title
             }
+            quality={100}
             className={styles.previewImage}
             width={1280}
             height={530}
