@@ -1,3 +1,4 @@
+import type { StrapiImageData } from "../api";
 import type { SiteType } from "./SiteType";
 
 export interface MetaTags {
@@ -11,6 +12,6 @@ export interface MetaTags {
     note?: string;
     createdAt: string;
     updatedAt?: string;
-    image?: unknown;
+    image?: StrapiImageData;
   };
 }

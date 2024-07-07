@@ -35,11 +35,14 @@ export const generateCustomMetadata = async (
     description: response.data.data[0].attributes.description,
     keywords: response.data.data[0].attributes.keywords,
     openGraph: {
-      type: response.data.data[0].attributes.type || type,
+      type: response.data.data[0].attributes.type || type || "website",
       title: response.data.data[0].attributes.title,
       description: response.data.data[0].attributes.description,
       siteName: SITE_NAME,
       url: `${CLIENT_URL}${response.data.data[0].attributes.path || path}`,
+      images: [
+        `${CLIENT_URL}${response.data.data[0].attributes.image?.data.attributes.url}`,
+      ],
     },
     alternates: {
       canonical: `${CLIENT_URL}${

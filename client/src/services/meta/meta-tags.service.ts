@@ -8,7 +8,7 @@ export class MetaTagsService {
   // Получить мета-теги по странице
   static async getMetaTagsByPath(path: string) {
     const response = await $content.get<Data<MetaTags>>(
-      `/meta-tags-api?populate=*&path=${path}`
+      `/meta-tags-api?populate=*&filters[path][$eq]=${path}`
     );
     return response;
   }
