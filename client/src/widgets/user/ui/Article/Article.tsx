@@ -29,7 +29,7 @@ export const Article = ({ article }: ArticleProps) => {
         <div className={styles.preview}>
           <Image
             src={setServerUrlBeforeSrc(
-              article.attributes.preview.data.attributes.formats.large.url
+              article.attributes.preview.data.attributes.url
             )}
             alt={
               article.attributes.preview.data.attributes.alternativeText ||

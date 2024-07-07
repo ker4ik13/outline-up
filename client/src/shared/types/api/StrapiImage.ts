@@ -8,6 +8,16 @@ export interface StrapiImageData {
       caption?: string;
       width: number;
       height: number;
+      url: string;
+      size: number;
+      mime: string;
+      hash: string;
+      ext: string;
+      previewUrl?: string;
+      provider?: string;
+      provider_metadata?: string;
+      createdAt: string;
+      updatedAt?: string;
       formats: {
         large: StrapiImage;
         small: StrapiImage;
