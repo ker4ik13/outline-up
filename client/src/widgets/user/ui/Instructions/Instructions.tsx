@@ -328,16 +328,18 @@ export const Instructions = ({
                   {insruction.attributes.description && (
                     <Markdown>{insruction.attributes.description}</Markdown>
                   )}
-                  {insruction.attributes.values.map((value, index) => (
-                    <Accordion
-                      id={index}
-                      key={index}
-                      title={value.title}
-                      content={value.content}
-                      toggleAccordion={() => toggleAccordion(index)}
-                      isOpen={openIndex === index}
-                    />
-                  ))}
+                  <div className={styles.accordions}>
+                    {insruction.attributes.values.map((value, index) => (
+                      <Accordion
+                        id={index}
+                        key={index}
+                        title={value.title}
+                        content={value.content}
+                        toggleAccordion={() => toggleAccordion(index)}
+                        isOpen={openIndex === index}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

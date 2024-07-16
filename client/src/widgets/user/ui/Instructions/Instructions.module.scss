@@ -102,6 +102,13 @@
     }
   }
 }
+.accordions {
+  margin-top: rem(10);
+
+  @media screen and (max-width: $max-768) {
+    margin-top: rem(30);
+  }
+}
 .items {
   display: flex;
   align-items: stretch;
