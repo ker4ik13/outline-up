@@ -1,3 +1,4 @@
+import { AccordionUserService } from "@/services/content";
 import { appLinks } from "@/shared/constants";
 import { generateCustomMetadata } from "@/shared/helpers/lib";
 import { Instructions } from "@/widgets/user/ui";
@@ -31,10 +32,12 @@ export const generateMetadata = async (): Promise<Metadata> => {
 //   },
 // };
 
-const UserInstructionsPage = () => {
+const UserInstructionsPage = async () => {
+  const accordions = await AccordionUserService.getInstructions();
+
   return (
     <>
-      <Instructions />
+      <Instructions moreInstructions={accordions.data} />
     </>
   );
 };

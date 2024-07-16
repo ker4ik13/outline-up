@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accordions_tutorial",
+  "info": {
+    "singularName": "accordion-tutorial",
+    "pluralName": "accordions-tutorial",
+    "displayName": "Аккордеоны инструкции"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {},
+      "component": "ui.akkordeon",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {},
+      "type": "richtext"
+    }
+  }
+}

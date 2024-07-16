@@ -1,4 +1,5 @@
 import type { Accordion as IAccordion } from "@/shared/types/ui";
+import Markdown from "markdown-to-jsx";
 import { ArrowIcon } from "../icons";
 import styles from "./Accordion.module.scss";
 
@@ -22,7 +23,7 @@ export const Accordion = ({
         </div>
 
         <div className={`${styles.content} ${isOpen && styles.open}`}>
-          {content}
+          <Markdown>{content}</Markdown>
         </div>
       </div>
     );
@@ -34,7 +35,7 @@ export const Accordion = ({
           <ArrowIcon className={`${styles.arrow} ${isOpen && styles.open}`} />
         </div>
         <div className={`${styles.content} ${isOpen && styles.open}`}>
-          {content}
+          <Markdown>{content}</Markdown>
         </div>
       </div>
     );

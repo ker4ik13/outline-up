@@ -47,6 +47,32 @@
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
+  white-space: pre-wrap;
+
+  & ol,
+  ul {
+  }
+
+  & * {
+    margin-top: rem(16);
+    margin-left: 0;
+    line-height: 1.5;
+    @include desktop-p();
+    color: inherit;
+    white-space: pre-wrap;
+  }
+
+  & strong {
+    font-weight: bolder;
+  }
+
+  & a {
+    @include desktop-link();
+    color: inherit;
+    cursor: pointer;
+    font-style: normal;
+    white-space: pre-wrap;
+  }
 
   &.open {
     padding-top: rem(15);
@@ -61,5 +87,10 @@
 
   @media screen and (max-width: $max-768) {
     @include mob-p();
+
+    & a {
+      @include mob-link();
+      font-style: normal;
+    }
   }
 }

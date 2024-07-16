@@ -12,7 +12,7 @@ export const generateCustomMetadata = async (
   const response = await MetaTagsService.getMetaTagsByPath(path);
 
   // Если нет мета-тегов, то возвращаем стандартные мета-теги
-  if (!response.data.data) {
+  if (!response.data.data || !response.data.data[0].attributes) {
     return {
       metadataBase: new URL(`${CLIENT_URL}${path}`),
       title: SITE_NAME,
@@ -29,7 +29,11 @@ export const generateCustomMetadata = async (
 
   return {
     metadataBase: new URL(
-      `${CLIENT_URL}${response.data.data[0].attributes.path || path}`
+      `${CLIENT_URL}${
+        response.data.data[0].attributes.path
+          ? response.data.data[0].attributes.path
+          : path
+      }`
     ),
     title: response.data.data[0].attributes.title,
     description: response.data.data[0].attributes.description,
@@ -41,7 +45,11 @@ export const generateCustomMetadata = async (
       siteName: SITE_NAME,
       url: `${CLIENT_URL}${response.data.data[0].attributes.path || path}`,
       images: [
-        `${CLIENT_URL}${response.data.data[0].attributes.image?.data.attributes.url}`,
+        `${CLIENT_URL}${
+          response.data.data[0].attributes.image?.data
+            ? response.data.data[0].attributes.image.data.attributes.url
+            : ""
+        }`,
       ],
     },
     alternates: {

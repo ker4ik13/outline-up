@@ -5,10 +5,11 @@ export interface UiAkkordeon extends Schema.Component {
   info: {
     displayName: '\u0410\u043A\u043A\u043E\u0440\u0434\u0435\u043E\u043D';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     title: Attribute.Text & Attribute.Required;
-    content: Attribute.Text & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
   };
 }
 

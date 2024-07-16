@@ -788,6 +788,40 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAccordionTutorialAccordionTutorial
+  extends Schema.CollectionType {
+  collectionName: 'accordions_tutorial';
+  info: {
+    singularName: 'accordion-tutorial';
+    pluralName: 'accordions-tutorial';
+    displayName: '\u0410\u043A\u043A\u043E\u0440\u0434\u0435\u043E\u043D\u044B \u0438\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    values: Attribute.Component<'ui.akkordeon', true> & Attribute.Required;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accordion-tutorial.accordion-tutorial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accordion-tutorial.accordion-tutorial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAccordionsAccordions extends Schema.CollectionType {
   collectionName: 'accordions_api';
   info: {
@@ -1030,6 +1064,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::accordion-tutorial.accordion-tutorial': ApiAccordionTutorialAccordionTutorial;
       'api::accordions.accordions': ApiAccordionsAccordions;
       'api::articles.articles': ApiArticlesArticles;
       'api::meta-tags.meta-tags': ApiMetaTagsMetaTags;

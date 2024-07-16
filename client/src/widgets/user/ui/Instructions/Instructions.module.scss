@@ -79,27 +79,26 @@
   max-width: rem(740);
   width: 100%;
   color: inherit;
+  @include desktop-p();
+  white-space: pre-wrap;
 
-  & ol {
-    display: flex;
-    flex-direction: column;
-    gap: rem(30);
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
 
-    @media screen and (max-width: $max-768) {
-      gap: rem(15);
+  @media screen and (max-width: $max-768) {
+    gap: rem(15);
+  }
+
+  & li {
+    cursor: default;
+
+    & p {
+      cursor: text;
     }
 
-    & li {
-      @include desktop-p();
-      cursor: default;
-
-      & p {
-        cursor: text;
-      }
-
-      @media screen and (max-width: $max-768) {
-        @include mob-p();
-      }
+    @media screen and (max-width: $max-768) {
+      @include mob-p();
     }
   }
 }

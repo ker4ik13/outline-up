@@ -2,8 +2,11 @@
 
 import { appLinks } from "@/shared/constants";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
-import type { DefaultBlockProps } from "@/shared/types/ui";
-import { SharedButton } from "@/shared/ui/user";
+import type {
+  DefaultBlockProps,
+  InstructionAccordion,
+} from "@/shared/types/ui";
+import { Accordion, SharedButton } from "@/shared/ui/user";
 import {
   AndroidIcon,
   AppleIcon,
@@ -11,6 +14,7 @@ import {
   LinuxIcon,
   WindowsIcon,
 } from "@/shared/ui/user/icons";
+import Markdown from "markdown-to-jsx";
 import { useState } from "react";
 import styles from "./Instructions.module.scss";
 
@@ -24,6 +28,7 @@ interface DownloadItem {
 interface Props extends DefaultBlockProps {
   title?: string;
   items?: DownloadItem[];
+  moreInstructions?: InstructionAccordion[];
 }
 
 const initialItems: DownloadItem[] = [
@@ -71,8 +76,21 @@ export const Instructions = ({
   title,
   items,
   className,
+  moreInstructions,
 }: Props) => {
   const [selectedItem, setSelectedItem] = useState(initialItems[0]);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleAccordion = (index: number | null) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) {
+      if (index === openIndex) {
+        setOpenIndex(null);
+        return;
+      }
+    }
+
+    setOpenIndex(index);
+  };
 
   return (
     <div
@@ -162,12 +180,17 @@ export const Instructions = ({
                     Telegram-бот «OutlineUpBot»
                   </p>
                 </li>
+                <br />
                 <li>
                   <p>Перейдите в бота и нажмите на кнопку «Начать»</p>
                 </li>
+                <br />
+
                 <li>
                   <p>Для регистрации отправьте боту свое Имя и Фамилию</p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     На следующем шаге бот попросит вас указать номер телефона.
@@ -175,12 +198,16 @@ export const Instructions = ({
                     телефона»
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     После завершения регистрации вам будет доступен тестовый
                     ключ для использования пробного периода длительностью 3 дня
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     Чтобы купить ключ перейдите в главное меню и нажмите на
@@ -188,15 +215,21 @@ export const Instructions = ({
                     главном меню нажмите на кнопку «Купить ключ»
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     Выберите подходящий тариф. Если у вас есть промокод на
                     скидку нажмите на кнопку «Ввести промокод»
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>Нажмите на кнопку «Оплатить»</p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     В открывшемся окне укажите данные вашей банковской карты и
@@ -205,6 +238,8 @@ export const Instructions = ({
                     платежный сервис Юкасса
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     После успешной оплаты бот выдаст вам ключ доступа к серверу.
@@ -235,18 +270,24 @@ export const Instructions = ({
                     символов). Для этого просто нажмите на ключ
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     Откройте установленное приложение Outline и нажмите кнопку
                     «Добавить сервер» или иконку плюсика в правом верхнем углу
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     В открывшемся окне вставьте скопированный ранее ключ и
                     нажмите кнопку «Добавить сервер»
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     Теперь сервер Outline Up будет отображаться на главном
@@ -255,6 +296,8 @@ export const Instructions = ({
                     VPN
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     При первом подключении к VPN операционная система задаст
@@ -262,6 +305,8 @@ export const Instructions = ({
                     с VPN?» Нажмите на кнопку «Разрешить»
                   </p>
                 </li>
+                <br />
+
                 <li>
                   <p>
                     Готово! Чтобы выключить VPN, откройте приложение Outline и
@@ -271,6 +316,31 @@ export const Instructions = ({
               </ol>
             </div>
           </div>
+          {/* Инструкции оставшиеся */}
+          {moreInstructions &&
+            moreInstructions.length > 0 &&
+            moreInstructions.map((insruction) => (
+              <div className={styles.instructionItem} key={insruction.id}>
+                <p className={styles.instructionTitle}>
+                  {insruction.attributes.title}
+                </p>
+                <div className={styles.instructionContent}>
+                  {insruction.attributes.description && (
+                    <Markdown>{insruction.attributes.description}</Markdown>
+                  )}
+                  {insruction.attributes.values.map((value, index) => (
+                    <Accordion
+                      id={index}
+                      key={index}
+                      title={value.title}
+                      content={value.content}
+                      toggleAccordion={() => toggleAccordion(index)}
+                      isOpen={openIndex === index}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@
   "collectionName": "components_ui_akkordeon",
   "info": {
     "displayName": "Аккордеон",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,7 +12,7 @@
       "required": true
     },
     "content": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     }
   }
