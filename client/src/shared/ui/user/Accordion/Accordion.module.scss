@@ -88,6 +88,15 @@
   @media screen and (max-width: $max-768) {
     @include mob-p();
 
+    & * {
+      @include mob-p();
+
+      & a {
+        @include mob-link();
+        font-style: normal;
+      }
+    }
+
     & a {
       @include mob-link();
       font-style: normal;

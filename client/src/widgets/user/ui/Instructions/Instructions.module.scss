@@ -88,6 +88,7 @@
 
   @media screen and (max-width: $max-768) {
     gap: rem(15);
+    @include mob-p();
   }
 
   & li {
@@ -107,6 +108,7 @@
 
   @media screen and (max-width: $max-768) {
     margin-top: rem(30);
+    @include mob-p();
   }
 }
 .items {
