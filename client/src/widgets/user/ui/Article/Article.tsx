@@ -64,7 +64,10 @@ export const Article = ({ article }: ArticleProps) => {
         </div>
       </div>
       {article.attributes.accordions && article.attributes.accordions.data && (
-        <Accordions {...article.attributes.accordions.data.attributes} />
+        <Accordions
+          accordions={article.attributes.accordions.data.attributes.values}
+          title={article.attributes.accordions.data.attributes.title}
+        />
       )}
       {article.attributes.showPrices && (
         <Rates
