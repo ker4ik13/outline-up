@@ -13,7 +13,10 @@ export const Footer = () => {
         </div>
         <ul className={styles.pages}>
           <li className={styles.page}>
-            <Link href="#" className={styles.pageLink}>
+            <Link
+              href={appLinks.user.returnPolicy.main}
+              className={styles.pageLink}
+            >
               Правила возврата
             </Link>
           </li>

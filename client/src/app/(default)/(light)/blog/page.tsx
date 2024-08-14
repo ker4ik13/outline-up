@@ -20,7 +20,7 @@ const ArticlesPage = async ({
     limit?: number;
   };
 }) => {
-  const allArticles = await ArticleService.getAllArticles({
+  const mainArticles = await ArticleService.getAllArticles({
     page: searchParams.page,
     type: searchParams.type,
     limit: searchParams.limit,
@@ -29,13 +29,13 @@ const ArticlesPage = async ({
 
   return (
     <>
-      {allArticles.data.data.length > 0 && (
+      {mainArticles.data.data.length > 0 && (
         <Articles
           title="Статьи"
-          articles={allArticles.data}
+          articles={mainArticles.data}
           pagination={{
             enabled: true,
-            meta: allArticles.data.meta,
+            meta: mainArticles.data.meta,
           }}
           sort={{
             enabled: true,

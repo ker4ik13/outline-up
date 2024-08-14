@@ -7,7 +7,7 @@ export class ArticleService {
   // Получить статьи на главной
   static async getMainArticles(count: number = 4) {
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&pagination[pageSize]=${count}&sort[0]=publishedAt:desc`
+      `articles-api?populate=*&filters[onMainPage]=true&pagination[pageSize]=${count}&sort[0]=publishedAt:desc`
     );
     return response;
   }
@@ -22,7 +22,8 @@ export class ArticleService {
     page?: number;
     type?: string;
   }) {
-    let link = "articles-api?populate=*&sort[0]=publishedAt:desc";
+    let link =
+      "articles-api?populate[0]=preview.data&populate[1]=accordions.values&sort[0]=publishedAt:desc";
     if (type) {
       link += `&filters[type][$eq]=${type}`;
     }
@@ -35,7 +36,7 @@ export class ArticleService {
   // Получить статью по ссылке
   static async getArticleBySlug(slug: string) {
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&filters[slug][$eq]=${slug}`
+      `articles-api?filters[slug][$eq]=${slug}&populate[0]=preview.data&populate[1]=accordions.values&populate[2]=showPrices.data`
     );
     return response.data;
   }
@@ -43,7 +44,7 @@ export class ArticleService {
   // Получить последнюю статью по типу
   static async getLastArticleByType(type: string) {
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&sort[0]=publishedAt:desc&filters[type][$eq]=${type}`
+      `articles-api?populate[0]=preview.data&populate[1]=accordions.values&sort[0]=publishedAt:desc&filters[type][$eq]=${type}`
     );
     return response.data;
   }
@@ -52,13 +53,13 @@ export class ArticleService {
   static async getMoreArticles(slug?: string) {
     if (!slug) {
       const response = await $content.get<Data<IArticle>>(
-        `articles-api?populate=*&sort[0]=publishedAt:desc`
+        `articles-api?populate[0]=preview.data&populate[1]=accordions.values&sort[0]=publishedAt:desc`
       );
       return response.data;
     }
 
     const response = await $content.get<Data<IArticle>>(
-      `articles-api?populate=*&sort[0]=publishedAt:desc&filters[slug][$ne]=${slug}`
+      `articles-api?populate[0]=preview.data&populate[1]=accordions.values&sort[0]=publishedAt:desc&filters[slug][$ne]=${slug}`
     );
     return response.data;
   }

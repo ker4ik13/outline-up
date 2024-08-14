@@ -22,6 +22,9 @@ export const appLinks = {
     offerta: {
       main: "/offer",
     },
+    returnPolicy: {
+      main: "/return-policy",
+    },
     support: {
       main: "/support",
     },

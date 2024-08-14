@@ -4,6 +4,8 @@ import type { IArticle } from "@/shared/types/api";
 import Markdown from "markdown-to-jsx";
 import Image from "next/image";
 import Link from "next/link";
+import { Accordions } from "../Accordions/Accordions";
+import { Rates } from "../Rates/Rates";
 import styles from "./Article.module.scss";
 
 interface ArticleProps {
@@ -12,7 +14,7 @@ interface ArticleProps {
 
 export const Article = ({ article }: ArticleProps) => {
   return (
-    <div className={styles.article}>
+    <article className={styles.article}>
       <div className={styles.container}>
         {/* Хлебные крошки */}
         <div className={styles.breadcrumbs}>
@@ -43,12 +45,12 @@ export const Article = ({ article }: ArticleProps) => {
         </div>
 
         {/* Контент */}
-        <article className={styles.content}>
+        <div className={styles.content}>
           <h1 className={styles.title}>{article.attributes.title}</h1>
           <h2 className={styles.description}>
             {article.attributes.description}
           </h2>
-          {/* Основной контент статьи */}
+          {/* Тут контент */}
           <Markdown>{article.attributes.content}</Markdown>
           <time
             className={styles.publishDate}
@@ -59,8 +61,17 @@ export const Article = ({ article }: ArticleProps) => {
             Опубликовано:{" "}
             {new Date(article.attributes.publishedAt).toLocaleDateString("ru")}
           </time>
-        </article>
+        </div>
       </div>
-    </div>
+      {article.attributes.accordions && article.attributes.accordions.data && (
+        <Accordions {...article.attributes.accordions.data.attributes} />
+      )}
+      {article.attributes.showPrices && (
+        <Rates
+          data={article.attributes.showPrices.data}
+          title={article.attributes.showPrices.title}
+        />
+      )}
+    </article>
   );
 };

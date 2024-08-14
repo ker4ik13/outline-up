@@ -1,4 +1,4 @@
-import { SITE_NAME } from "@/shared/constants";
+import { appLinks, SITE_NAME } from "@/shared/constants";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps, TextCard } from "@/shared/types/ui";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const initialCards: TextCard[] = [
     title: "Мгновенное получение",
     description: (
       <>
-        Отправим ключ на&nbsp;вашу электронную почту сразу&nbsp;же после
+        Моментально выдадим ключ в&nbsp;Telegram-боте сразу&nbsp;же после
         успешной оплаты любым удобным для&nbsp;вас способом
       </>
     ),
@@ -76,12 +76,12 @@ export const TextCards = ({
         </div>
         <p className={styles.helpText}>
           Если у&nbsp;вас возникнут проблемы с&nbsp;установкой и&nbsp;настройкой
-          приложения – напишите нам через{" "}
-          <Link href="#" target="_blank">
-            форму обратной связи
-          </Link>{" "}
-          или в&nbsp;Telegram. Мы поможем вам настроить VPN на&nbsp;вашем
-          устройстве, а&nbsp;если не&nbsp;получится – вернём деньги
+          приложения – напишите нам в&nbsp;
+          <Link href={appLinks.other.tgSupport} target="_blank">
+            Telegram
+          </Link>
+          . Мы поможем вам настроить VPN на&nbsp;вашем устройстве, а&nbsp;если
+          не&nbsp;получится – вернём деньги
         </p>
       </div>
     </div>

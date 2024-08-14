@@ -12,50 +12,51 @@ export const generateCustomMetadata = async (
   const response = await MetaTagsService.getMetaTagsByPath(path);
 
   // Если нет мета-тегов, то возвращаем стандартные мета-теги
-  if (!response.data.data || !response.data.data[0].attributes) {
+
+  if (response && response.data && response.data.data.length !== 0) {
     return {
-      metadataBase: new URL(`${CLIENT_URL}${path}`),
-      title: SITE_NAME,
+      metadataBase: new URL(
+        `${CLIENT_URL}${
+          response.data.data[0].attributes.path
+            ? response.data.data[0].attributes.path
+            : path
+        }`
+      ),
+      title: response.data.data[0].attributes.title,
+      description: response.data.data[0].attributes.description,
+      keywords: response.data.data[0].attributes.keywords,
       openGraph: {
+        type: response.data.data[0].attributes.type || type || "website",
+        title: response.data.data[0].attributes.title,
+        description: response.data.data[0].attributes.description,
         siteName: SITE_NAME,
-        url: `${CLIENT_URL}${path}`,
-        type: type || "website",
+        url: `${CLIENT_URL}${response.data.data[0].attributes.path || path}`,
+        images: [
+          `${CLIENT_URL}${
+            response.data.data[0].attributes.image?.data
+              ? response.data.data[0].attributes.image.data.attributes.url
+              : ""
+          }`,
+        ],
       },
       alternates: {
-        canonical: `${CLIENT_URL}${path}`,
+        canonical: `${CLIENT_URL}${
+          response.data.data[0].attributes.path || path
+        }`,
       },
     };
   }
 
   return {
-    metadataBase: new URL(
-      `${CLIENT_URL}${
-        response.data.data[0].attributes.path
-          ? response.data.data[0].attributes.path
-          : path
-      }`
-    ),
-    title: response.data.data[0].attributes.title,
-    description: response.data.data[0].attributes.description,
-    keywords: response.data.data[0].attributes.keywords,
+    metadataBase: new URL(`${CLIENT_URL}${path}`),
+    title: SITE_NAME,
     openGraph: {
-      type: response.data.data[0].attributes.type || type || "website",
-      title: response.data.data[0].attributes.title,
-      description: response.data.data[0].attributes.description,
       siteName: SITE_NAME,
-      url: `${CLIENT_URL}${response.data.data[0].attributes.path || path}`,
-      images: [
-        `${CLIENT_URL}${
-          response.data.data[0].attributes.image?.data
-            ? response.data.data[0].attributes.image.data.attributes.url
-            : ""
-        }`,
-      ],
+      url: `${CLIENT_URL}${path}`,
+      type: type || "website",
     },
     alternates: {
-      canonical: `${CLIENT_URL}${
-        response.data.data[0].attributes.path || path
-      }`,
+      canonical: `${CLIENT_URL}${path}`,
     },
   };
 };

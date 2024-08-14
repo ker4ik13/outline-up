@@ -1,3 +1,5 @@
+import type { Accordion, Rate } from "../ui";
+import type { IAccordionsOne } from "./IAccordions";
 import type { StrapiImageData } from "./StrapiImage";
 
 export interface IArticle {
@@ -14,5 +16,11 @@ export interface IArticle {
     createdAt: string;
     updatedAt?: string;
     publishedAt: string;
+    accordions?: IAccordionsOne<Accordion>;
+    showPrices?: {
+      id: number;
+      title?: string;
+      data: Rate[];
+    };
   };
 }
