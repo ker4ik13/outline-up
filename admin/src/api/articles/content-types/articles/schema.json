@@ -20,10 +20,6 @@
       "type": "text",
       "required": true
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "preview": {
       "type": "media",
       "multiple": false,
@@ -53,6 +49,20 @@
     },
     "keywords": {
       "type": "text"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "accordions": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::accordions.accordions"
+    },
+    "showPrices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.tarify"
     }
   }
 }

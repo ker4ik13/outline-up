@@ -26,11 +26,24 @@ export interface UiButton extends Schema.Component {
   };
 }
 
+export interface UiTarify extends Schema.Component {
+  collectionName: 'components_ui_tarify';
+  info: {
+    displayName: '\u0422\u0430\u0440\u0438\u0444\u044B';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String;
+    data: Attribute.Relation<'ui.tarify', 'oneToMany', 'api::rates.rates'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'ui.akkordeon': UiAkkordeon;
       'ui.button': UiButton;
+      'ui.tarify': UiTarify;
     }
   }
 }

@@ -869,7 +869,6 @@ export interface ApiArticlesArticles extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
-    content: Attribute.RichText & Attribute.Required;
     preview: Attribute.Media<'images'> & Attribute.Required;
     type: Attribute.Enumeration<
       [
@@ -883,6 +882,13 @@ export interface ApiArticlesArticles extends Schema.CollectionType {
     onMainPage: Attribute.Boolean & Attribute.DefaultTo<false>;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
     keywords: Attribute.Text;
+    content: Attribute.RichText & Attribute.Required;
+    accordions: Attribute.Relation<
+      'api::articles.articles',
+      'oneToOne',
+      'api::accordions.accordions'
+    >;
+    showPrices: Attribute.Component<'ui.tarify'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

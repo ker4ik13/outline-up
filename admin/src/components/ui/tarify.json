@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_tarify",
+  "info": {
+    "displayName": "Тарифы",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rates.rates"
+    }
+  }
+}
