@@ -134,6 +134,13 @@
     margin: rem(50) 0;
   }
 
+  & ul,
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+
   @media screen and (max-width: $max-768) {
     gap: rem(30);
 
