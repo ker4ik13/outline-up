@@ -52,7 +52,7 @@ export const Article = ({ article }: ArticleProps) => {
           </h2>
           {/* Тут контент */}
           <Markdown>{article.attributes.content}</Markdown>
-          <time
+          {/* <time
             className={styles.publishDate}
             dateTime={new Date(
               article.attributes.publishedAt
@@ -60,19 +60,20 @@ export const Article = ({ article }: ArticleProps) => {
           >
             Опубликовано:{" "}
             {new Date(article.attributes.publishedAt).toLocaleDateString("ru")}
-          </time>
+          </time> */}
         </div>
       </div>
-      {article.attributes.accordions && article.attributes.accordions.data && (
-        <Accordions
-          accordions={article.attributes.accordions.data.attributes.values}
-          title={article.attributes.accordions.data.attributes.title}
-        />
-      )}
+
       {article.attributes.showPrices && (
         <Rates
           data={article.attributes.showPrices.data}
           title={article.attributes.showPrices.title}
+        />
+      )}
+      {article.attributes.accordions && article.attributes.accordions.data && (
+        <Accordions
+          accordions={article.attributes.accordions.data.attributes.values}
+          title={article.attributes.accordions.data.attributes.title}
         />
       )}
     </article>

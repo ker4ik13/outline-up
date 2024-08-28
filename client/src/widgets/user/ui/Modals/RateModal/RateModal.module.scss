@@ -36,7 +36,7 @@
   }
 }
 .closeButton {
-  position: absolute;
+  position: fixed;
   top: rem(30);
   right: rem(30);
   background-color: $bg-dark-white;
@@ -95,8 +95,8 @@
   padding: rem(100) rem(110);
   background-color: $bg-white;
   border-radius: $border-radius;
+  max-height: 92vh;
   overflow: auto;
-  max-height: 94vh;
   touch-action: none;
   transition: transform 0.1s;
 
@@ -126,7 +126,6 @@
   justify-content: space-between;
   gap: rem(30);
   margin-top: rem(70);
-  min-height: rem(480);
 
   @media screen and (max-width: $max-1000) {
     flex-direction: column;

@@ -104,10 +104,6 @@ export const RateModal = ({ rate, isOpen, closeModal }: Props) => {
                 перенаправлены в&nbsp;приложение Telegram
               </p>
               <br />
-              <p>
-                Для осуществления покупки будет необходимо зарегистрироваться
-                и&nbsp;указать действующий номер телефона
-              </p>
               <SharedButton
                 href={appLinks.other.tgBot}
                 target="_blank"
