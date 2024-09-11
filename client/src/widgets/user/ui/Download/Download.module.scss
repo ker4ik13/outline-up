@@ -135,6 +135,24 @@
     width: 100%;
   }
 }
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .button {
   min-width: rem(300);
+}
+
+.link {
+  margin: 0 auto;
+  margin-top: rem(15);
+  @include desktop-link();
+  color: $light-black;
+  cursor: pointer;
+  text-align: center;
+
+  @media screen and (max-width: $max-768) {
+    @include mob-link();
+  }
 }

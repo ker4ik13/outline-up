@@ -1,5 +1,7 @@
 "use client";
 
+import { appLinks } from "@/shared/constants";
+import { getUserPlatform } from "@/shared/helpers/lib";
 import { getDefaultBlockStyles } from "@/shared/helpers/ui";
 import type { DefaultBlockProps } from "@/shared/types/ui";
 import { SharedButton } from "@/shared/ui/user";
@@ -11,7 +13,8 @@ import {
   LinuxIcon,
   WindowsIcon,
 } from "@/shared/ui/user/icons";
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./Download.module.scss";
 
 interface DownloadItem {
@@ -29,31 +32,31 @@ interface Props extends DefaultBlockProps {
 const initialItems: DownloadItem[] = [
   {
     name: "Windows",
-    slug: "windows",
+    slug: "Windows",
     href: "https://s3.amazonaws.com/outline-releases/client/windows/stable/Outline-Client.exe",
     icon: <WindowsIcon className={styles.itemIcon} />,
   },
   {
     name: "Mac OS",
-    slug: "mac-os",
+    slug: "Macintosh",
     href: "https://itunes.apple.com/us/app/outline-app/id1356178125",
     icon: <AppleIcon className={styles.itemIcon} />,
   },
   {
     name: "Linux",
-    slug: "linux",
+    slug: "Linux",
     href: "https://s3.amazonaws.com/outline-releases/client/linux/stable/Outline-Client.AppImage",
     icon: <LinuxIcon className={styles.itemIcon} />,
   },
   {
     name: "Android",
-    slug: "android",
+    slug: "Android",
     href: "https://play.google.com/store/apps/details?id=org.outline.android.client",
     icon: <AndroidIcon className={styles.itemIcon} />,
   },
   {
     name: "iOS",
-    slug: "ios",
+    slug: "iPhone",
     href: "https://itunes.apple.com/us/app/outline-app/id1356177741",
     icon: <AppleIcon className={styles.itemIcon} />,
   },
@@ -72,7 +75,19 @@ export const Download = ({
   items,
   className,
 }: Props) => {
-  const [selectedItem, setSelectedItem] = useState(initialItems[0]);
+  const [selectedItem, setSelectedItem] = useState<Partial<DownloadItem>>({});
+  const userAgent = typeof window !== "undefined" && navigator.userAgent;
+
+  useEffect(() => {
+    const userPlatform = getUserPlatform(userAgent || "");
+    const defaultSelectedItem = items
+      ? items.filter((item) => item.slug === userPlatform)[0]
+      : initialItems.filter((item) => item.slug === userPlatform)[0];
+
+    if (defaultSelectedItem) {
+      setSelectedItem(defaultSelectedItem);
+    }
+  }, []);
 
   return (
     <div
@@ -124,14 +139,19 @@ export const Download = ({
                 </button>
               ))}
         </div>
-        <div className={styles.buttonWrapper}>
-          <SharedButton
-            center
-            fullWidth
-            className={styles.button}
-            href={selectedItem.href}
-            target="_blank"
-          >{`Скачать для ${selectedItem.name}`}</SharedButton>
+        <div className={styles.buttons}>
+          <div className={styles.buttonWrapper}>
+            <SharedButton
+              center
+              fullWidth
+              className={styles.button}
+              href={selectedItem.href}
+              target="_blank"
+            >{`Скачать для ${selectedItem.name}`}</SharedButton>
+          </div>
+          <Link href={appLinks.user.buy.main} className={styles.link}>
+            Купить ключ доступа
+          </Link>
         </div>
       </div>
     </div>
