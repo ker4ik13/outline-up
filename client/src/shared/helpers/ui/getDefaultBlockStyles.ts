@@ -11,10 +11,13 @@ export const getDefaultBlockStyles = ({
   isGrayBg,
   className,
   styles,
+  withoutTopPadding,
 }: Props) => {
   return `${isGrayBg && styles.gray} ${
     rounded && rounded.top && styles.roundedTop
   } ${rounded && rounded.bottom && styles.roundedBottom} ${
     rounded && rounded.bottom && rounded.top && styles.rounded
-  } ${className && className}`;
+  } ${withoutTopPadding ? styles.withoutTopPadding : ""} ${
+    className && className
+  }`;
 };

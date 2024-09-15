@@ -6,11 +6,19 @@
   position: relative;
   @include default-block-styles();
 
+  &.withoutTopPadding {
+    padding-top: 0;
+  }
+
   @media screen and (max-width: $max-768) {
     padding: rem(80) 0;
 
     &.paddingTop {
       padding-top: rem(160);
+    }
+
+    &.withoutTopPadding {
+      padding-top: 0;
     }
   }
 }

@@ -33,6 +33,7 @@ export const Articles = async ({
   sort,
   articles,
   mainArticles,
+  withoutTopPadding,
 }: Props) => {
   return (
     <div
@@ -43,6 +44,7 @@ export const Articles = async ({
         isGrayBg,
         rounded,
         className,
+        withoutTopPadding,
       })}`}
     >
       <div className={styles.container}>
