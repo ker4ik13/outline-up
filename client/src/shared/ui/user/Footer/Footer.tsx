@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <p className={styles.copy}>&copy; {SITE_NAME} | 2024</p>
+        <p className={styles.copy}>&copy; {SITE_NAME} 2024</p>
         <div className={styles.authorInfo}>
           <p className={styles.authorInfoText}>ИП Пырьев Александр Иванович</p>
           <p className={styles.authorInfoText}>ИНН 711609923813</p>
@@ -31,6 +31,29 @@ export const Footer = () => {
             </Link>
           </li>
         </ul>
+        <div className={styles.authors}>
+          <div className={styles.author}>
+            <p className={styles.authorJob}>Дизайн:</p>
+            <Link
+              className={styles.authorLink}
+              href={"https://t.me/alexpyriev"}
+              target="_blank"
+            >
+              alexpyriev
+            </Link>
+          </div>
+          <div className={styles.author}>
+            <p className={styles.authorJob}>Разработка:</p>
+            <Link
+              className={styles.authorLink}
+              href={"https://hxh.agency"}
+              target="_blank"
+              aria-label="HxH Agency"
+            >
+              HxH Agency
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

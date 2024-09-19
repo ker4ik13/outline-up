@@ -71,3 +71,34 @@
   cursor: pointer;
   color: $light-black;
 }
+.authors {
+  display: flex;
+  align-items: center;
+  gap: rem(5);
+  flex-direction: column;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: rem(5);
+}
+.authorJob {
+  @include desktop-extra-small();
+  color: $light-black;
+}
+.authorLink {
+  @include desktop-extra-small();
+  cursor: pointer;
+  color: $light-black;
+  text-decoration: none;
+
+  &:active {
+    text-decoration: underline;
+  }
+
+  @media screen and (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
