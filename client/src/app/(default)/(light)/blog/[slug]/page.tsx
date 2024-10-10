@@ -1,5 +1,10 @@
 import { ArticleService } from "@/services/content";
-import { appLinks, CLIENT_URL, SITE_NAME } from "@/shared/constants";
+import {
+  appLinks,
+  CLIENT_URL,
+  SERVER_URL,
+  SITE_NAME,
+} from "@/shared/constants";
 import { Article, MoreArticles } from "@/widgets/user/ui";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next/types";
@@ -36,14 +41,24 @@ export const generateMetadata = async ({
     title: article.data[0].attributes.title,
     description: article.data[0].attributes.description,
     keywords: article.data[0].attributes.keywords,
+    authors: [{ name: SITE_NAME, url: CLIENT_URL }],
     openGraph: {
       title: article.data[0].attributes.title,
       description: article.data[0].attributes.description,
       type: "article",
+      authors: SITE_NAME,
       siteName: SITE_NAME,
+      publishedTime: article.data[0].attributes.publishedAt,
+      modifiedTime: article.data[0].attributes.updatedAt,
       url: `${CLIENT_URL}${appLinks.user.articles.bySlug(params.slug)}`,
       images: [
-        article.data[0].attributes.preview.data.attributes.formats.medium.url,
+        {
+          url: `${SERVER_URL}${article.data[0].attributes.preview.data.attributes.url}`,
+          type: article.data[0].attributes.preview.data.attributes.mime,
+          width: article.data[0].attributes.preview.data.attributes.width,
+          height: article.data[0].attributes.preview.data.attributes.height,
+          alt: article.data[0].attributes.title,
+        },
       ],
     },
     alternates: {
@@ -51,6 +66,9 @@ export const generateMetadata = async ({
       languages: {
         ru: `${CLIENT_URL}${appLinks.user.articles.bySlug(params.slug)}`,
       },
+    },
+    other: {
+      "telegram:channel": "@newsoutlineup",
     },
   };
 };

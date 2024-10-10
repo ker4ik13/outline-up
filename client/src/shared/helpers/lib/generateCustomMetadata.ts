@@ -1,5 +1,5 @@
 import { MetaTagsService } from "@/services/meta";
-import { CLIENT_URL, SITE_NAME } from "@/shared/constants";
+import { CLIENT_URL, SERVER_URL, SITE_NAME } from "@/shared/constants";
 import type { SiteType } from "@/shared/types/meta";
 import type { Metadata } from "next/types";
 
@@ -32,7 +32,7 @@ export const generateCustomMetadata = async (
         siteName: SITE_NAME,
         url: `${CLIENT_URL}${response.data.data[0].attributes.path || path}`,
         images: [
-          `${CLIENT_URL}${
+          `${SERVER_URL}${
             response.data.data[0].attributes.image?.data
               ? response.data.data[0].attributes.image.data.attributes.url
               : ""
