@@ -10,6 +10,10 @@
   position: relative;
 }
 .mouseAnimation {
+  @media screen and (max-width: $max-768) {
+    display: none;
+  }
+
   @media screen and (min-width: $max-768) {
     position: absolute;
     bottom: rem(40);
@@ -23,6 +27,10 @@
   }
 }
 .swipeAnimation {
+  @media screen and (min-width: $max-768) {
+    display: none;
+  }
+
   @media screen and (max-width: $max-768) {
     position: absolute;
     bottom: rem(30);
