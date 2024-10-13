@@ -7,6 +7,33 @@
   align-items: center;
   justify-content: center;
   margin-bottom: rem(-10);
+  position: relative;
+}
+.mouseAnimation {
+  @media screen and (min-width: $max-768) {
+    position: absolute;
+    bottom: rem(40);
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    & svg {
+      max-width: rem(30);
+      width: 100%;
+    }
+  }
+}
+.swipeAnimation {
+  @media screen and (max-width: $max-768) {
+    position: absolute;
+    bottom: rem(30);
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    & svg {
+      max-width: rem(60);
+      width: 100%;
+    }
+  }
 }
 .video {
   width: 100%;

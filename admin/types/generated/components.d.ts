@@ -1,15 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface UiAkkordeon extends Schema.Component {
-  collectionName: 'components_ui_akkordeon';
+export interface UiTarify extends Schema.Component {
+  collectionName: 'components_ui_tarify';
   info: {
-    displayName: '\u0410\u043A\u043A\u043E\u0440\u0434\u0435\u043E\u043D';
+    displayName: '\u0422\u0430\u0440\u0438\u0444\u044B';
     icon: 'bulletList';
-    description: '';
   };
   attributes: {
-    title: Attribute.Text & Attribute.Required;
-    content: Attribute.RichText & Attribute.Required;
+    title: Attribute.String;
+    data: Attribute.Relation<'ui.tarify', 'oneToMany', 'api::rates.rates'>;
   };
 }
 
@@ -26,24 +25,25 @@ export interface UiButton extends Schema.Component {
   };
 }
 
-export interface UiTarify extends Schema.Component {
-  collectionName: 'components_ui_tarify';
+export interface UiAkkordeon extends Schema.Component {
+  collectionName: 'components_ui_akkordeon';
   info: {
-    displayName: '\u0422\u0430\u0440\u0438\u0444\u044B';
+    displayName: '\u0410\u043A\u043A\u043E\u0440\u0434\u0435\u043E\u043D';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
-    title: Attribute.String;
-    data: Attribute.Relation<'ui.tarify', 'oneToMany', 'api::rates.rates'>;
+    title: Attribute.Text & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'ui.akkordeon': UiAkkordeon;
-      'ui.button': UiButton;
       'ui.tarify': UiTarify;
+      'ui.button': UiButton;
+      'ui.akkordeon': UiAkkordeon;
     }
   }
 }

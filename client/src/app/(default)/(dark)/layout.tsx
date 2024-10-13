@@ -20,7 +20,7 @@ export default function RootLayout({
         content="FAFAFA"
       />
       <body>
-        <Nav isSolid theme="dark" />
+        <Nav theme="dark" />
         <main>{children}</main>
         <Footer />
       </body>

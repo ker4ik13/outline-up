@@ -43,7 +43,7 @@ $header-height: rem(80);
     }
   }
   &.dark {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #16000b;
     color: $bg-white;
     position: fixed;
     top: 0;
@@ -52,7 +52,7 @@ $header-height: rem(80);
       @media (max-width: $burger-active-width) {
         &.active {
           transform: translate(0%, $header-height);
-          background-color: $bg-black;
+          background-color: #16000b;
         }
       }
     }
