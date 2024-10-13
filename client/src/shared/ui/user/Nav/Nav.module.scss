@@ -43,7 +43,7 @@ $header-height: rem(80);
     }
   }
   &.dark {
-    background-color: #16000b;
+    background-color: rgba(22, 0, 11, 0.5);
     color: $bg-white;
     position: fixed;
     top: 0;
@@ -55,6 +55,10 @@ $header-height: rem(80);
           background-color: #16000b;
         }
       }
+    }
+
+    @media screen and (max-width: $burger-active-width) {
+      background-color: #16000b;
     }
 
     &.isSolid {
